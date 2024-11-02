@@ -460,7 +460,7 @@ MonoBehaviour:
   zoomStep: 1.5
   zoomSpeed: 10
   movementTime: 5
-  movementSpeed: 20
+  movementSpeed: 1
   edgeMovementEnabled: 0
 --- !u!4 &1768654672
 Transform:
