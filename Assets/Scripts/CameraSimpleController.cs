@@ -32,7 +32,7 @@ public class CameraSimpleController : MonoBehaviour
     [SerializeField]
     private bool edgeMovementEnabled;
 
-    private Vector3 _targetPosition;
+    private Vector3 _targetPosition = Vector3.zero;
     private float _movementSpeedZoomAmplifier;
     private float _targetZoom;
 
