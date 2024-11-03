@@ -6,7 +6,7 @@ namespace Actions
     {
         public bool Move(ActionContext actionContext)
         {
-            Debug.Log(actionContext.ActionName + " about to perform");
+            Debug.Log("Move" + " about to perform");
 
             Vector3 ignoreY = new Vector3(
                 actionContext.ClickedObject.transform.position.x,
