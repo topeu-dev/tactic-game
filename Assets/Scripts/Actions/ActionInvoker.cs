@@ -4,13 +4,11 @@ namespace Actions
 {
     public class ActionContext
     {
-        public readonly string ActionName;
         public readonly GameObject CurrentActiveChar;
         public readonly GameObject ClickedObject;
 
-        public ActionContext(string actionName, GameObject currentActiveChar, GameObject clickedObject)
+        public ActionContext(GameObject currentActiveChar, GameObject clickedObject)
         {
-            ActionName = actionName;
             CurrentActiveChar = currentActiveChar;
             ClickedObject = clickedObject;
         }

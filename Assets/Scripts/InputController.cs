@@ -13,13 +13,15 @@ public class InputController : MonoBehaviour
 {
     [SerializeField]
     private GamePhase currentPhase = GamePhase.None;
+
     [SerializeField]
     private GameObject _activeCharacter;
+
     [SerializeField]
-    private int selectedAction;
+    private ActionSo selectedActionSO;
 
     private static int actionUnselected = -100;
-    
+
     private bool actionInProgress = false;
 
     private void Awake()
@@ -59,7 +61,7 @@ public class InputController : MonoBehaviour
     {
         if (actionInProgress)
             return;
-        
+
         if (currentPhase == GamePhase.None)
         {
             if (clickedObject.CompareTag("PlayableChar"))
@@ -106,13 +108,13 @@ public class InputController : MonoBehaviour
             {
                 Debug.Log("Can apply");
                 actionInProgress = true;
-                ActionInvoker.Invoke("Move", new ActionContext("Move", _activeCharacter, clickedObject));
+                ActionInvoker.Invoke(selectedActionSO.actionName, new ActionContext(_activeCharacter, clickedObject));
                 currentPhase = GamePhase.CharSelected;
                 actionInProgress = false;
             }
             else
             {
-                Debug.Log("Can't apply" + selectedAction  + " to " + " clickedObject: " + clickedObject.name
+                Debug.Log("Can't apply" + selectedActionSO.actionName + " to " + " clickedObject: " + clickedObject.name
                           + " currentActiveCharacter: " + _activeCharacter.name);
             }
         }
@@ -125,20 +127,20 @@ public class InputController : MonoBehaviour
         if (clickedObject != null)
         {
             currentPhase = GamePhase.CharSelected;
+            EventManager.SelectableObject.OnObjectSelectedEvent(this, clickedObject);
         }
     }
 
     public void SelectAction(int actionId)
     {
-        selectedAction = actionId;
+        var genericChar = _activeCharacter.GetComponent<GenericChar>();
+        selectedActionSO = genericChar.actions[actionId];
         currentPhase = GamePhase.ActionSelected;
-        Debug.Log("Spell selected: " + selectedAction);
+        Debug.Log("Spell selected: " + selectedActionSO.actionName);
     }
 
     private bool CanApplyActionToClickedObject(GameObject clickedObject)
     {
-        var genericChar = _activeCharacter.GetComponent<GenericChar>();
-        var selectedActionOnActiveChar = genericChar.actions[selectedAction];
-        return selectedActionOnActiveChar.possibleObjectsToApply.Contains(clickedObject.tag);
+        return selectedActionSO.possibleObjectsToApply.Contains(clickedObject.tag);
     }
 }

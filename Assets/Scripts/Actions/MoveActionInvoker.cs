@@ -8,28 +8,7 @@ namespace Actions
   {
     public bool Move(ActionContext actionContext)
     {
-      GameObject character = actionContext.CurrentActiveChar;
 
-      if (character == null)
-        return false;
-
-      // Получаем или добавляем компонент Mover
-      MoveControllerPtagus mover = character.GetComponent<MoveControllerPtagus>();
-      if (mover == null)
-      {
-        mover = character.AddComponent<MoveControllerPtagus>();
-      }
-
-      // Устанавливаем цель перемещения
-      if (actionContext.ClickedObject != null)
-      {
-        Vector3 targetPosition = actionContext.ClickedObject.transform.position;
-
-        mover.MoveToPositionAsync(targetPosition);
-        return true; // Движение успешно завершено
-      }
-
-      return false; // Цель не задана
     }
     /*
     public async Task<bool> MoveAsync(ActionContext actionContext)
@@ -40,27 +19,27 @@ namespace Actions
       if (character == null)
         return false;
 
-      // Получаем или добавляем компонент Mover
+      // ГЏГ®Г«ГіГ·Г ГҐГ¬ ГЁГ«ГЁ Г¤Г®ГЎГ ГўГ«ГїГҐГ¬ ГЄГ®Г¬ГЇГ®Г­ГҐГ­ГІ Mover
       MoveControllerPtagus mover = character.GetComponent<MoveControllerPtagus>();
       if (mover == null)
       {
         mover = character.AddComponent<MoveControllerPtagus>();
       }
 
-      // Устанавливаем цель перемещения
+      // Г“Г±ГІГ Г­Г ГўГ«ГЁГўГ ГҐГ¬ Г¶ГҐГ«Гј ГЇГҐГ°ГҐГ¬ГҐГ№ГҐГ­ГЁГї
       if (actionContext.ClickedObject != null)
       {
         Vector3 targetPosition = actionContext.ClickedObject.transform.position;
 
         Debug.Log("startasyncfuncinmove");
-        // Асинхронно ждем завершения движения
+        // ГЂГ±ГЁГ­ГµГ°Г®Г­Г­Г® Г¦Г¤ГҐГ¬ Г§Г ГўГҐГ°ГёГҐГ­ГЁГї Г¤ГўГЁГ¦ГҐГ­ГЁГї
         await mover.MoveToPositionAsync(targetPosition);
 
         Debug.Log("Movement complete");
-        return true; // Движение успешно завершено
+        return true; // Г„ГўГЁГ¦ГҐГ­ГЁГҐ ГіГ±ГЇГҐГёГ­Г® Г§Г ГўГҐГ°ГёГҐГ­Г®
       }
 
-      return false; // Цель не задана
+      return false; // Г–ГҐГ«Гј Г­ГҐ Г§Г Г¤Г Г­Г 
     }*/
   }
 }
