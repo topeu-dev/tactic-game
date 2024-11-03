@@ -132,7 +132,7 @@ GameObject:
   - component: {fileID: 144708230}
   - component: {fileID: 144708229}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: HUD
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -215,8 +215,6 @@ RectTransform:
   m_Children:
   - {fileID: 1112165317}
   - {fileID: 2065423423}
-  - {fileID: 277794380}
-  - {fileID: 1228121831}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -253,6 +251,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8dafa883b46ace048a7505d2af83e6d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentPhase: 0
+  _activeCharacter: {fileID: 0}
+  selectedAction: 0
 --- !u!4 &248667953
 Transform:
   m_ObjectHideFlags: 0
@@ -281,7 +282,7 @@ GameObject:
   - component: {fileID: 277794382}
   - component: {fileID: 277794381}
   m_Layer: 5
-  m_Name: HitButton
+  m_Name: SpellSlot2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -294,17 +295,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 277794379}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 353483100}
-  m_Father: {fileID: 144708232}
+  m_Father: {fileID: 1112165317}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -14, y: 293}
+  m_AnchoredPosition: {x: -14, y: 779}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &277794381
@@ -1042,7 +1043,7 @@ GameObject:
   - component: {fileID: 449389289}
   m_Layer: 0
   m_Name: Char2
-  m_TagString: Untagged
+  m_TagString: PlayableChar
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1191,6 +1192,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startCellX: 0
   startCellY: 0
+  actions:
+  - {fileID: 11400000, guid: f89c94753cfd088428b4205c2e41223b, type: 2}
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0
@@ -1410,7 +1413,7 @@ GameObject:
   - component: {fileID: 1100779826}
   m_Layer: 0
   m_Name: Char1
-  m_TagString: Untagged
+  m_TagString: PlayableChar
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1547,6 +1550,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startCellX: 0
   startCellY: 0
+  actions:
+  - {fileID: 11400000, guid: f89c94753cfd088428b4205c2e41223b, type: 2}
+  - {fileID: 11400000, guid: 0f68f778ee775b6408d219c798fe1440, type: 2}
 --- !u!1 &1109008066
 GameObject:
   m_ObjectHideFlags: 0
@@ -1656,6 +1662,8 @@ RectTransform:
   - {fileID: 429611879}
   - {fileID: 1109008067}
   - {fileID: 1898052154}
+  - {fileID: 1228121831}
+  - {fileID: 277794380}
   m_Father: {fileID: 144708232}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.25, y: 0}
@@ -1714,7 +1722,7 @@ GameObject:
   - component: {fileID: 1228121833}
   - component: {fileID: 1228121832}
   m_Layer: 5
-  m_Name: MoveButton
+  m_Name: SpellSlot1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1727,17 +1735,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1228121830}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1550487501}
-  m_Father: {fileID: 144708232}
+  m_Father: {fileID: 1112165317}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -208.74, y: 293}
+  m_AnchoredPosition: {x: -208.74, y: 779}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1228121832
@@ -2116,7 +2124,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Move
+  m_text: SpellSlot1
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

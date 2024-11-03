@@ -10,7 +10,7 @@ public class BattleField : MonoBehaviour
     public int columns = 4;
     public float cellSize = 12f;
 
-    public PlayerControllerPtagus dermo;
+    public InputController dermo;
 
     private Cell[,] _matrix;
 
@@ -22,7 +22,7 @@ public class BattleField : MonoBehaviour
 
     public void OnPointerClick(GameObject cellRef)
     {
-        dermo.SetActivePlayer(cellRef);
+        dermo.HandleClickOnObject(cellRef);
     }
 
     private void GenerateGrid()
