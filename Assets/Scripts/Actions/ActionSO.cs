@@ -9,10 +9,12 @@ namespace Actions
         public string actionName;
         public string description;
         public Sprite icon;
-        
+
         //Object tags used
         public List<string> possibleObjectsToApply;
-        
+
+        //TEMP change to Interface
+        public GameObject actionVisualizer;
         // add-self apply?
     }
 }

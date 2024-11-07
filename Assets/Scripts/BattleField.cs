@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -14,7 +15,7 @@ public class BattleField : MonoBehaviour
 
     private Cell[,] _matrix;
 
-    private void Awake()
+    private void Start()
     {
         _matrix = new Cell[rows, columns];
         GenerateGrid();

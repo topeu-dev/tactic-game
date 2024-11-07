@@ -7,11 +7,12 @@ TagManager:
   - Enemy
   - Cell
   - PlayableChar
+  - BattleField
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - BattleFieldLayer
   - Water
   - UI
   - 

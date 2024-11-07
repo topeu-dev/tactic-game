@@ -16,4 +16,5 @@ MonoBehaviour:
   description: Go to cell
   icon: {fileID: 21300000, guid: 6960c6bd5088317429f7e0e033bee813, type: 3}
   possibleObjectsToApply:
-  - Cell
+  - BattleField
+  actionVisualizer: {fileID: 5744010823618333322, guid: 6ecccb371e712e444844da305be49f3c, type: 3}

@@ -1,5 +1,8 @@
 using Actions;
+using Actions.Visualizers;
+using TaskApproachTest;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 
 public enum GamePhase
@@ -22,6 +25,7 @@ public class InputController : MonoBehaviour
 
     private static int actionUnselected = -100;
 
+    [SerializeField]
     private bool actionInProgress = false;
 
     private void Awake()
@@ -57,11 +61,30 @@ public class InputController : MonoBehaviour
         }
     }
 
+    public Vector3? GetBattleFieldHitPosition()
+    {
+        // Debug.Log(Input.mousePosition);
+        // Convert screen position to world position using a raycast
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        if (Physics.Raycast(ray, out RaycastHit hit, 400f,1 << LayerMask.NameToLayer("BattleFieldLayer")))
+        {
+            Vector3 worldPosition = hit.point;
+            Debug.Log("battlefield hit found " + worldPosition);
+            return worldPosition;
+        }
+        
+        Debug.Log("No battlefield hit found");
+        return null;
+    }
+
     public void HandleClickOnObject(GameObject clickedObject)
     {
+        Debug.Log(clickedObject);
         if (actionInProgress)
             return;
 
+        Vector3? battleFieldClickedPos = GetBattleFieldHitPosition();
+        
         if (currentPhase == GamePhase.None)
         {
             if (clickedObject.CompareTag("PlayableChar"))
@@ -69,7 +92,7 @@ public class InputController : MonoBehaviour
                 SetNewActiveCharacter(clickedObject);
             }
 
-            if (clickedObject.CompareTag("Cell"))
+            if (clickedObject.CompareTag("BattleField"))
             {
                 // ignore
             }
@@ -89,7 +112,7 @@ public class InputController : MonoBehaviour
                 SetNewActiveCharacter(clickedObject);
             }
 
-            if (clickedObject.CompareTag("Cell"))
+            if (clickedObject.CompareTag("BattleField"))
             {
                 // ignore
             }
@@ -108,9 +131,14 @@ public class InputController : MonoBehaviour
             {
                 Debug.Log("Can apply");
                 actionInProgress = true;
-                ActionInvoker.Invoke(selectedActionSO.actionName, new ActionContext(_activeCharacter, clickedObject));
+                TaskExecutor taskExecutor = _activeCharacter.GetComponent<TaskExecutor>();
+                taskExecutor.ExecuteTask(
+                    selectedActionSO,
+                    new ActionContext(_activeCharacter, clickedObject, battleFieldClickedPos),
+                    () => UnlockInput()
+                );
+
                 currentPhase = GamePhase.CharSelected;
-                actionInProgress = false;
             }
             else
             {
@@ -136,11 +164,24 @@ public class InputController : MonoBehaviour
         var genericChar = _activeCharacter.GetComponent<GenericChar>();
         selectedActionSO = genericChar.actions[actionId];
         currentPhase = GamePhase.ActionSelected;
+        if (selectedActionSO.actionVisualizer != null)
+        {
+            // GameObject moveVisualizer = selectedActionSO.actionVisualizer;
+            // var refqwe = Instantiate(moveVisualizer, Vector3.zero, Quaternion.identity);
+            // refqwe.GetComponent<MoveVisualizer>().EnableVisualizerFor(_activeCharacter);
+
+        }
         Debug.Log("Spell selected: " + selectedActionSO.actionName);
     }
 
     private bool CanApplyActionToClickedObject(GameObject clickedObject)
     {
         return selectedActionSO.possibleObjectsToApply.Contains(clickedObject.tag);
+    }
+
+    public void UnlockInput()
+    {
+        Debug.Log("Unlocked from callback!!!");
+        actionInProgress = false;
     }
 }

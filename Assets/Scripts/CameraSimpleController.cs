@@ -72,7 +72,6 @@ public class CameraSimpleController : MonoBehaviour
 
     private void ZoomCamera(InputAction.CallbackContext context)
     {
-        Debug.Log("Zoom!");
         float zoomDir = context.ReadValue<float>();
         _targetZoom = zoomDir < 0
             ? Mathf.Clamp(_targetZoom + zoomStep, zoomMin, zoomMax)
