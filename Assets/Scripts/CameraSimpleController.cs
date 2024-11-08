@@ -54,12 +54,19 @@ public class CameraSimpleController : MonoBehaviour
     {
         InputActionSingleton.GeneralInputActions.Camera.Zoom.Enable();
         InputActionSingleton.GeneralInputActions.Camera.CameraMovement.Enable();
+        EventManager.CameraEvent.OnPlayableCharacterFocusEvent += OnPlayableCharacterFocusEvent;
     }
 
     private void OnDisable()
     {
         InputActionSingleton.GeneralInputActions.Camera.Zoom.Disable();
         InputActionSingleton.GeneralInputActions.Camera.CameraMovement.Disable();
+        EventManager.CameraEvent.OnPlayableCharacterFocusEvent -= OnPlayableCharacterFocusEvent;
+    }
+    
+    private void OnPlayableCharacterFocusEvent(Component arg0, GameObject arg1)
+    {
+        _targetPosition = arg1.transform.position;
     }
 
     void Update()
@@ -127,4 +134,6 @@ public class CameraSimpleController : MonoBehaviour
             _targetPosition += moveDirection * (0.5f * movementSpeed * _movementSpeedZoomAmplifier);
         }
     }
+    
+    
 }

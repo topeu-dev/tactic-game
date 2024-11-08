@@ -1,10 +1,8 @@
-using System;
 using System.Collections.Generic;
 using Actions;
 using Actions.Visualizers;
 using TaskApproachTest;
 using UnityEngine;
-using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 
 public enum GamePhase
@@ -30,10 +28,11 @@ public class InputController : MonoBehaviour
     [SerializeField]
     private bool actionInProgress = false;
 
-    
+    private GameObject _characterWithActiveTurn;
+
     private Dictionary<ActionVisualizerType, ActionVisualizer> _actionVisualizers = new();
     private ActionVisualizer _selectedActionVisualizer;
-    
+
     private void Awake()
     {
         InputActionSingleton.GeneralInputActions.Gameplay.PressBack.performed += HandlePressBack;
@@ -43,13 +42,24 @@ public class InputController : MonoBehaviour
     {
         var moveVisualizer = FindFirstObjectByType<MoveVisualizer>();
         _actionVisualizers.Add(ActionVisualizerType.Move, moveVisualizer);
-        var hitVisualizer =FindFirstObjectByType<HitVisualizer>();
+        var hitVisualizer = FindFirstObjectByType<HitVisualizer>();
         _actionVisualizers.Add(ActionVisualizerType.MeleeHit, hitVisualizer);
     }
 
     private void OnEnable()
     {
         InputActionSingleton.GeneralInputActions.Gameplay.PressBack.Enable();
+        EventManager.TurnEvent.OnNextTurnEvent += TurnChanged;
+    }
+
+    private void TurnChanged(Component arg0, GameObject arg1)
+    {
+        _characterWithActiveTurn = arg1;
+        if (arg1.tag == "PlayableChar")
+        {
+            SelectAction(actionUnselected);
+            SetNewActiveCharacter(arg1);
+        }
     }
 
     private void OnDisable()
@@ -80,13 +90,13 @@ public class InputController : MonoBehaviour
         // Debug.Log(Input.mousePosition);
         // Convert screen position to world position using a raycast
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        if (Physics.Raycast(ray, out RaycastHit hit, 400f,1 << LayerMask.NameToLayer("BattleFieldLayer")))
+        if (Physics.Raycast(ray, out RaycastHit hit, 400f, 1 << LayerMask.NameToLayer("BattleFieldLayer")))
         {
             Vector3 worldPosition = hit.point;
             Debug.Log("battlefield hit found " + worldPosition);
             return worldPosition;
         }
-        
+
         Debug.Log("No battlefield hit found");
         return null;
     }
@@ -98,7 +108,7 @@ public class InputController : MonoBehaviour
             return;
 
         Vector3? battleFieldClickedPos = GetBattleFieldHitPosition();
-        
+
         if (currentPhase == GamePhase.None)
         {
             if (clickedObject.CompareTag("PlayableChar"))
@@ -167,7 +177,7 @@ public class InputController : MonoBehaviour
     private void SetNewActiveCharacter(GameObject clickedObject)
     {
         _activeCharacter = clickedObject;
-        
+
         if (clickedObject != null)
         {
             Debug.Log("Current Active Char -> " + clickedObject.name);
@@ -183,7 +193,12 @@ public class InputController : MonoBehaviour
             _selectedActionVisualizer.DisableVisualizer();
             _selectedActionVisualizer = null;
         }
-        
+
+        if (actionId == actionUnselected)
+        {
+            return;
+        }
+
         var genericChar = _activeCharacter.GetComponent<GenericChar>();
         selectedActionSO = genericChar.actions[actionId];
         currentPhase = GamePhase.ActionSelected;
@@ -193,7 +208,7 @@ public class InputController : MonoBehaviour
             _selectedActionVisualizer = visualizer;
             visualizer.EnableVisualizerFor(_activeCharacter);
         }
-        
+
         Debug.Log("Spell selected: " + selectedActionSO.actionName);
     }
 
