@@ -1,3 +1,5 @@
+using System;
+using System.Collections.Generic;
 using Actions;
 using Actions.Visualizers;
 using TaskApproachTest;
@@ -28,9 +30,21 @@ public class InputController : MonoBehaviour
     [SerializeField]
     private bool actionInProgress = false;
 
+    
+    private Dictionary<ActionVisualizerType, ActionVisualizer> _actionVisualizers = new();
+    private ActionVisualizer _selectedActionVisualizer;
+    
     private void Awake()
     {
         InputActionSingleton.GeneralInputActions.Gameplay.PressBack.performed += HandlePressBack;
+    }
+
+    private void Start()
+    {
+        var moveVisualizer = FindFirstObjectByType<MoveVisualizer>();
+        _actionVisualizers.Add(ActionVisualizerType.Move, moveVisualizer);
+        var hitVisualizer =FindFirstObjectByType<HitVisualizer>();
+        _actionVisualizers.Add(ActionVisualizerType.MeleeHit, hitVisualizer);
     }
 
     private void OnEnable()
@@ -139,6 +153,8 @@ public class InputController : MonoBehaviour
                 );
 
                 currentPhase = GamePhase.CharSelected;
+                _selectedActionVisualizer.DisableVisualizer();
+                _selectedActionVisualizer = null;
             }
             else
             {
@@ -151,9 +167,10 @@ public class InputController : MonoBehaviour
     private void SetNewActiveCharacter(GameObject clickedObject)
     {
         _activeCharacter = clickedObject;
-        Debug.Log("Current Active Char -> " + clickedObject.name);
+        
         if (clickedObject != null)
         {
+            Debug.Log("Current Active Char -> " + clickedObject.name);
             currentPhase = GamePhase.CharSelected;
             EventManager.SelectableObject.OnObjectSelectedEvent(this, clickedObject);
         }
@@ -161,16 +178,22 @@ public class InputController : MonoBehaviour
 
     public void SelectAction(int actionId)
     {
+        if (_selectedActionVisualizer != null)
+        {
+            _selectedActionVisualizer.DisableVisualizer();
+            _selectedActionVisualizer = null;
+        }
+        
         var genericChar = _activeCharacter.GetComponent<GenericChar>();
         selectedActionSO = genericChar.actions[actionId];
         currentPhase = GamePhase.ActionSelected;
-        if (selectedActionSO.actionVisualizer != null)
+        var visualizer = _actionVisualizers[selectedActionSO.actionVisualizerType];
+        if (visualizer != null)
         {
-            // GameObject moveVisualizer = selectedActionSO.actionVisualizer;
-            // var refqwe = Instantiate(moveVisualizer, Vector3.zero, Quaternion.identity);
-            // refqwe.GetComponent<MoveVisualizer>().EnableVisualizerFor(_activeCharacter);
-
+            _selectedActionVisualizer = visualizer;
+            visualizer.EnableVisualizerFor(_activeCharacter);
         }
+        
         Debug.Log("Spell selected: " + selectedActionSO.actionName);
     }
 

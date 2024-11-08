@@ -5,7 +5,7 @@ using UnityEngine.AI;
 namespace Actions.Visualizers
 {
     [RequireComponent(typeof(LineRenderer))]
-    public class MoveVisualizer : MonoBehaviour
+    public class MoveVisualizer : MonoBehaviour, ActionVisualizer
     {
         private LineRenderer lineRenderer;
 
@@ -26,9 +26,15 @@ namespace Actions.Visualizers
 
         public void EnableVisualizerFor(GameObject activeChar)
         {
-            Debug.Log("GOGOGOG!123");
             _navMeshAgentRef = activeChar.gameObject.GetComponent<NavMeshAgent>();
+            lineRenderer.enabled = true;
             _enabled = true;
+        }
+
+        public void DisableVisualizer()
+        {
+            lineRenderer.enabled = false;
+            _enabled = false;
         }
 
         private void Update()

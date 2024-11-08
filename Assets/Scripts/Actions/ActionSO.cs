@@ -3,6 +3,15 @@ using UnityEngine;
 
 namespace Actions
 {
+    public enum ActionVisualizerType
+    {
+        None,
+        MeleeHit,
+        Move,
+        RangedHit,
+        AoeHit
+    }
+    
     [CreateAssetMenu(menuName = "Actions/New Char Action")]
     public class ActionSo : ScriptableObject
     {
@@ -14,7 +23,7 @@ namespace Actions
         public List<string> possibleObjectsToApply;
 
         //TEMP change to Interface
-        public GameObject actionVisualizer;
+        public ActionVisualizerType actionVisualizerType;
         // add-self apply?
     }
 }

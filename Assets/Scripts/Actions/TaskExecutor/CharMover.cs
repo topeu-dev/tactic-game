@@ -11,14 +11,14 @@ namespace TaskApproachTest
     {
         public float speed;
 
+        public float distanceToTargetLessToPlayIdle;
+        public float remainingDistanceToTarget;
         private NavMeshSurface _navMeshSurfaceRef;
         private NavMeshAgent _navMeshAgentRef;
         private Animator _animatorRef;
 
         [SerializeField]
         private float _currentSpeed;
-
-        private bool changed = false;
 
 
         private void Awake()
@@ -49,7 +49,6 @@ namespace TaskApproachTest
 
             while (!AgentReachedDestination())
             {
-                _currentSpeed = _navMeshAgentRef.velocity.sqrMagnitude;
                 yield return null;
             }
             _animatorRef.SetTrigger("IdleTrigger");
@@ -67,9 +66,9 @@ namespace TaskApproachTest
             {
                 if (_navMeshAgentRef.remainingDistance <= _navMeshAgentRef.stoppingDistance)
                 {
-
-                    if (!_navMeshAgentRef.hasPath || _navMeshAgentRef.velocity.sqrMagnitude < 3f)
+                    if (!_navMeshAgentRef.hasPath || _navMeshAgentRef.velocity.sqrMagnitude == 0f)
                     {
+
                         return true;
                     }
                 }
