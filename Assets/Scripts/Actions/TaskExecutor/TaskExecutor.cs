@@ -5,6 +5,6 @@ namespace TaskApproachTest
 {
     public interface TaskExecutor
     {
-        void ExecuteTask(ActionSo actionSo, ActionContext actionContext, Action callback);
+        void ExecuteTask(ActionInstance actionInstance, ActionContext actionContext, Action callback);
     }
 }

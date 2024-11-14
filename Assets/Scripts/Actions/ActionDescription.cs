@@ -11,19 +11,16 @@ namespace Actions
         RangedHit,
         AoeHit
     }
-    
+
     [CreateAssetMenu(menuName = "Actions/New Char Action")]
-    public class ActionSo : ScriptableObject
+    public class ActionDescription : ScriptableObject
     {
         public string actionName;
         public string description;
         public Sprite icon;
 
-        //Object tags used
+        //Tags
         public List<string> possibleObjectsToApply;
-
-        //TEMP change to Interface
         public ActionVisualizerType actionVisualizerType;
-        // add-self apply?
     }
 }

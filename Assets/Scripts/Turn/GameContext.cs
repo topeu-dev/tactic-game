@@ -17,7 +17,6 @@ namespace Turn
 
         public void StartBattle()
         {
-            
             _activeObject = _turnManager.nextTurn();
             EventManager.TurnEvent.OnNextTurnEvent?.Invoke(this, _activeObject);
         }
@@ -38,11 +37,10 @@ namespace Turn
                 _turnManager.makeNextTurnSequence();
                 _activeObject = _turnManager.nextTurn();
             }
-            
-            EventManager.TurnEvent.OnNextTurnEvent?.Invoke(this, _activeObject);
-            
             var newTurnRelated = _activeObject.GetComponent<TurnRelated>();
             newTurnRelated.StartOfTurn();
+            
+            EventManager.TurnEvent.OnNextTurnEvent?.Invoke(this, _activeObject);
         }
     }
 }

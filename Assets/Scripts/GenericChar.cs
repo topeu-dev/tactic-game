@@ -1,7 +1,5 @@
-using System;
 using System.Collections.Generic;
 using Actions;
-using Effects;
 using Turn;
 using UnityEngine;
 
@@ -12,12 +10,15 @@ public class GenericChar : MonoBehaviour, TurnRelated
 
     private Initiative currentInitiative;
 
-    public List<ActionSo> actions = new();
-    public List<Effect> currentEffects = new();
+    [SerializeField]
+    public List<ActionInstance> actionsInstances = new();
+
+    // public List<Effect> currentEffects = new();
 
     private void Awake()
     {
         currentInitiative = new Initiative(startInitiativeValue, 10);
+        actionsInstances.ForEach(action => action.Init());
     }
 
     public void EndOfTurn()
@@ -27,6 +28,7 @@ public class GenericChar : MonoBehaviour, TurnRelated
 
     public void StartOfTurn()
     {
+        actionsInstances.ForEach(action => action.StartOfTurn());
         EventManager.CameraEvent.OnPlayableCharacterFocusEvent?.Invoke(this, gameObject);
     }
 

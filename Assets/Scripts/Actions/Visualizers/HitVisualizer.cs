@@ -1,28 +1,26 @@
-using System;
 using UnityEngine;
 
 namespace Actions.Visualizers
 {
-    
     [RequireComponent(typeof(LineRenderer))]
     public class HitVisualizer : MonoBehaviour, ActionVisualizer
     {
-        
         private LineRenderer lineRenderer;
-        public int segments = 50; // Number of points along the circle, the higher the value, the smoother the circle
-        public float radius = 5.0f; // Radius of the circle
+        public int segments = 50;
 
         private bool _enabled;
-        
+        private ActionInstance _actionInstanceToVisualize;
+
         private void Awake()
         {
             lineRenderer = GetComponent<LineRenderer>();
             lineRenderer.loop = true;
             lineRenderer.enabled = false;
         }
-        
-        public void EnableVisualizerFor(GameObject activeChar)
+
+        public void EnableVisualizerFor(GameObject activeChar, ActionInstance actionInstance)
         {
+            _actionInstanceToVisualize = actionInstance;
             DrawCircle(activeChar.transform.position);
             lineRenderer.enabled = true;
             _enabled = true;
@@ -34,12 +32,6 @@ namespace Actions.Visualizers
             _enabled = false;
         }
 
-
-        // private void Update()
-        // {
-        //     throw new NotImplementedException();
-        // }
-
         void DrawCircle(Vector3 center)
         {
             lineRenderer.transform.position = center;
@@ -50,8 +42,8 @@ namespace Actions.Visualizers
             for (int i = 0; i < segments + 1; i++)
             {
                 float angle = (float)i / segments * Mathf.PI * 2;
-                float x = center.x + Mathf.Cos(angle) * radius;
-                float z = center.z + Mathf.Sin(angle) * radius;
+                float x = center.x + Mathf.Cos(angle) * _actionInstanceToVisualize.CurrentDistance;
+                float z = center.z + Mathf.Sin(angle) * _actionInstanceToVisualize.CurrentDistance;
 
                 positions[i] = new Vector3(x, 0, z);
             }

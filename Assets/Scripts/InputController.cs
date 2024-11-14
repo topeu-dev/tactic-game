@@ -4,6 +4,8 @@ using Actions.Visualizers;
 using TaskApproachTest;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Serialization;
+using Utility;
 
 public enum GamePhase
 {
@@ -20,8 +22,9 @@ public class InputController : MonoBehaviour
     [SerializeField]
     private GameObject _activeCharacter;
 
+    [FormerlySerializedAs("selectedActionDescription")]
     [SerializeField]
-    private ActionSo selectedActionSO;
+    private ActionInstance selectedAction;
 
     private static int actionUnselected = -100;
 
@@ -55,7 +58,7 @@ public class InputController : MonoBehaviour
     private void TurnChanged(Component arg0, GameObject arg1)
     {
         _characterWithActiveTurn = arg1;
-        if (arg1.tag == "PlayableChar")
+        if (arg1.CompareTag("PlayableChar"))
         {
             SelectAction(actionUnselected);
             SetNewActiveCharacter(arg1);
@@ -136,7 +139,7 @@ public class InputController : MonoBehaviour
                 SetNewActiveCharacter(clickedObject);
             }
 
-            if (clickedObject.CompareTag("BattleField"))
+            if (clickedObject.CompareTag(CustomTags.BattleField.ToString()))
             {
                 // ignore
             }
@@ -153,11 +156,10 @@ public class InputController : MonoBehaviour
         {
             if (CanApplyActionToClickedObject(clickedObject))
             {
-                Debug.Log("Can apply");
                 actionInProgress = true;
                 TaskExecutor taskExecutor = _activeCharacter.GetComponent<TaskExecutor>();
                 taskExecutor.ExecuteTask(
-                    selectedActionSO,
+                    selectedAction,
                     new ActionContext(_activeCharacter, clickedObject, battleFieldClickedPos),
                     () => UnlockInput()
                 );
@@ -168,7 +170,8 @@ public class InputController : MonoBehaviour
             }
             else
             {
-                Debug.Log("Can't apply" + selectedActionSO.actionName + " to " + " clickedObject: " + clickedObject.name
+                Debug.Log("Can't apply" + selectedAction.actionDescription.actionName + " to " + " clickedObject: " +
+                          clickedObject.name
                           + " currentActiveCharacter: " + _activeCharacter.name);
             }
         }
@@ -200,21 +203,23 @@ public class InputController : MonoBehaviour
         }
 
         var genericChar = _activeCharacter.GetComponent<GenericChar>();
-        selectedActionSO = genericChar.actions[actionId];
+        selectedAction = genericChar.actionsInstances[actionId];
+
         currentPhase = GamePhase.ActionSelected;
-        var visualizer = _actionVisualizers[selectedActionSO.actionVisualizerType];
+        var visualizer = _actionVisualizers[selectedAction.actionDescription.actionVisualizerType];
+
         if (visualizer != null)
         {
             _selectedActionVisualizer = visualizer;
-            visualizer.EnableVisualizerFor(_activeCharacter);
+            visualizer.EnableVisualizerFor(_activeCharacter, selectedAction);
         }
 
-        Debug.Log("Spell selected: " + selectedActionSO.actionName);
+        Debug.Log("Spell selected: " + selectedAction.actionDescription.actionName);
     }
 
     private bool CanApplyActionToClickedObject(GameObject clickedObject)
     {
-        return selectedActionSO.possibleObjectsToApply.Contains(clickedObject.tag);
+        return selectedAction.actionDescription.possibleObjectsToApply.Contains(clickedObject.tag);
     }
 
     public void UnlockInput()

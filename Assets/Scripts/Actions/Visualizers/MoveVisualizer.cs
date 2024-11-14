@@ -7,33 +7,30 @@ namespace Actions.Visualizers
     [RequireComponent(typeof(LineRenderer))]
     public class MoveVisualizer : MonoBehaviour, ActionVisualizer
     {
-        private LineRenderer lineRenderer;
-
-        [SerializeField]
+        private LineRenderer _lineRenderer;
         private NavMeshAgent _navMeshAgentRef;
-
-        [SerializeField]
         private bool _enabled;
-
-        private NavMeshPath path;
+        private NavMeshPath _path;
+        private ActionInstance actionInstance;
 
         private void Awake()
         {
-            path = new NavMeshPath();
-            lineRenderer = GetComponent<LineRenderer>();
+            _path = new NavMeshPath();
+            _lineRenderer = GetComponent<LineRenderer>();
         }
 
 
-        public void EnableVisualizerFor(GameObject activeChar)
+        public void EnableVisualizerFor(GameObject activeChar, ActionInstance actionInstance)
         {
             _navMeshAgentRef = activeChar.gameObject.GetComponent<NavMeshAgent>();
-            lineRenderer.enabled = true;
+            this.actionInstance = actionInstance;
+            _lineRenderer.enabled = true;
             _enabled = true;
         }
 
         public void DisableVisualizer()
         {
-            lineRenderer.enabled = false;
+            _lineRenderer.enabled = false;
             _enabled = false;
         }
 
@@ -45,9 +42,9 @@ namespace Actions.Visualizers
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             if (Physics.Raycast(ray, out RaycastHit hit, 200f, 1 << LayerMask.NameToLayer("BattleFieldLayer")))
             {
-                NavMesh.CalculatePath(_navMeshAgentRef.transform.position, hit.point, NavMesh.AllAreas, path);
+                NavMesh.CalculatePath(_navMeshAgentRef.transform.position, hit.point, NavMesh.AllAreas, _path);
                 // Проверяем, есть ли путь
-                if (path.status == NavMeshPathStatus.PathComplete)
+                if (_path.status == NavMeshPathStatus.PathComplete)
                 {
                     // Отображаем путь
                     DrawPath();
@@ -55,28 +52,31 @@ namespace Actions.Visualizers
             }
             else
             {
-                lineRenderer.positionCount = 0;
+                _lineRenderer.positionCount = 0;
             }
         }
 
         void DrawPath()
         {
-            if (path.corners.Length < 1)
+            if (_path.corners.Length < 1)
                 return;
-            if (GetPathDistance(path) < 10)
+            if (GetPathDistance(_path) < actionInstance.CurrentDistance)
             {
-                lineRenderer.startColor = Color.green;
+                _lineRenderer.startColor = Color.green;
+                _lineRenderer.endColor = Color.green;
             }
             else
             {
-                lineRenderer.startColor = Color.red;
+                _lineRenderer.startColor = Color.red;
+                _lineRenderer.endColor = Color.red;
             }
 
-            lineRenderer.positionCount = path.corners.Length;
+            _lineRenderer.positionCount = _path.corners.Length;
+
             
-            lineRenderer.SetPositions(path.corners);
+            _lineRenderer.SetPositions(_path.corners);
         }
-        
+
         float GetPathDistance(NavMeshPath path)
         {
             float distance = 0.0f;

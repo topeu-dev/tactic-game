@@ -4,21 +4,18 @@ using Actions;
 using Unity.AI.Navigation;
 using UnityEngine;
 using UnityEngine.AI;
+using Utility;
 
 namespace TaskApproachTest
 {
     public class CharMover : MonoBehaviour
     {
+
         public float speed;
 
-        public float distanceToTargetLessToPlayIdle;
-        public float remainingDistanceToTarget;
         private NavMeshSurface _navMeshSurfaceRef;
         private NavMeshAgent _navMeshAgentRef;
         private Animator _animatorRef;
-
-        [SerializeField]
-        private float _currentSpeed;
 
 
         private void Awake()
@@ -28,33 +25,71 @@ namespace TaskApproachTest
             _animatorRef = gameObject.GetComponent<Animator>();
         }
 
-        public void Move(ActionContext actionContext, Action callback)
+        public void Move(ActionInstance actionInstance, ActionContext actionContext, Action callback)
         {
-            if (actionContext.BattleFieldClickedPos.HasValue &&
-                CanAgentReach(actionContext.BattleFieldClickedPos.Value))
+            if (!actionContext.BattleFieldClickedPos.HasValue)
             {
-                StartCoroutine(MoveToPosition(actionContext.BattleFieldClickedPos.Value, speed, callback));
+                CantMove(callback);
+                return;
             }
-            else
+
+            NavMeshPath path = CalcPath(actionContext.BattleFieldClickedPos.Value);
+            if (!AgentCanReachDestination(path))
             {
-                callback?.Invoke();
-                Debug.LogWarning("BattleFieldClickedPos is null or can't be reached.");
+                CantMove(callback);
+                return;
             }
+
+            if (GetPathDistance(path) > actionInstance.CurrentDistance)
+            {
+                CantMove(callback);
+                return;
+            }
+            
+            StartCoroutine(
+                MoveToPosition(
+                    path,
+                    actionInstance,
+                    speed,
+                    callback
+                )
+            );
+            
+            
         }
 
-        public IEnumerator MoveToPosition(Vector3 target, float speed, Action onComplete)
+        private bool AgentCanReachDestination(NavMeshPath path)
         {
-            _animatorRef.SetTrigger("MoveTrigger");
-            _navMeshAgentRef.SetDestination(target);
+            return path.status == NavMeshPathStatus.PathComplete;
+        }
+
+        private void CantMove(Action callback)
+        {
+            EventManager.NotificationEvent.OnErrorNotificationEvent(this, "Cant move there");
+            Debug.LogWarning("BattleFieldClickedPos is null or can't be reached.");
+            callback?.Invoke();
+        }
+
+        public IEnumerator MoveToPosition(NavMeshPath path, ActionInstance actionInstance, float speed, Action onComplete)
+        {
+            float distanceToMove = GetPathDistance(path);
+            _animatorRef.SetTrigger(AnimTriggers.MoveTrigger);
+            _navMeshAgentRef.SetPath(path);
 
             while (!AgentReachedDestination())
             {
                 yield return null;
             }
-            _animatorRef.SetTrigger("IdleTrigger");
 
+
+            actionInstance.DecreaseDistance(distanceToMove);
+            if (actionInstance.CurrentDistance < 0.5f)
+            {
+                actionInstance.Used();
+                EventManager.ActionUseEvent.OnActionUsed(this, null);
+            }
+            _animatorRef.SetTrigger(AnimTriggers.IdleTrigger);
             _navMeshSurfaceRef.BuildNavMesh();
-
             onComplete?.Invoke();
         }
 
@@ -68,7 +103,6 @@ namespace TaskApproachTest
                 {
                     if (!_navMeshAgentRef.hasPath || _navMeshAgentRef.velocity.sqrMagnitude == 0f)
                     {
-
                         return true;
                     }
                 }
@@ -97,16 +131,26 @@ namespace TaskApproachTest
             return closest;
         }
 
-        public bool CanAgentReach(Vector3 targetPosition)
+        NavMeshPath CalcPath(Vector3 targetPosition)
         {
-            // Create a NavMeshPath instance to store the calculated path
             NavMeshPath path = new NavMeshPath();
-
-            // Calculate a path to the target position
             _navMeshAgentRef.CalculatePath(targetPosition, path);
+            return path;
+        }
 
-            // Check if the path status is complete
-            return path.status == NavMeshPathStatus.PathComplete;
+        float GetPathDistance(NavMeshPath path)
+        {
+            float totalDistance = 0.0f;
+
+            if (path.corners.Length < 2)
+                return totalDistance;
+
+            for (int i = 0; i < path.corners.Length - 1; i++)
+            {
+                totalDistance += Vector3.Distance(path.corners[i], path.corners[i + 1]);
+            }
+
+            return totalDistance;
         }
     }
 }

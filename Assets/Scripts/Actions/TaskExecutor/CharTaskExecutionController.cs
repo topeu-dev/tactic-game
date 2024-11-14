@@ -1,23 +1,24 @@
 using System;
 using Actions;
+using Actions.TaskExecutor;
 using TaskApproachTest;
 using UnityEngine;
 
 public class CharTaskExecutionController : MonoBehaviour, TaskExecutor
 {
-    public void ExecuteTask(ActionSo actionSo, ActionContext actionContext, Action callback)
+    public void ExecuteTask(ActionInstance actionInstance, ActionContext actionContext, Action callback)
     {
-        switch (actionSo.actionName)
+        switch (actionInstance.actionDescription.actionName)
         {
             case "Move":
-                gameObject.GetComponent<CharMover>().Move(actionContext, callback);
+                gameObject.GetComponent<CharMover>().Move(actionInstance, actionContext, callback);
                 break;
             case "Hit":
-                gameObject.GetComponent<MeleeHitExecutor>().Hit(actionContext, callback);
+                gameObject.GetComponent<MeleeHitExecutor>().Hit(actionInstance, actionContext, callback);
                 break;
             default:
                 Debug.Log("Error: gameObject: " + gameObject.name + " doesn't know how to execute " +
-                          actionSo.actionName);
+                          actionInstance.actionDescription.actionName);
                 break;
         }
     }

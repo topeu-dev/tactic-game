@@ -1,11 +1,12 @@
 using System;
-using Actions;
 using UnityEngine;
+using Utility;
 
-namespace TaskApproachTest
+namespace Actions.TaskExecutor
 {
     public class MeleeHitExecutor : MonoBehaviour
     {
+        
         private Animator _animatorRef;
 
         private void Awake()
@@ -14,13 +15,23 @@ namespace TaskApproachTest
         }
 
 
-        public void Hit(ActionContext actionContext, Action callback)
+        public void Hit(ActionInstance actionInstance, ActionContext actionContext, Action callback)
         {
             var hitTarget = actionContext.ClickedObject;
             var activeChar = actionContext.CurrentActiveChar;
+
+            var distanceToHitTarget = Vector3.Distance(hitTarget.transform.position, activeChar.transform.position);
+            //TODO: also check if there is no wall between
+            if (distanceToHitTarget > actionInstance.CurrentDistance)
+            {
+                CantHit(callback);
+                return;
+            }
             
             activeChar.transform.LookAt(hitTarget.transform);
-            _animatorRef.SetTrigger("MeleeHitTrigger");
+            _animatorRef.SetTrigger(AnimTriggers.MeleeHitTrigger);
+            actionInstance.Used();
+            EventManager.ActionUseEvent.OnActionUsed(this, null);
             callback?.Invoke();
             // activeChar calcDamage
             // activeChar -> playHitAnim;
@@ -29,6 +40,13 @@ namespace TaskApproachTest
             // if damage > remaining hp
             // play dead anim
             // else play damageTakenAnim
+        }
+
+
+        private void CantHit(Action callback)
+        {
+            EventManager.NotificationEvent.OnErrorNotificationEvent(this, "Can't reach target");
+            callback?.Invoke();
         }
     }
 }
