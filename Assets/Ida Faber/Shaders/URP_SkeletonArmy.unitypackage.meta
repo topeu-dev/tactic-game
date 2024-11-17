@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: d23b509f62ca0af438e32d3f3057b825
+DefaultImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 201184
+  packageName: Modular Skeleton Army
+  packageVersion: 2.0
+  assetPath: Assets/Ida Faber/Shaders/URP_SkeletonArmy.unitypackage
+  uploadId: 584887
