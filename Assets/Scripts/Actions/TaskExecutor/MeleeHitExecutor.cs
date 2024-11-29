@@ -29,9 +29,12 @@ namespace Actions.TaskExecutor
             }
             
             activeChar.transform.LookAt(hitTarget.transform);
-            _animatorRef.SetTrigger(AnimTriggers.MeleeHitTrigger);
+            _animatorRef.SetTrigger(AnimTriggers.MeleeHit);
             actionInstance.Used();
+            
+            //todo: dont trigger if its a bot
             EventManager.ActionUseEvent.OnActionUsed(this, null);
+            EventManager.DamageRelatedEvent.OnDamageTaken(this, hitTarget, actionInstance.CalcDamage());
             callback?.Invoke();
             // activeChar calcDamage
             // activeChar -> playHitAnim;

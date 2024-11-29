@@ -10,7 +10,6 @@ namespace TaskApproachTest
 {
     public class CharMover : MonoBehaviour
     {
-
         public float speed;
 
         private NavMeshSurface _navMeshSurfaceRef;
@@ -34,18 +33,14 @@ namespace TaskApproachTest
             }
 
             NavMeshPath path = CalcPath(actionContext.BattleFieldClickedPos.Value);
+            
             if (!AgentCanReachDestination(path))
             {
                 CantMove(callback);
                 return;
             }
-
-            if (GetPathDistance(path) > actionInstance.CurrentDistance)
-            {
-                CantMove(callback);
-                return;
-            }
             
+
             StartCoroutine(
                 MoveToPosition(
                     path,
@@ -54,8 +49,6 @@ namespace TaskApproachTest
                     callback
                 )
             );
-            
-            
         }
 
         private bool AgentCanReachDestination(NavMeshPath path)
@@ -70,11 +63,15 @@ namespace TaskApproachTest
             callback?.Invoke();
         }
 
-        public IEnumerator MoveToPosition(NavMeshPath path, ActionInstance actionInstance, float speed, Action onComplete)
+        private IEnumerator MoveToPosition(NavMeshPath path, ActionInstance actionInstance, float speed,
+            Action onComplete)
         {
-            float distanceToMove = GetPathDistance(path);
-            _animatorRef.SetTrigger(AnimTriggers.MoveTrigger);
-            _navMeshAgentRef.SetPath(path);
+            var possibleCorners = NavMeshHelper.GetPathCornersWithinDistance(path, actionInstance.CurrentDistance);
+            
+            float distanceToMove = GetPathDistance(possibleCorners);
+            _animatorRef.SetTrigger(AnimTriggers.Move);
+            _navMeshAgentRef.SetDestination(possibleCorners[^1]);
+            // _navMeshAgentRef.SetPath(path);
 
             while (!AgentReachedDestination())
             {
@@ -88,7 +85,8 @@ namespace TaskApproachTest
                 actionInstance.Used();
                 EventManager.ActionUseEvent.OnActionUsed(this, null);
             }
-            _animatorRef.SetTrigger(AnimTriggers.IdleTrigger);
+
+            _animatorRef.SetTrigger(AnimTriggers.Idle);
             _navMeshSurfaceRef.BuildNavMesh();
             onComplete?.Invoke();
         }
@@ -111,26 +109,6 @@ namespace TaskApproachTest
             return false;
         }
 
-        //todo: implement later
-        GameObject GetClosestEnemy(Vector3 currentPosition)
-        {
-            GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
-            GameObject closest = null;
-            float minDistance = Mathf.Infinity;
-
-            foreach (GameObject enemy in enemies)
-            {
-                float distance = Vector3.Distance(enemy.transform.position, currentPosition);
-                if (distance < minDistance)
-                {
-                    closest = enemy;
-                    minDistance = distance;
-                }
-            }
-
-            return closest;
-        }
-
         NavMeshPath CalcPath(Vector3 targetPosition)
         {
             NavMeshPath path = new NavMeshPath();
@@ -138,16 +116,16 @@ namespace TaskApproachTest
             return path;
         }
 
-        float GetPathDistance(NavMeshPath path)
+        float GetPathDistance(Vector3[] pathCorners)
         {
             float totalDistance = 0.0f;
 
-            if (path.corners.Length < 2)
+            if (pathCorners.Length < 2)
                 return totalDistance;
 
-            for (int i = 0; i < path.corners.Length - 1; i++)
+            for (int i = 0; i < pathCorners.Length - 1; i++)
             {
-                totalDistance += Vector3.Distance(path.corners[i], path.corners[i + 1]);
+                totalDistance += Vector3.Distance(pathCorners[i], pathCorners[i + 1]);
             }
 
             return totalDistance;

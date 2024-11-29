@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using Actions;
+using Enemy;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -11,6 +12,7 @@ public class HUDController : MonoBehaviour
     private GameObject _characterWithActiveTurn;
     private GameObject _characterHudFor;
 
+    public GameObject actionPanel;
     public List<GameObject> actionPlaceholders = new();
     public GameObject notificationBar;
     public GameObject endOfTurnButton;
@@ -23,8 +25,8 @@ public class HUDController : MonoBehaviour
 
     private void OnEnable()
     {
-        EventManager.SelectableObject.OnObjectSelectedEvent += ShowHudFor;
         EventManager.TurnEvent.OnNextTurnEvent += TurnChanged;
+        EventManager.SelectableObject.OnObjectSelectedEvent += ShowHudFor;
         EventManager.NotificationEvent.OnErrorNotificationEvent += ShowErrorNotification;
         EventManager.ActionUseEvent.OnActionUsed += UpdateHud;
     }
@@ -35,7 +37,7 @@ public class HUDController : MonoBehaviour
         EventManager.TurnEvent.OnNextTurnEvent -= TurnChanged;
     }
 
-    
+
     private void UpdateHud(Component arg0, GameObject arg1)
     {
         ShowHudFor(this, _characterHudFor);
@@ -43,20 +45,31 @@ public class HUDController : MonoBehaviour
 
     private void TurnChanged(Component arg0, GameObject arg1)
     {
+        Debug.Log("Turn Changed invoked" + arg1.name + " source " + arg0.name);
         _characterWithActiveTurn = arg1;
+        ShowHudFor(this, _characterWithActiveTurn);
     }
 
     private void ShowHudFor(Component source, GameObject clickedObject)
     {
-        if (clickedObject is GameObject o && o.TryGetComponent(out GenericChar character))
+        // Debug.Log("ShowHudFor invoked" + clickedObject.name + " in source: " + source.name + "char with active turn" + _characterWithActiveTurn.name);
+        if (clickedObject != null && clickedObject.TryGetComponent(out GenericChar character))
         {
             _characterHudFor = clickedObject;
             ShowHudWithActions(character.actionsInstances, clickedObject);
+            return;
+        }
+
+        if (clickedObject && clickedObject.TryGetComponent(out GenericEnemy enemy))
+        {
+            Debug.Log("ShowHudFor invoked 2" + clickedObject.name);
+            actionPanel.SetActive(false);
         }
     }
 
     private void ShowHudWithActions(List<ActionInstance> actions, GameObject clickedObject)
     {
+        actionPanel.SetActive(true);
         var buttons = actionPlaceholders;
 
         for (var i = 0; i < buttons.Count; i++)
@@ -72,7 +85,7 @@ public class HUDController : MonoBehaviour
             }
 
             var iconPlaceHolder = buttons[i].GetComponent<Image>();
-            
+
             if (i < actions.Count && actions[i] != null)
             {
                 iconPlaceHolder.sprite = actions[i].actionDescription.icon;

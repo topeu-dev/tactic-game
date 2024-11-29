@@ -8,8 +8,9 @@ namespace Actions
         None,
         MeleeHit,
         Move,
-        RangedHit,
-        AoeHit
+        RaycastTargetHit,
+        AoeHit,
+        MeleeHitAoe,
     }
 
     [CreateAssetMenu(menuName = "Actions/New Char Action")]

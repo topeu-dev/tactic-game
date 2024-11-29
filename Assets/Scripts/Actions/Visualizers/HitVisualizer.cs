@@ -18,9 +18,9 @@ namespace Actions.Visualizers
             lineRenderer.enabled = false;
         }
 
-        public void EnableVisualizerFor(GameObject activeChar, ActionInstance actionInstance)
+        public void EnableVisualizerFor(GameObject activeChar, ActionInstance actionInstanceParam)
         {
-            _actionInstanceToVisualize = actionInstance;
+            _actionInstanceToVisualize = actionInstanceParam;
             DrawCircle(activeChar.transform.position);
             lineRenderer.enabled = true;
             _enabled = true;
