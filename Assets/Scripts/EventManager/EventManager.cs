@@ -44,5 +44,8 @@ public static class EventManager
         /// Component -> this, GameObject -> next char
         /// </summary>
         public UnityAction<Component, GameObject> OnNextTurnEvent;
+
+        public UnityAction<Component> OnBattleStartEvent;
+        public UnityAction<Component> OnRoundEndedEvent;
     }
 }

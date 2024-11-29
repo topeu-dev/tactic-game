@@ -29,6 +29,7 @@ namespace Turn
                 .OrderBy(obj => obj.GetComponent<TurnRelated>().GetInitiative().Value)
                 .Reverse()
                 .ToList());
+            EventManager.TurnEvent.OnRoundEndedEvent?.Invoke(this);
         }
 
         public bool hasNextInSequence()
@@ -85,6 +86,11 @@ namespace Turn
             }
 
             return result;
+        }
+
+        public LinkedList<GameObject> GetRoundQueue()
+        {
+            return _roundQueue;
         }
     }
 }

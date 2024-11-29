@@ -18,6 +18,7 @@ namespace Global
         {
             _activeObject = _turnManager.nextTurn();
             EventManager.TurnEvent.OnNextTurnEvent?.Invoke(this, _activeObject);
+            EventManager.TurnEvent.OnBattleStartEvent?.Invoke(this);
         }
 
 
