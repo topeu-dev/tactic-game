@@ -19,8 +19,9 @@ public class InputController : MonoBehaviour
     [SerializeField]
     private GamePhase currentPhase = GamePhase.None;
 
+    [FormerlySerializedAs("_activeCharacter")]
     [SerializeField]
-    private GameObject _activeCharacter;
+    private GameObject _selectedCharacter;
 
     [FormerlySerializedAs("selectedActionDescription")]
     [SerializeField]
@@ -30,8 +31,6 @@ public class InputController : MonoBehaviour
 
     [SerializeField]
     private bool actionInProgress = false;
-
-    private GameObject _characterWithActiveTurn;
 
     private Dictionary<ActionVisualizerType, ActionVisualizer> _actionVisualizers = new();
     private ActionVisualizer _selectedActionVisualizer;
@@ -47,6 +46,10 @@ public class InputController : MonoBehaviour
         _actionVisualizers.Add(ActionVisualizerType.Move, moveVisualizer);
         var hitVisualizer = FindFirstObjectByType<HitVisualizer>();
         _actionVisualizers.Add(ActionVisualizerType.MeleeHit, hitVisualizer);
+        var raycastRangeHitVisualizer = FindFirstObjectByType<RaycastTargetVisualizer>();
+        _actionVisualizers.Add(ActionVisualizerType.RaycastTargetHit, raycastRangeHitVisualizer);
+        var meleeHitAoeVisualizer = FindFirstObjectByType<AoeMeleeHitVisualizer>();
+        _actionVisualizers.Add(ActionVisualizerType.MeleeHitAoe, meleeHitAoeVisualizer);
     }
 
     private void OnEnable()
@@ -57,17 +60,23 @@ public class InputController : MonoBehaviour
 
     private void TurnChanged(Component arg0, GameObject arg1)
     {
-        _characterWithActiveTurn = arg1;
         if (arg1.CompareTag("PlayableChar"))
         {
             SelectAction(actionUnselected);
-            SetNewActiveCharacter(arg1);
+            _selectedCharacter = arg1;
+            // SelectNewCharacter(arg1);
+        }
+        else
+        {
+            SelectAction(actionUnselected);
+            _selectedCharacter = null;
         }
     }
 
     private void OnDisable()
     {
         InputActionSingleton.GeneralInputActions.Gameplay.PressBack.Disable();
+        EventManager.TurnEvent.OnNextTurnEvent -= TurnChanged;
     }
 
     private void HandlePressBack(InputAction.CallbackContext obj)
@@ -78,7 +87,7 @@ public class InputController : MonoBehaviour
                 // toggle in-game menu
                 break;
             case GamePhase.CharSelected:
-                SetNewActiveCharacter(null);
+                SelectNewCharacter(null);
                 currentPhase = GamePhase.None;
                 break;
             case GamePhase.ActionSelected:
@@ -90,8 +99,6 @@ public class InputController : MonoBehaviour
 
     public Vector3? GetBattleFieldHitPosition()
     {
-        // Debug.Log(Input.mousePosition);
-        // Convert screen position to world position using a raycast
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         if (Physics.Raycast(ray, out RaycastHit hit, 400f, 1 << LayerMask.NameToLayer("BattleFieldLayer")))
         {
@@ -116,7 +123,7 @@ public class InputController : MonoBehaviour
         {
             if (clickedObject.CompareTag("PlayableChar"))
             {
-                SetNewActiveCharacter(clickedObject);
+                SelectNewCharacter(clickedObject);
             }
 
             if (clickedObject.CompareTag("BattleField"))
@@ -136,7 +143,7 @@ public class InputController : MonoBehaviour
         {
             if (clickedObject.CompareTag("PlayableChar"))
             {
-                SetNewActiveCharacter(clickedObject);
+                SelectNewCharacter(clickedObject);
             }
 
             if (clickedObject.CompareTag(CustomTags.BattleField.ToString()))
@@ -154,13 +161,14 @@ public class InputController : MonoBehaviour
 
         if (currentPhase == GamePhase.ActionSelected)
         {
-            if (CanApplyActionToClickedObject(clickedObject))
+            if (CanApplyActionToClickedObject(clickedObject) ||
+                selectedAction.actionDescription.possibleObjectsToApply.Contains("BattleField"))
             {
                 actionInProgress = true;
-                TaskExecutor taskExecutor = _activeCharacter.GetComponent<TaskExecutor>();
+                TaskExecutor taskExecutor = _selectedCharacter.GetComponent<TaskExecutor>();
                 taskExecutor.ExecuteTask(
                     selectedAction,
-                    new ActionContext(_activeCharacter, clickedObject, battleFieldClickedPos),
+                    new ActionContext(_selectedCharacter, clickedObject, battleFieldClickedPos),
                     () => UnlockInput()
                 );
 
@@ -172,20 +180,20 @@ public class InputController : MonoBehaviour
             {
                 Debug.Log("Can't apply" + selectedAction.actionDescription.actionName + " to " + " clickedObject: " +
                           clickedObject.name
-                          + " currentActiveCharacter: " + _activeCharacter.name);
+                          + " currentActiveCharacter: " + _selectedCharacter.name);
             }
         }
     }
 
-    private void SetNewActiveCharacter(GameObject clickedObject)
+    private void SelectNewCharacter(GameObject selectedChar)
     {
-        _activeCharacter = clickedObject;
+        _selectedCharacter = selectedChar;
 
-        if (clickedObject != null)
+        if (selectedChar != null)
         {
-            Debug.Log("Current Active Char -> " + clickedObject.name);
+            Debug.Log("Current Active Char -> " + selectedChar.name);
             currentPhase = GamePhase.CharSelected;
-            EventManager.SelectableObject.OnObjectSelectedEvent(this, clickedObject);
+            EventManager.SelectableObject.OnObjectSelectedEvent.Invoke(this, selectedChar);
         }
     }
 
@@ -202,16 +210,15 @@ public class InputController : MonoBehaviour
             return;
         }
 
-        var genericChar = _activeCharacter.GetComponent<GenericChar>();
+        var genericChar = _selectedCharacter.GetComponent<GenericChar>();
         selectedAction = genericChar.actionsInstances[actionId];
 
         currentPhase = GamePhase.ActionSelected;
         var visualizer = _actionVisualizers[selectedAction.actionDescription.actionVisualizerType];
-
         if (visualizer != null)
         {
             _selectedActionVisualizer = visualizer;
-            visualizer.EnableVisualizerFor(_activeCharacter, selectedAction);
+            visualizer.EnableVisualizerFor(_selectedCharacter, selectedAction);
         }
 
         Debug.Log("Spell selected: " + selectedAction.actionDescription.actionName);

@@ -1,16 +1,13 @@
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using Turn;
 using UnityEngine;
 
-namespace DefaultNamespace
+namespace Turn
 {
     public class TurnManager : MonoBehaviour
     {
-        private Queue<GameObject> _queue;
+        private LinkedList<GameObject> _roundQueue;
         private List<GameObject> sortedTurnRelatedObjects;
-
 
         [SerializeField]
         private GameObject _selectedCharacter;
@@ -23,13 +20,12 @@ namespace DefaultNamespace
                 .Reverse()
                 .ToList();
 
-            _queue = new Queue<GameObject>(sortedTurnRelatedObjects);
-            
+            _roundQueue = new LinkedList<GameObject>(sortedTurnRelatedObjects);
         }
 
         public void makeNextTurnSequence()
         {
-            _queue = new Queue<GameObject>(sortedTurnRelatedObjects
+            _roundQueue = new LinkedList<GameObject>(sortedTurnRelatedObjects
                 .OrderBy(obj => obj.GetComponent<TurnRelated>().GetInitiative().Value)
                 .Reverse()
                 .ToList());
@@ -37,19 +33,36 @@ namespace DefaultNamespace
 
         public bool hasNextInSequence()
         {
-            return _queue.Count > 0;
+            return _roundQueue.Count > 0;
         }
 
         public GameObject nextTurn()
         {
-            return _queue.Dequeue();
+            var obj = _roundQueue.First();
+            Debug.Log("NEXT_TURN" + obj.name);
+            _roundQueue.RemoveFirst();
+            return obj;
         }
 
         private void OnEnable()
         {
-            // subscribe to DeathEvent
-            // subscribe to ChangeInitiativeEvent
-            // subscribe to SpawnEvent (?)
+            EventManager.DamageRelatedEvent.OnDeath += HandleOnDeath;
+        }
+
+        private void OnDisable()
+        {
+            EventManager.DamageRelatedEvent.OnDeath -= HandleOnDeath;
+        }
+
+        private void HandleOnDeath(Component arg0, GameObject arg1)
+        {
+            removeFromTurnRelatedObjects(arg1);
+        }
+
+        private void removeFromTurnRelatedObjects(GameObject o)
+        {
+            sortedTurnRelatedObjects.Remove(o);
+            _roundQueue.Remove(o);
         }
 
 

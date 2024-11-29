@@ -1,13 +1,17 @@
-using System;
 using UnityEngine;
 using UnityEngine.AI;
+using Utility;
 
 namespace Actions.Visualizers
 {
-    [RequireComponent(typeof(LineRenderer))]
     public class MoveVisualizer : MonoBehaviour, ActionVisualizer
     {
-        private LineRenderer _lineRenderer;
+        [SerializeField]
+        private LineRenderer firstLineRenderer;
+
+        [SerializeField]
+        private LineRenderer secondLineRenderer;
+
         private NavMeshAgent _navMeshAgentRef;
         private bool _enabled;
         private NavMeshPath _path;
@@ -16,21 +20,23 @@ namespace Actions.Visualizers
         private void Awake()
         {
             _path = new NavMeshPath();
-            _lineRenderer = GetComponent<LineRenderer>();
         }
 
 
-        public void EnableVisualizerFor(GameObject activeChar, ActionInstance actionInstance)
+        public void EnableVisualizerFor(GameObject activeChar, ActionInstance actionInstanceParam)
         {
             _navMeshAgentRef = activeChar.gameObject.GetComponent<NavMeshAgent>();
-            this.actionInstance = actionInstance;
-            _lineRenderer.enabled = true;
+            actionInstance = actionInstanceParam;
+            firstLineRenderer.enabled = true;
+            secondLineRenderer.enabled = true;
+
             _enabled = true;
         }
 
         public void DisableVisualizer()
         {
-            _lineRenderer.enabled = false;
+            firstLineRenderer.enabled = false;
+            secondLineRenderer.enabled = false;
             _enabled = false;
         }
 
@@ -52,7 +58,8 @@ namespace Actions.Visualizers
             }
             else
             {
-                _lineRenderer.positionCount = 0;
+                firstLineRenderer.positionCount = 0;
+                secondLineRenderer.positionCount = 0;
             }
         }
 
@@ -60,34 +67,16 @@ namespace Actions.Visualizers
         {
             if (_path.corners.Length < 1)
                 return;
-            if (GetPathDistance(_path) < actionInstance.CurrentDistance)
-            {
-                _lineRenderer.startColor = Color.green;
-                _lineRenderer.endColor = Color.green;
-            }
-            else
-            {
-                _lineRenderer.startColor = Color.red;
-                _lineRenderer.endColor = Color.red;
-            }
 
-            _lineRenderer.positionCount = _path.corners.Length;
+            var possiblePositions = NavMeshHelper.GetPathCornersWithinDistance(_path, actionInstance.CurrentDistance);
+            Vector3[] impossiblePositions =
+                NavMeshHelper.GetPathCornersBeyondDistance(_path, actionInstance.CurrentDistance);
 
-            
-            _lineRenderer.SetPositions(_path.corners);
-        }
+            firstLineRenderer.positionCount = possiblePositions.Length;
+            firstLineRenderer.SetPositions(possiblePositions);
 
-        float GetPathDistance(NavMeshPath path)
-        {
-            float distance = 0.0f;
-
-            // Iterate through the corners of the path
-            for (int i = 0; i < path.corners.Length - 1; i++)
-            {
-                distance += Vector3.Distance(path.corners[i], path.corners[i + 1]);
-            }
-
-            return distance;
+            secondLineRenderer.positionCount = impossiblePositions.Length;
+            secondLineRenderer.SetPositions(impossiblePositions);
         }
     }
 }
