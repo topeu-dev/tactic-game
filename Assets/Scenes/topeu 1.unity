@@ -391,7 +391,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentPhase: 0
-  _activeCharacter: {fileID: 0}
+  _selectedCharacter: {fileID: 0}
   selectedAction:
     actionDescription: {fileID: 0}
     cooldown: 0
@@ -1899,7 +1899,7 @@ Light:
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
-  m_ColorTemperature: 5425
+  m_ColorTemperature: 10644
   m_UseColorTemperature: 1
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
@@ -2300,10 +2300,10 @@ MonoBehaviour:
     minDmg: 2
     maxDmg: 5
   - actionDescription: {fileID: 11400000, guid: 4e2c28e0e594fa24883a7e939a2d8555, type: 2}
-    cooldown: 1
+    cooldown: 2
     distance: 3
     aoe: 3
-    minDmg: 2
+    minDmg: 3
     maxDmg: 5
 --- !u!114 &624889336
 MonoBehaviour:
@@ -3657,7 +3657,7 @@ Light:
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
-  m_ColorTemperature: 5839
+  m_ColorTemperature: 6136
   m_UseColorTemperature: 1
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
@@ -5810,6 +5810,10 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6221431906906019497, guid: 929dcf9add853394f9793e87f59c4932, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6976433587360444348, guid: 929dcf9add853394f9793e87f59c4932, type: 3}
       propertyPath: m_Name
       value: HpBar 1
@@ -6124,6 +6128,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 395850551763621309, guid: bd4abe84bd6f24d4d9e08195e3bd9fdb, type: 3}
+      propertyPath: startHp
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 395850551763621309, guid: bd4abe84bd6f24d4d9e08195e3bd9fdb, type: 3}
       propertyPath: gameContext
       value: 
       objectReference: {fileID: 77358147}
@@ -6394,6 +6402,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6221431906906019497, guid: 929dcf9add853394f9793e87f59c4932, type: 3}
       propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6221431906906019497, guid: 929dcf9add853394f9793e87f59c4932, type: 3}
+      propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6976433587360444348, guid: 929dcf9add853394f9793e87f59c4932, type: 3}
