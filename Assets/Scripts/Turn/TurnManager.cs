@@ -20,16 +20,17 @@ namespace Turn
                 .Reverse()
                 .ToList();
 
-            _roundQueue = new LinkedList<GameObject>(sortedTurnRelatedObjects);
+            makeNextTurnSequence();
         }
 
         public void makeNextTurnSequence()
         {
-            _roundQueue = new LinkedList<GameObject>(sortedTurnRelatedObjects
+      _roundQueue = new LinkedList<GameObject>(sortedTurnRelatedObjects
                 .OrderBy(obj => obj.GetComponent<TurnRelated>().GetInitiative().Value)
                 .Reverse()
                 .ToList());
             EventManager.TurnEvent.OnRoundEndedEvent?.Invoke(this);
+            EventManager.TurnEvent.OnNextTurnSequenceEvent?.Invoke(this, new LinkedList<GameObject>(_roundQueue));
         }
 
         public bool hasNextInSequence()
@@ -45,7 +46,7 @@ namespace Turn
             return obj;
         }
 
-        private void OnEnable()
+    private void OnEnable()
         {
             EventManager.DamageRelatedEvent.OnDeath += HandleOnDeath;
         }

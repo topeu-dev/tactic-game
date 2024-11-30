@@ -8,6 +8,7 @@ TagManager:
   - Cell
   - PlayableChar
   - BattleField
+  - UI
   layers:
   - Default
   - TransparentFX
