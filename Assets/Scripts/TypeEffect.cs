@@ -4,11 +4,15 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class TypeEffect : MonoBehaviour
 {
+    public Image fader;
+    public int nextScene = 1;
     public bool isChoosing;
     public Image speaker;
+    public TextMeshProUGUI debuffTextBox;
     public GameObject buttonStart;
     public string[] names;
     public Sprite[] bg;
@@ -16,6 +20,7 @@ public class TypeEffect : MonoBehaviour
     public Image nextbg;
     public GameObject[] panels;
     public AudioClip[] audios;
+    public AudioClip[] audiosByChoose;
     public AudioSource source;
     public float fadespeed = 1;
     public float bgfadespeed = 1;
@@ -26,20 +31,17 @@ public class TypeEffect : MonoBehaviour
     float typeSpeed;
     string fullText = "";
     public string[] nowText;
-    public RectTransform container;
+    public string[] debuffText;
     int count = 0;
     int spritecount;
-    bool end, choose, endoftext, fade, fadebg;
+    bool end, choose, endoftext, fade, fadebg, fadeui;
     public Color charColor;
     public Color bgColor;
-    public Color onChooseColor;
+    public Color faderColor;
     public int[] charqueue;
-    GameObject activeChar;
+    string debuff;
+    int itemChoose;
 
-    [SerializeField] GraphicRaycaster m_Raycaster;
-    PointerEventData m_PointerEventData;
-    [SerializeField] EventSystem m_EventSystem;
-    [SerializeField] RectTransform canvasRect;
 
     private void Start()
     {
@@ -60,7 +62,7 @@ public class TypeEffect : MonoBehaviour
     private void Update()
     {
         
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) && !fade)
         {
             UpdatePortrait();
         }
@@ -85,6 +87,16 @@ public class TypeEffect : MonoBehaviour
             {
                 charColor.a = 0;
                 UpdateText();
+            }
+        }
+        if (fadeui)
+        {
+            faderColor.a += Time.deltaTime * bgfadespeed;
+            fader.color = faderColor;
+            if (faderColor.a >= 1)
+            {
+                fadeui = false;
+                StartNewScene(nextScene);
             }
         }
     }
@@ -133,6 +145,11 @@ public class TypeEffect : MonoBehaviour
       source.Play();
     }
     speechTextBox.text = "";
+    if (nowText[count] == "")
+    {
+      ShowPanels();
+      return;
+    }
     fullText = nowText[count];
 
     StartCoroutine(TypeText(fullText));
@@ -161,6 +178,7 @@ public class TypeEffect : MonoBehaviour
     {
         if (isChoosing)
         {
+            source.Stop();
             choose = true;
             panels[0].SetActive(false);
             speaker.gameObject.SetActive(false);
@@ -169,18 +187,41 @@ public class TypeEffect : MonoBehaviour
         }
         else
         {
+            source.Stop();
             Debug.Log("End");
             buttonStart.SetActive(true);
+            if (debuffTextBox is not null)
+            {
+              panels[0].SetActive(false);
+              speaker.gameObject.SetActive(false);
+              debuffTextBox.text = debuff;
+            }
         }
     }
 
     public void Choose(int i)
+  {
+    itemChoose = i;
+  }
+    public void Choose(string text)
+  {
+        count++;
+        debuff = debuffText[itemChoose];
+        audios[count] = audiosByChoose[itemChoose];
+        nowText[count] = text; 
+        panels[0].SetActive(true);
+        speaker.gameObject.SetActive(true);
+        panels[1].SetActive(false);
+        UpdateText();    
+  }
+
+  public void Choose()
     {
-        
+        fadeui = true;
     }
 
-    public void Choose()
+    public void StartNewScene(int i)
     {
-        //send on nextscene
+    SceneManager.LoadSceneAsync(i);
     }
 }
