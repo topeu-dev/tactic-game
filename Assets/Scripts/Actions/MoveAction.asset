@@ -14,7 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   actionName: Move
   description: Go to cell
-  icon: {fileID: 21300000, guid: 6960c6bd5088317429f7e0e033bee813, type: 3}
+  icon: {fileID: 21300000, guid: 328b1bfa8fbcfe64c996ee588bdb8c5e, type: 3}
   possibleObjectsToApply:
   - BattleField
   actionVisualizerType: 2
+  effectsToApply: []
+  audioClip: {fileID: 0}
+  animExecutorTriggerName: 
+  impactDelay: 0

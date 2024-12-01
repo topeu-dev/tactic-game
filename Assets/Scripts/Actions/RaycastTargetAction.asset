@@ -18,3 +18,7 @@ MonoBehaviour:
   possibleObjectsToApply:
   - Enemy
   actionVisualizerType: 3
+  effectsToApply: []
+  audioClip: {fileID: 0}
+  animExecutorTriggerName: CastSpellTrigger
+  impactDelay: 2

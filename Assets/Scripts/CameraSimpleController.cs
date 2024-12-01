@@ -27,7 +27,7 @@ public class CameraSimpleController : MonoBehaviour
 
     [SerializeField]
     private float movementSpeed;
-
+    
     [Header("Edge Movement")]
     [SerializeField]
     private bool edgeMovementEnabled;
@@ -76,7 +76,7 @@ public class CameraSimpleController : MonoBehaviour
         HandleScreenEdgeMovement();
         HandleZoom();
     }
-
+    
     private void ZoomCamera(InputAction.CallbackContext context)
     {
         float zoomDir = context.ReadValue<float>();
@@ -98,9 +98,8 @@ public class CameraSimpleController : MonoBehaviour
         _camera.orthographicSize = Mathf.Lerp(_camera.orthographicSize, _targetZoom, Time.deltaTime * zoomSpeed);
     }
 
-
     private void HandleMovementInput()
-    {
+    { 
         Vector2 fromInput = _movement.ReadValue<Vector2>();
 
         if (!(fromInput.sqrMagnitude > 0.1f)) return;
@@ -133,6 +132,7 @@ public class CameraSimpleController : MonoBehaviour
 
             _targetPosition += moveDirection * (0.5f * movementSpeed * _movementSpeedZoomAmplifier);
         }
+        
     }
     
     

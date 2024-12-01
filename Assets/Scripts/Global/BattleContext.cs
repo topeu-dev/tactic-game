@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -21,9 +20,7 @@ namespace Global
 
         private void HandleOnDeath(Component arg0, GameObject arg1)
         {
-            print(_charactersInBattle.Count);
             _charactersInBattle.Remove(arg1);
-            print(_charactersInBattle.Count);
             if (getOnlyPlayerCharactersInBattle().Count == 0)
             {
                 // TODO GAME OVER EVENT
@@ -65,18 +62,28 @@ namespace Global
         public Dictionary<GameObject, CharacterInfo> getOnlyPlayerCharactersInBattle()
         {
             return _charactersInBattle
-                .Where(entry => entry.Key.CompareTag("PlayableChar"))
+                .Where(entry => entry.Key.CompareTag("PlayableChar") && entry.Value.IsVisible)
                 .ToDictionary(entry => entry.Key, entry => entry.Value);
         }
-        
+
         public Dictionary<GameObject, CharacterInfo> getOnlyEnemiesInBattle()
         {
             return _charactersInBattle
                 .Where(entry => entry.Key.CompareTag("Enemy"))
                 .ToDictionary(entry => entry.Key, entry => entry.Value);
         }
+
+        public void MakeInvisible(GameObject playableCharacter)
+        {
+            _charactersInBattle[playableCharacter].IsVisible = false;
+        }
+
+        public void MakeVisible(GameObject playableCharacter)
+        {
+            _charactersInBattle[playableCharacter].IsVisible = true;
+        }
     }
-    
+
 
     public class CharacterInfo
     {

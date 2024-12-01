@@ -25,12 +25,12 @@ namespace Actions
         private int maxDmg;
 
         public int CurrentCooldown { get; private set; }
-        public float CurrentDistance { get; private set; }
+        public float CurrentDistance { get; set; }
         public float CurrentAoe { get; private set; }
 
-        public int CurrentMinDamage { get; private set; }
+        public int CurrentMinDamage { get; set; }
 
-        public int CurrentMaxDamage { get; private set; }
+        public int CurrentMaxDamage { get; set; }
 
         ActionInstance(ActionDescription actionDescription, int cooldown, float distance, float aoe, int minDamage,
             int maxDamage)

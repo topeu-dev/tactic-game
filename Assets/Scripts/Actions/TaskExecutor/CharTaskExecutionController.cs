@@ -19,6 +19,9 @@ public class CharTaskExecutionController : MonoBehaviour, TaskExecutor
             case "MeleeAoeHit":
                 gameObject.GetComponent<MeleeAoeExecutor>().AoeHit(actionInstance, actionContext, callback);
                 break;
+            case "Raycast":
+                gameObject.GetComponent<HitScanExecutor>().HitScan(actionInstance, actionContext, callback);
+                break;
             default:
                 Debug.Log("Error: gameObject: " + gameObject.name + " doesn't know how to execute " +
                           actionInstance.actionDescription.actionName);

@@ -1,5 +1,7 @@
+using System.Collections;
 using System.Collections.Generic;
 using Actions;
+using Effects;
 using Global;
 using Turn;
 using UnityEngine;
@@ -33,6 +35,8 @@ namespace Enemy
 
         [SerializeField]
         public List<ActionInstance> actionsInstances = new();
+        [SerializeField]
+        public List<EffectInstance> effectsInstances = new();
 
 
         private void OnEnable()
@@ -45,7 +49,7 @@ namespace Enemy
             EventManager.DamageRelatedEvent.OnDamageTaken -= OnDamageTaken;
         }
 
-        private void OnDamageTaken(Component source, GameObject targetObject, int damage)
+        private void OnDamageTaken(Component source, GameObject targetObject, int damage, float impactDelay)
         {
             if (targetObject != gameObject) return;
 
@@ -64,9 +68,15 @@ namespace Enemy
             }
             else
             {
-                _animatorRef.SetTrigger(AnimTriggers.GetHit);
+                StartCoroutine(GetHitWithDelay(impactDelay));
                 Debug.Log(gameObject.name + " damage taken -> " + damage);
             }
+        }
+
+        private IEnumerator GetHitWithDelay(float delay)
+        {
+            yield return new WaitForSeconds(delay);
+            _animatorRef.SetTrigger(AnimTriggers.GetHit);
         }
 
         private void Awake()
@@ -79,6 +89,7 @@ namespace Enemy
             _botController = GetComponent<BotController>();
             currentInitiative = new Initiative(startInitiativeValue, 10);
             actionsInstances.ForEach(action => action.Init());
+            
             _currentHp = startHp;
         }
 
@@ -89,15 +100,12 @@ namespace Enemy
 
         public void StartOfTurn()
         {
-            Debug.Log("ENEMY START OF TURN");
-
             //refresh cooldowns
             actionsInstances.ForEach(action => action.StartOfTurn());
 
             EventManager.CameraEvent.OnPlayableCharacterFocusEvent?.Invoke(this, gameObject);
             StartCoroutine(_botController.MakeMove(actionsInstances, () =>
             {
-                Debug.Log("Coroutine done");
                 gameContext.turnEndClicked();
             }));
         }
@@ -106,5 +114,8 @@ namespace Enemy
         {
             return currentInitiative;
         }
+        
+        
+        
     }
 }

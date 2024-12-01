@@ -17,6 +17,8 @@ namespace Global
         public void StartBattle()
         {
             _activeObject = _turnManager.nextTurn();
+            var newTurnRelated = _activeObject.GetComponent<TurnRelated>();
+            newTurnRelated.StartOfTurn();
             EventManager.TurnEvent.OnNextTurnEvent?.Invoke(this, _activeObject);
             EventManager.TurnEvent.OnBattleStartEvent?.Invoke(this);
         }
@@ -40,7 +42,24 @@ namespace Global
 
             var newTurnRelated = _activeObject.GetComponent<TurnRelated>();
             newTurnRelated.StartOfTurn();
+            EventManager.TurnEvent.OnNextTurnEvent?.Invoke(this, _activeObject);
+        }
 
+        public void activeCharSkipTurn()
+        {
+
+            if (_turnManager.hasNextInSequence())
+            {
+                _activeObject = _turnManager.nextTurn();
+            }
+            else
+            {
+                _turnManager.makeNextTurnSequence();
+                _activeObject = _turnManager.nextTurn();
+            }
+
+            var newTurnRelated = _activeObject.GetComponent<TurnRelated>();
+            newTurnRelated.StartOfTurn();
             EventManager.TurnEvent.OnNextTurnEvent?.Invoke(this, _activeObject);
         }
     }

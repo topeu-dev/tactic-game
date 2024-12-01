@@ -33,7 +33,8 @@ public static class EventManager
 
     public class DamageRelatedEvents
     {
-        public UnityAction<Component, GameObject, int> OnDamageTaken;
+        public UnityAction<Component, GameObject, int, float> OnDamageTaken;
+        // public UnityAction<Component, GameObject, EffectInstance> ApplyEffectToTarget;
         public UnityAction<Component, GameObject, int, int> UpdateHealthBar;
         public UnityAction<Component, GameObject> OnDeath;
     }
