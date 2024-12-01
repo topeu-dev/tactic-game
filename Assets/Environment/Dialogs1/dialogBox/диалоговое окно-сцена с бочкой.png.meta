@@ -134,12 +134,35 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: "\u0434\u0438\u0430\u043B\u043E\u0433\u043E\u0432\u043E\u0435 \u043E\u043A\u043D\u043E-\u0441\u0446\u0435\u043D\u0430
+        \u0441 \u0431\u043E\u0447\u043A\u043E\u0439_2"
+      rect:
+        serializedVersion: 2
+        x: 213
+        y: 138
+        width: 2275
+        height: 1050
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e03c1acda7ef1ee4e9da813c273d55b3
+      internalID: 1464219816
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 38d30821bb2c31d4cb636192164cff41
     internalID: 0
     vertices: []
     indices: 
@@ -148,7 +171,10 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      "\u0434\u0438\u0430\u043B\u043E\u0433\u043E\u0432\u043E\u0435 \u043E\u043A\u043D\u043E-\u0441\u0446\u0435\u043D\u0430 \u0441 \u0431\u043E\u0447\u043A\u043E\u0439_0": 1546179788
+      "\u0434\u0438\u0430\u043B\u043E\u0433\u043E\u0432\u043E\u0435 \u043E\u043A\u043D\u043E-\u0441\u0446\u0435\u043D\u0430 \u0441 \u0431\u043E\u0447\u043A\u043E\u0439_1": 287072291
+      "\u0434\u0438\u0430\u043B\u043E\u0433\u043E\u0432\u043E\u0435 \u043E\u043A\u043D\u043E-\u0441\u0446\u0435\u043D\u0430 \u0441 \u0431\u043E\u0447\u043A\u043E\u0439_2": 1464219816
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

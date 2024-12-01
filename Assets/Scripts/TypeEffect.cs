@@ -8,6 +8,7 @@ using UnityEngine.SceneManagement;
 
 public class TypeEffect : MonoBehaviour
 {
+    public int maxcount = 100;
     public Image fader;
     public int nextScene = 1;
     public bool isChoosing;
@@ -45,6 +46,15 @@ public class TypeEffect : MonoBehaviour
 
     private void Start()
     {
+        if (PlayerPrefs.GetInt("barrel") == 1 || isChoosing)
+        {
+            maxcount = 100;
+            isChoosing = true;
+            nowText[8] = "";
+            audios[8] = null;
+            nowText[9] = "";
+            audios[9] = null;
+        }
         charColor = speaker.color;
         bgColor = nextbg.color;
         if (audios.Length > 0)
@@ -64,6 +74,10 @@ public class TypeEffect : MonoBehaviour
         
         if (Input.GetKeyDown(KeyCode.Space) && !fade)
         {
+            if (count >= maxcount)
+            {
+              return;
+            }
             UpdatePortrait();
         }
         if (fadebg)
@@ -163,7 +177,7 @@ public class TypeEffect : MonoBehaviour
             return;
         }
         count++;
-        if (count >= nowText.Length)
+        if (count >= nowText.Length || count == maxcount)
         {
             StopAllCoroutines();
             endoftext = true;
@@ -190,7 +204,7 @@ public class TypeEffect : MonoBehaviour
             source.Stop();
             Debug.Log("End");
             buttonStart.SetActive(true);
-            if (debuffTextBox is not null)
+            if (debuffText.Length > 0)
             {
               panels[0].SetActive(false);
               speaker.gameObject.SetActive(false);
@@ -203,10 +217,31 @@ public class TypeEffect : MonoBehaviour
   {
     itemChoose = i;
   }
-    public void Choose(string text)
+  public void Setglobal(int i)
+  {
+    PlayerPrefs.SetInt("barrel", 1);
+  }
+  public void NewMaxCount(int i)
+  {
+    maxcount = i;
+    charColor.a = 0;
+    speaker.color = charColor;
+  }
+  public void NameUpdate()
+  {
+    charqueue[9] = 0;
+  }
+  public void AddCount()
+  {
+    count++;
+  }
+  public void Choose(string text)
   {
         count++;
-        debuff = debuffText[itemChoose];
+        if (debuffText.Length > 0)
+        {
+          debuff = debuffText[itemChoose];
+        }
         audios[count] = audiosByChoose[itemChoose];
         nowText[count] = text; 
         panels[0].SetActive(true);
