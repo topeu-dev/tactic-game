@@ -11,6 +11,7 @@ namespace Effects
         public GameObject fired;
         public GameObject stun;
         public GameObject slow;
+        public GameObject storm;
         public List<GameObject> rageObjects;
 
         public void EnableVfxFor(EffectInstance effect)
@@ -39,7 +40,11 @@ namespace Effects
                 case "Slow":
                     slow.SetActive(true);
                     break;
-
+                
+                case "Storm":
+                    storm.SetActive(true);
+                    break;
+                
                 default:
                 {
                     Debug.LogWarning("Can't find vfx for " + effect.effectDescription.effectName);
