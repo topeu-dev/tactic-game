@@ -15,10 +15,17 @@ MonoBehaviour:
   actionName: Raycast
   description: Range attack
   icon: {fileID: 21300000, guid: b450d0b398880cb458f83d1a01b399ca, type: 3}
+  iconDescription: {fileID: 0}
   possibleObjectsToApply:
   - Enemy
   actionVisualizerType: 3
-  effectsToApply: []
+  effectsToApply:
+  - effectDescription: {fileID: 11400000, guid: 1e637abd168b9184db2450ef8b42dcb1, type: 2}
+    duration: 1
+    periodicalDamage: 0
+    movementModifer: 1
+    damageModifer: 0
+    currentDuration: 1
   audioClip: {fileID: 0}
   animExecutorTriggerName: CastSpellTrigger
-  impactDelay: 2
+  impactDelay: 1.5
