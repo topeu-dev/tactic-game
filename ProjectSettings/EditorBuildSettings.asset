@@ -15,12 +15,6 @@ EditorBuildSettings:
     path: Assets/Scenes/1Battle 1.unity
     guid: 36a84aaf6aa85284aad862122ed9da6a
   - enabled: 1
-    path: Assets/Scenes/Dialogs1.unity
-    guid: ec7558d22e682374984596d354144838
-  - enabled: 1
-    path: Assets/Scenes/2Battle_new.unity
-    guid: e7d42fa47c5026b43909ef5106ea1407
-  - enabled: 1
     path: Assets/Scenes/Dialogs2.unity
     guid: ae45b7ba3c1120347b6df6cd96b710e5
   - enabled: 1

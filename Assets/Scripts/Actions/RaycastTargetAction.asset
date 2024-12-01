@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   actionName: Raycast
   description: Range attack
-  icon: {fileID: 21300000, guid: b450d0b398880cb458f83d1a01b399ca, type: 3}
-  iconDescription: {fileID: 0}
+  icon: {fileID: 21300000, guid: 3049af31cd234d245a1d2fb8856affce, type: 3}
+  iconDescription: {fileID: 21300000, guid: cedb3495610d7db4cabdeb8319ad189e, type: 3}
   possibleObjectsToApply:
   - Enemy
   actionVisualizerType: 3
@@ -26,6 +26,6 @@ MonoBehaviour:
     movementModifer: 1
     damageModifer: 0
     currentDuration: 1
-  audioClip: {fileID: 0}
+  audioClip: {fileID: 8300000, guid: 0031660382314854b945614975ccb3fe, type: 3}
   animExecutorTriggerName: CastSpellTrigger
   impactDelay: 1.5
