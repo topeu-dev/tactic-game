@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -47,5 +48,6 @@ public static class EventManager
 
         public UnityAction<Component> OnBattleStartEvent;
         public UnityAction<Component> OnRoundEndedEvent;
-    }
+        public UnityAction<Component, LinkedList<GameObject>> OnNextTurnSequenceEvent;
+  }
 }
