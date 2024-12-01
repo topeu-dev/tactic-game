@@ -20224,12 +20224,12 @@ MonoBehaviour:
   actionsInstances:
   - actionDescription: {fileID: 11400000, guid: f89c94753cfd088428b4205c2e41223b, type: 2}
     cooldown: 1
-    distance: 8
+    distance: 20
     aoe: 0
     minDmg: 0
     maxDmg: 0
   - actionDescription: {fileID: 11400000, guid: b55f1a2dfe81bcc4ca6d7d9dc3514860, type: 2}
-    cooldown: 1
+    cooldown: 0
     distance: 12
     aoe: 0
     minDmg: 10
@@ -20347,6 +20347,7 @@ MonoBehaviour:
   fired: {fileID: 2515864880833299566}
   stun: {fileID: 1147522120825580610}
   slow: {fileID: 0}
+  storm: {fileID: 0}
   rageObjects:
   - {fileID: 4919766247660683204}
   - {fileID: 2728281118182935390}

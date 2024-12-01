@@ -47,7 +47,7 @@ namespace Actions.Visualizers
             var decalCopy = new Dictionary<DecalProjector, float>(_decalProjectors);
             foreach (var decalProjector in decalCopy)
             {
-                if (Time.time - decalProjector.Value > 1.5f)
+                if (Time.time - decalProjector.Value > 0.3f)
                 {
                     decalProjector.Key.enabled = false;
                 }
@@ -91,7 +91,10 @@ namespace Actions.Visualizers
                     if (decalProjector != null && _lineRenderer.startColor != Color.red)
                     {
                         decalProjector.enabled = true;
-                        _decalProjectors.Add(decalProjector, Time.time);
+                        if (_decalProjectors.ContainsKey(decalProjector))
+                        {
+                            _decalProjectors[decalProjector] = Time.time;
+                        }
                     }
                 }
             }
