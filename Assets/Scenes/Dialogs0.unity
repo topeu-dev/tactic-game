@@ -996,7 +996,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxcount: 100
   fader: {fileID: 670718606}
-  nextScene: 1
+  nextScene: 2
   isChoosing: 0
   speaker: {fileID: 2013773190}
   debuffTextBox: {fileID: 0}

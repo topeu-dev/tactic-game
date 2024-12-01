@@ -1543,7 +1543,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxcount: 100
   fader: {fileID: 670718606}
-  nextScene: 3
+  nextScene: 6
   isChoosing: 1
   speaker: {fileID: 2013773190}
   debuffTextBox: {fileID: 1423868782}
@@ -1630,7 +1630,7 @@ MonoBehaviour:
   charColor: {r: 0, g: 0, b: 0, a: 0}
   bgColor: {r: 0, g: 0, b: 0, a: 0}
   faderColor: {r: 0, g: 0, b: 0, a: 0}
-  charqueue: 03000000030000000300000001000000000000000300000000000000030000000300000003000000670000006700000003000000
+  charqueue: 03000000030000000300000001000000000000000300000002000000030000000300000003000000670000006700000003000000
 --- !u!114 &980074589
 MonoBehaviour:
   m_ObjectHideFlags: 0
