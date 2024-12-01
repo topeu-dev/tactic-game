@@ -9705,7 +9705,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1941157033733554254}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0777d029ed3dffa4692f417d4aba19ca, type: 3}
   m_Name: 
@@ -9796,7 +9796,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9095325986078031204, guid: db4c661689009b142aecea90e9593f53, type: 3}
       propertyPath: m_Name
-      value: Skelet_Warlord
+      value: SkWarlord0.1
       objectReference: {fileID: 0}
     - target: {fileID: 9095325986078031204, guid: db4c661689009b142aecea90e9593f53, type: 3}
       propertyPath: m_TagString

@@ -39,7 +39,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5049534332616916262}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0777d029ed3dffa4692f417d4aba19ca, type: 3}
   m_Name: 
@@ -5342,7 +5342,7 @@ PrefabInstance:
       objectReference: {fileID: 9100000, guid: ef6403663453e6a4cb106814a81e72b4, type: 2}
     - target: {fileID: 5605319319537555642, guid: dbef58bc5d3f27c4a9710a553651fed4, type: 3}
       propertyPath: m_Name
-      value: Skelet_Mage
+      value: SkMage0.1
       objectReference: {fileID: 0}
     - target: {fileID: 5605319319537555642, guid: dbef58bc5d3f27c4a9710a553651fed4, type: 3}
       propertyPath: m_TagString
