@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d25881e2a0848059f3c093f6aaf59f4, type: 3}
   m_Name: Warlord Stun
   m_EditorClassIdentifier: 
-  actionName: Raycast
+  actionName: WarlordStun
   description: Range attack
   icon: {fileID: 21300000, guid: c2adca1acc411964bb37cc6bcf3b2117, type: 3}
+  iconDescription: {fileID: 0}
   possibleObjectsToApply:
   - Enemy
   actionVisualizerType: 3

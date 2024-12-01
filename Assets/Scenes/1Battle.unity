@@ -1753,11 +1753,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 633069607}
   m_CullTransparentMesh: 1
---- !u!1 &642961387 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7278484145751378595, guid: f7dc74d13bc60e044a2d70fa12254fa1, type: 3}
-  m_PrefabInstance: {fileID: 6479744208607116220}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &647206877
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2074,11 +2069,6 @@ MonoBehaviour:
       m_PostInfinity: 2
       m_RotationOrder: 4
   CustomBlends: {fileID: 0}
---- !u!1 &715269695 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 259559542830567330, guid: 7f5ce4abcf3553048ad39b1d03c97100, type: 3}
-  m_PrefabInstance: {fileID: 7899794530818982031}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &716388606
 GameObject:
   m_ObjectHideFlags: 0
@@ -4377,11 +4367,6 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 5454929500541585683, guid: 8a86ffe811bf6e940a2e0ba0cf641af0, type: 3}
   m_PrefabInstance: {fileID: 601329873}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1339070276 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1983984431242400771, guid: 26d058e6943ac5c419af50bbbbc9554d, type: 3}
-  m_PrefabInstance: {fileID: 4903148832511351970}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1348458957 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 3429a15638e3ecb40966bc319bb86c96, type: 3}
@@ -5174,6 +5159,14 @@ PrefabInstance:
     - target: {fileID: 2934967845623000291, guid: 3c983cae219f69c40b7fd5bd25229e9f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: turnEndClicked
+      objectReference: {fileID: 0}
+    - target: {fileID: 3157067425244942129, guid: 3c983cae219f69c40b7fd5bd25229e9f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1006252762}
+    - target: {fileID: 3157067425244942129, guid: 3c983cae219f69c40b7fd5bd25229e9f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SelectAction
       objectReference: {fileID: 0}
     - target: {fileID: 3696618321358422752, guid: 3c983cae219f69c40b7fd5bd25229e9f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -6741,11 +6734,6 @@ Light:
   m_LightUnit: 1
   m_LuxAtDistance: 1
   m_EnableSpotReflector: 1
---- !u!1 &1998005789 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4421545386365350617, guid: 58d86220c37743c4c83c22a17f576292, type: 3}
-  m_PrefabInstance: {fileID: 3503592731813614596}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2068232457 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 181875948908340422, guid: 65e390b132a35e940ba311dc6677f5ef, type: 3}
@@ -7055,10 +7043,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 519703395647573399, guid: 58d86220c37743c4c83c22a17f576292, type: 3}
+      propertyPath: audioRef
+      value: 
+      objectReference: {fileID: 1006252761}
     - target: {fileID: 1502651655700289036, guid: 58d86220c37743c4c83c22a17f576292, type: 3}
       propertyPath: LightsModule.light
       value: 
       objectReference: {fileID: 1104678054}
+    - target: {fileID: 1965281328266853886, guid: 58d86220c37743c4c83c22a17f576292, type: 3}
+      propertyPath: audioRef
+      value: 
+      objectReference: {fileID: 1006252761}
     - target: {fileID: 2768055314272033246, guid: 58d86220c37743c4c83c22a17f576292, type: 3}
       propertyPath: gameContext
       value: 
@@ -7067,10 +7063,10 @@ PrefabInstance:
       propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1006252762}
-    - target: {fileID: 7592818905624442298, guid: 58d86220c37743c4c83c22a17f576292, type: 3}
-      propertyPath: storm
+    - target: {fileID: 3532875556127135712, guid: 58d86220c37743c4c83c22a17f576292, type: 3}
+      propertyPath: audioRef
       value: 
-      objectReference: {fileID: 1998005789}
+      objectReference: {fileID: 1006252761}
     - target: {fileID: 8657255669476540236, guid: 58d86220c37743c4c83c22a17f576292, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -7200,10 +7196,6 @@ PrefabInstance:
       propertyPath: gameContext
       value: 
       objectReference: {fileID: 1006252764}
-    - target: {fileID: 4241130568064762559, guid: 26d058e6943ac5c419af50bbbbc9554d, type: 3}
-      propertyPath: storm
-      value: 
-      objectReference: {fileID: 1339070276}
     - target: {fileID: 5774681731199908719, guid: 26d058e6943ac5c419af50bbbbc9554d, type: 3}
       propertyPath: LightsModule.light
       value: 
@@ -7221,14 +7213,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2915283050449363398, guid: 93adbe117f147c94fa49a7f44e08c514, type: 3}
-      propertyPath: actionsInstances.Array.data[0].distance
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 2915283050449363398, guid: 93adbe117f147c94fa49a7f44e08c514, type: 3}
-      propertyPath: actionsInstances.Array.data[1].cooldown
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 3396921214228782238, guid: 93adbe117f147c94fa49a7f44e08c514, type: 3}
       propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -7370,10 +7354,6 @@ PrefabInstance:
       propertyPath: gameContext
       value: 
       objectReference: {fileID: 1006252764}
-    - target: {fileID: 7938221568026039809, guid: f7dc74d13bc60e044a2d70fa12254fa1, type: 3}
-      propertyPath: storm
-      value: 
-      objectReference: {fileID: 642961387}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -7516,10 +7496,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3443925819504501254, guid: 7f5ce4abcf3553048ad39b1d03c97100, type: 3}
-      propertyPath: storm
-      value: 
-      objectReference: {fileID: 715269695}
     - target: {fileID: 3481933992504329597, guid: 7f5ce4abcf3553048ad39b1d03c97100, type: 3}
       propertyPath: LightsModule.light
       value: 
@@ -7602,6 +7578,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7787013979150680722, guid: 525b030ae454fd24e9feaa88361fafba, type: 3}
+      propertyPath: audioRef
+      value: 
+      objectReference: {fileID: 1006252761}
+    - target: {fileID: 8531390872959939554, guid: 525b030ae454fd24e9feaa88361fafba, type: 3}
       propertyPath: audioRef
       value: 
       objectReference: {fileID: 1006252761}

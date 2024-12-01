@@ -20,6 +20,8 @@ namespace Enemy
 
         private CharMover _charMover;
         private MeleeHitExecutor _meleeHitExecutor;
+        private HitScanExecutor _hitScanExecutor;
+        private MeleeAoeExecutor _meleeAoeExecutor;
 
         private bool actionInProgress = false;
         private float stopDistance = 2f;
@@ -29,6 +31,8 @@ namespace Enemy
             _battleContext = FindFirstObjectByType<BattleContext>();
             _charMover = GetComponent<CharMover>();
             _meleeHitExecutor = GetComponent<MeleeHitExecutor>();
+            _meleeAoeExecutor = GetComponent<MeleeAoeExecutor>();
+            _hitScanExecutor = GetComponent<HitScanExecutor>();
             _inputController = FindFirstObjectByType<InputController>();
         }
 
@@ -41,12 +45,29 @@ namespace Enemy
             );
 
             var hitActionInstance = actions.Find(
-                action => action.actionDescription.actionName.Contains("Hit")
+                action => action.actionDescription.actionName.Contains("MeleeHit")
             );
 
             var hitActionWithStun = actions.Find(
                 action => action.actionDescription.actionName.Contains("HitWithStun")
             );
+
+            var warlordStunHitScan = actions.Find(
+                action => action.actionDescription.actionName.Contains("WarlordStun")
+            );
+
+            var bleedingHit = actions.Find(
+                action => action.actionDescription.actionName.Contains("BleedingHit")
+            );
+
+            var poisonHitScan = actions.Find(
+                action => action.actionDescription.actionName.Contains("PoisonHitScan")
+            );
+
+            var warlordAoe = actions.Find(
+                action => action.actionDescription.actionName.Contains("WarlordAoe")
+            );
+
 
             var target = FindTarget();
             if (target == null)
@@ -55,6 +76,67 @@ namespace Enemy
                 onComplete?.Invoke();
                 Debug.Log("No target found");
                 yield break;
+            }
+
+            // if (CanHit(target, warlordAoe))
+            // {
+            //     actionInProgress = true;
+            //     Debug.Log("1Swordsman use WarlordAoe");
+            //     _hitScanExecutor.HitScan(warlordAoe,
+            //         new ActionContext(gameObject, target, null),
+            //         toggleActionInProgress
+            //     );
+            // }
+
+            while (actionInProgress)
+            {
+                yield return null;
+            }
+
+            if (CanHit(target, poisonHitScan))
+            {
+                actionInProgress = true;
+                Debug.Log("1Swordsman use Bleeding HIT");
+                _hitScanExecutor.HitScan(poisonHitScan,
+                    new ActionContext(gameObject, target, null),
+                    toggleActionInProgress
+                );
+            }
+
+            while (actionInProgress)
+            {
+                yield return null;
+            }
+
+            if (CanHit(target, warlordStunHitScan))
+            {
+                actionInProgress = true;
+                _hitScanExecutor.HitScan(warlordStunHitScan,
+                    new ActionContext(gameObject, target, null),
+                    toggleActionInProgress
+                );
+            }
+            
+            
+
+            while (actionInProgress)
+            {
+                yield return null;
+            }
+
+            if (CanHit(target, bleedingHit))
+            {
+                actionInProgress = true;
+                Debug.Log("1Swordsman use Bleeding HIT");
+                _meleeHitExecutor.Hit(bleedingHit,
+                    new ActionContext(gameObject, target, null),
+                    toggleActionInProgress
+                );
+            }
+
+            while (actionInProgress)
+            {
+                yield return null;
             }
 
             if (canStun(target, hitActionWithStun))
@@ -66,11 +148,12 @@ namespace Enemy
                 );
             }
 
+
             while (actionInProgress)
             {
                 yield return null;
             }
-            
+
             if (CanHit(target, hitActionInstance))
             {
                 actionInProgress = true;
@@ -81,7 +164,7 @@ namespace Enemy
                     toggleActionInProgress
                 );
             }
-            
+
             while (actionInProgress)
             {
                 yield return null;
@@ -94,18 +177,105 @@ namespace Enemy
                 new ActionContext(gameObject, null, closePosition),
                 toggleActionInProgress
             );
+            
+            Debug.Log(gameObject.name + " DECIDE TO MOVE");
+            while (actionInProgress)
+            {
+                yield return null;
+            }
+            
+            
+            if (CanHit(target, warlordAoe))
+            {
+                actionInProgress = true;
+                _meleeAoeExecutor.AoeHit(warlordAoe,
+                    new ActionContext(gameObject, target, null),
+                    toggleActionInProgress
+                );
+            }
+            while (actionInProgress)
+            {
+                yield return null;
+            }
+            
+            
+
+            // wait until moveDone -> 
+            if (warlordAoe != null && warlordAoe.CurrentCooldown == 0)
+            {
+                actionInProgress = true;
+                _meleeAoeExecutor.AoeHit(warlordAoe,
+                    new ActionContext(gameObject, target, null),
+                    toggleActionInProgress
+                );
+            }
+
+            Debug.Log(gameObject.name + " DECIDE TO MOVE2");
 
             while (actionInProgress)
             {
                 yield return null;
             }
 
+            Debug.Log(gameObject.name + " DECIDE TO MOVE3");
+            if (CanHit(target, poisonHitScan))
+            {
+                Debug.Log("IM HERE");
+                actionInProgress = true;
 
-            // wait until moveDone -> 
+                _hitScanExecutor.HitScan(poisonHitScan,
+                    new ActionContext(gameObject, target, null),
+                    toggleActionInProgress
+                );
+            }
+
+            Debug.Log(gameObject.name + " DECIDE TO MOVE4");
+            while (actionInProgress)
+            {
+                yield return null;
+            }
+
+            Debug.Log(gameObject.name + " DECIDE TO MOVE5");
+            if (CanHit(target, bleedingHit))
+            {
+                actionInProgress = true;
+                Debug.Log("1Swordsman use Bleeding HIT");
+                _meleeHitExecutor.Hit(bleedingHit,
+                    new ActionContext(gameObject, target, null),
+                    toggleActionInProgress
+                );
+            }
+
+            Debug.Log(gameObject.name + " DECIDE TO MOVE6");
+
+            while (actionInProgress)
+            {
+                yield return null;
+            }
+
+            Debug.Log(gameObject.name + " DECIDE TO MOVE7");
+
+            if (canStun(target, hitActionWithStun))
+            {
+                actionInProgress = true;
+                Debug.Log("1Swordsman use STUN HIT");
+                _meleeHitExecutor.Hit(hitActionWithStun, new ActionContext(gameObject, target, null),
+                    toggleActionInProgress
+                );
+            }
+
+            Debug.Log(gameObject.name + " DECIDE TO MOVE8");
+
+            while (actionInProgress)
+            {
+                yield return null;
+            }
+
+            Debug.Log(gameObject.name + " DECIDE TO MOVE9");
             if (CanHit(target, hitActionInstance))
             {
-                Debug.Log("2Swordsman use common HIT");
                 actionInProgress = true;
+                Debug.Log("1Swordsman use common HIT");
                 _meleeHitExecutor.Hit(
                     hitActionInstance,
                     new ActionContext(gameObject, target, null),
@@ -115,28 +285,21 @@ namespace Enemy
 
             while (actionInProgress)
             {
-                yield return null; // Ждем до следующего кадра
+                yield return null;
             }
 
-            if (canStun(target, hitActionWithStun))
-            {
-                Debug.Log("2Swordsman use STUN HIT");
-                _meleeHitExecutor.Hit(hitActionWithStun, new ActionContext(gameObject, target, null),
-                    () => { _inputController.UnlockInput(); }
-                );
-            }
-            
 
             yield return new WaitForSeconds(1f);
             onComplete?.Invoke();
             Debug.Log(gameObject.name + " done moving.");
         }
+        
 
         private bool canStun(GameObject target, ActionInstance hitActionWithStun)
         {
-            if (hitActionWithStun == null) 
+            if (hitActionWithStun == null)
                 return false;
-            
+
             if (hitActionWithStun.CurrentCooldown != 0 ||
                 hitActionWithStun.CurrentDistance < Vector3.Distance(transform.position, target.transform.position))
             {
@@ -167,10 +330,16 @@ namespace Enemy
 
         private bool CanHit(GameObject target, ActionInstance hitActionInstance)
         {
+            if (hitActionInstance == null)
+            {
+                return false;
+            }
+
             Debug.Log("Distance to hit -> " + Vector3.Distance(transform.position, target.transform.position));
             return hitActionInstance.CurrentCooldown == 0 &&
                    hitActionInstance.CurrentDistance >= Vector3.Distance(transform.position, target.transform.position);
         }
+
 
         private GameObject FindTarget()
         {
