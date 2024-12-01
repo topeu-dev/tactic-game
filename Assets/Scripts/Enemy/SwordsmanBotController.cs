@@ -134,6 +134,9 @@ namespace Enemy
 
         private bool canStun(GameObject target, ActionInstance hitActionWithStun)
         {
+            if (hitActionWithStun == null) 
+                return false;
+            
             if (hitActionWithStun.CurrentCooldown != 0 ||
                 hitActionWithStun.CurrentDistance < Vector3.Distance(transform.position, target.transform.position))
             {

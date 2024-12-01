@@ -10,20 +10,21 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0d25881e2a0848059f3c093f6aaf59f4, type: 3}
-  m_Name: HitWithStun
+  m_Name: RageAction
   m_EditorClassIdentifier: 
-  actionName: HitWithStun
-  description: 
-  icon: {fileID: 21300000, guid: 72c3cb794bcd67f4794adcf7d99c8fbc, type: 3}
-  possibleObjectsToApply: []
-  actionVisualizerType: 1
+  actionName: ApplyRage
+  description: Q
+  icon: {fileID: 21300000, guid: b6343c4fe72d8604bbeef33f40c675b0, type: 3}
+  possibleObjectsToApply:
+  - PlayableChar
+  actionVisualizerType: 3
   effectsToApply:
-  - effectDescription: {fileID: 11400000, guid: 7ee71e974a4b8ac4fafc38df04b64a63, type: 2}
+  - effectDescription: {fileID: 11400000, guid: 856a31fcbf458d04c997a92b1117d510, type: 2}
     duration: 2
     periodicalDamage: 0
     movementModifer: 0
-    damageModifer: 0
+    damageModifer: 1.5
     currentDuration: 2
-  audioClip: {fileID: 8300000, guid: af22e25058055984da15c2e56714178f, type: 3}
-  animExecutorTriggerName: 
-  impactDelay: 0.2
+  audioClip: {fileID: 8300000, guid: 4584cf0c899f78f448e6a154f233431f, type: 3}
+  animExecutorTriggerName: CastSpellTrigger
+  impactDelay: 0.5

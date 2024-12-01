@@ -10,20 +10,20 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0d25881e2a0848059f3c093f6aaf59f4, type: 3}
-  m_Name: HitWithStun
+  m_Name: EnemyPoisonAction
   m_EditorClassIdentifier: 
-  actionName: HitWithStun
+  actionName: PoisonHitScan
   description: 
-  icon: {fileID: 21300000, guid: 72c3cb794bcd67f4794adcf7d99c8fbc, type: 3}
+  icon: {fileID: 0}
   possibleObjectsToApply: []
-  actionVisualizerType: 1
+  actionVisualizerType: 0
   effectsToApply:
-  - effectDescription: {fileID: 11400000, guid: 7ee71e974a4b8ac4fafc38df04b64a63, type: 2}
-    duration: 2
-    periodicalDamage: 0
+  - effectDescription: {fileID: 11400000, guid: 30f4fa4acdaf5de4ab3d5cd64b7931ba, type: 2}
+    duration: 5
+    periodicalDamage: 4
     movementModifer: 0
     damageModifer: 0
-    currentDuration: 2
-  audioClip: {fileID: 8300000, guid: af22e25058055984da15c2e56714178f, type: 3}
-  animExecutorTriggerName: 
-  impactDelay: 0.2
+    currentDuration: 5
+  audioClip: {fileID: 0}
+  animExecutorTriggerName: CastSpellTrigger
+  impactDelay: 1.5

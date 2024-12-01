@@ -18,4 +18,4 @@ MonoBehaviour:
   effectType: 0
   whenToApply: 0
   stackBehaviour: 0
-  audioClip: {fileID: 8300000, guid: 3b49625d7d059f247a102f28ceb92cca, type: 3}
+  audioClip: {fileID: 0}

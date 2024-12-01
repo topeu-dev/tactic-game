@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Actions;
@@ -14,11 +15,13 @@ namespace Enemy
     public class GenericEnemy : MonoBehaviour, TurnRelated
     {
         private Animator _animatorRef;
+        private EffectController _effectControllerRef;
         
         //todo мб перенести это куда то
         private EventTrigger _triggerRef;
         private CapsuleCollider _colliderRef;
         private NavMeshAgent _navMeshAgentRef;
+        
 
         [SerializeField]
         private GameContext gameContext;
@@ -47,6 +50,11 @@ namespace Enemy
         private void OnDisable()
         {
             EventManager.DamageRelatedEvent.OnDamageTaken -= OnDamageTaken;
+        }
+
+        private void Start()
+        {
+            _effectControllerRef.EnableInitialVfxs(effectsInstances);
         }
 
         private void OnDamageTaken(Component source, GameObject targetObject, int damage, float impactDelay)
@@ -81,6 +89,7 @@ namespace Enemy
 
         private void Awake()
         {
+            _effectControllerRef = GetComponent<EffectController>();
             _colliderRef = GetComponent<CapsuleCollider>();
             _triggerRef = GetComponent<EventTrigger>();
             _navMeshAgentRef = GetComponent<NavMeshAgent>();
@@ -104,6 +113,13 @@ namespace Enemy
             actionsInstances.ForEach(action => action.StartOfTurn());
 
             EventManager.CameraEvent.OnPlayableCharacterFocusEvent?.Invoke(this, gameObject);
+            
+            //todo remove
+            if (_botController == null)
+            {
+                gameContext.turnEndClicked();
+                return;
+            }
             StartCoroutine(_botController.MakeMove(actionsInstances, () =>
             {
                 gameContext.turnEndClicked();

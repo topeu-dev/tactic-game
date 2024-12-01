@@ -14,8 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   actionName: Hit
   description: Hit your enemy
-  icon: {fileID: 21300000, guid: 2a5c892bdd014164da633b8c6fd0f246, type: 3}
+  icon: {fileID: 21300000, guid: a353c972e10eb934fb842d1291100bf8, type: 3}
   possibleObjectsToApply:
   - Enemy
   actionVisualizerType: 1
   effectsToApply: []
+  audioClip: {fileID: 8300000, guid: 99d516812a6c22949b9f0f50bc78b95a, type: 3}
+  animExecutorTriggerName: 
+  impactDelay: 0

@@ -10,15 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0d25881e2a0848059f3c093f6aaf59f4, type: 3}
-  m_Name: MeleeAoeHitAction
+  m_Name: WarlordHit
   m_EditorClassIdentifier: 
-  actionName: MeleeAoeHit
-  description: some
-  icon: {fileID: 21300000, guid: 2523a9d639d37e5499c92411208f432c, type: 3}
+  actionName: Hit
+  description: Hit your enemy
+  icon: {fileID: 21300000, guid: a353c972e10eb934fb842d1291100bf8, type: 3}
   possibleObjectsToApply:
   - Enemy
-  actionVisualizerType: 5
+  actionVisualizerType: 1
   effectsToApply: []
-  audioClip: {fileID: 8300000, guid: 63eb458405a1873469f43f26991e1338, type: 3}
+  audioClip: {fileID: 8300000, guid: a0547476386494b4c8701f1ae2080c48, type: 3}
   animExecutorTriggerName: 
   impactDelay: 0.2

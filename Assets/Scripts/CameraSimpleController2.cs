@@ -73,7 +73,10 @@ public class CameraSimpleController2 : MonoBehaviour
     {
         // var adjustTarget = new Vector3(arg1.transform.position.x - 18f, arg1.transform.position.y, arg1.transform.position.z + 14f);
         // _targetPosition = adjustTarget;
-        _targetPosition = arg1.transform.position;
+        var asd = _virtualCamera.ResolveLookAt(arg1.transform);
+        print("Initial pos " + arg1.transform.position + "LookAt " +asd.transform.position);
+        _targetPosition = asd.position;
+        // _targetPosition = arg1.transform.position;
     }
 
     void Update()

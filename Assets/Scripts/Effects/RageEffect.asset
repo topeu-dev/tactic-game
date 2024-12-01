@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d296160e7704bb59532a3f34a102978, type: 3}
   m_Name: RageEffect
   m_EditorClassIdentifier: 
-  icon: {fileID: 21300000, guid: a2563f2b8dbc4044b9a50537d3a29962, type: 3}
+  icon: {fileID: 21300000, guid: b6343c4fe72d8604bbeef33f40c675b0, type: 3}
   effectName: Rage
   description: Damage increased
   effectType: 1
   whenToApply: 0
   stackBehaviour: 0
-  audioClip: {fileID: 8300000, guid: 3b49625d7d059f247a102f28ceb92cca, type: 3}
+  audioClip: {fileID: 0}
