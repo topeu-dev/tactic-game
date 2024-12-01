@@ -1737,6 +1737,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Loshok2
       objectReference: {fileID: 0}
+    - target: {fileID: 7138156930908526867, guid: bd4abe84bd6f24d4d9e08195e3bd9fdb, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7138156930908554611, guid: bd4abe84bd6f24d4d9e08195e3bd9fdb, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1.16
@@ -4744,10 +4748,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   zoomMin: 5
   zoomMax: 30
-  zoomStep: 1.5
+  zoomStep: 1
   zoomSpeed: 10
-  movementTime: 1
-  movementSpeed: 1
+  movementTime: 0
+  movementSpeed: 3
   edgeMovementEnabled: 0
 --- !u!4 &1768654672
 Transform:
@@ -4758,7 +4762,7 @@ Transform:
   m_GameObject: {fileID: 1768654670}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 7.6, y: 0, z: -4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -4781,6 +4785,10 @@ PrefabInstance:
     - target: {fileID: 4957605393579145644, guid: db8ee4fe0d057ed4caf72dad62e70a9b, type: 3}
       propertyPath: m_Name
       value: HumanMaleTest2BigOne
+      objectReference: {fileID: 0}
+    - target: {fileID: 4957605393579145644, guid: db8ee4fe0d057ed4caf72dad62e70a9b, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4957605393579145644, guid: db8ee4fe0d057ed4caf72dad62e70a9b, type: 3}
       propertyPath: m_TagString
@@ -5832,6 +5840,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SK_Skeleton_Warlord_BlackBlood Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 7138156930908526867, guid: bd4abe84bd6f24d4d9e08195e3bd9fdb, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7138156930908554611, guid: bd4abe84bd6f24d4d9e08195e3bd9fdb, type: 3}
       propertyPath: m_LocalPosition.x
       value: -4.72
@@ -6016,6 +6028,10 @@ PrefabInstance:
     - target: {fileID: 2193504015840751361, guid: b45757ae41d2a114d9ff6bcc99a86dc8, type: 3}
       propertyPath: m_Name
       value: HumanMaleTest
+      objectReference: {fileID: 0}
+    - target: {fileID: 2193504015840751361, guid: b45757ae41d2a114d9ff6bcc99a86dc8, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2193504015840751363, guid: b45757ae41d2a114d9ff6bcc99a86dc8, type: 3}
       propertyPath: m_LocalPosition.x
