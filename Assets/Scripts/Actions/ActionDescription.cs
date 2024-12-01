@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Effects;
 using UnityEngine;
 
 namespace Actions
@@ -23,5 +24,9 @@ namespace Actions
         //Tags
         public List<string> possibleObjectsToApply;
         public ActionVisualizerType actionVisualizerType;
+        public List<EffectInstance> effectsToApply;
+        public AudioClip audioClip;
+        public string animExecutorTriggerName;
+        public float impactDelay;
     }
 }

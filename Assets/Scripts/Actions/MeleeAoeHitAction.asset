@@ -18,3 +18,7 @@ MonoBehaviour:
   possibleObjectsToApply:
   - Enemy
   actionVisualizerType: 5
+  effectsToApply: []
+  audioClip: {fileID: 8300000, guid: 63eb458405a1873469f43f26991e1338, type: 3}
+  animExecutorTriggerName: 
+  impactDelay: 0.2

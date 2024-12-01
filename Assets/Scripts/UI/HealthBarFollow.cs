@@ -1,4 +1,6 @@
 using System.Collections;
+using System.Collections.Generic;
+using Effects;
 using Enemy;
 using TMPro;
 using UnityEngine;
@@ -12,8 +14,13 @@ namespace UI
         private Camera mainCamera;
 
         private TextMeshProUGUI healthText;
+
+        [SerializeField]
+        private List<Image> effectIcons = new();
+
         private Slider _slider;
         private GameObject _parentRef;
+        private List<EffectInstance> _currentEffectsRef;
         private Vector3 initialScale;
         public float baseOrthographicSize = 10f;
 
@@ -24,6 +31,8 @@ namespace UI
             _parentRef = transform.parent.gameObject;
             healthBar = GetComponent<Canvas>();
             healthText = GetComponentInChildren<TextMeshProUGUI>();
+            effectIcons.ForEach(it => it.enabled = false);
+            getEffectsRef();
             _slider = GetComponentInChildren<Slider>();
             _slider.value = 1f;
 
@@ -31,6 +40,21 @@ namespace UI
             healthText.text = initialMaxHp + "/" + initialMaxHp;
 
             healthBar.enabled = false;
+        }
+
+        private void getEffectsRef()
+        {
+            var genericChar = _parentRef.GetComponent<GenericChar>();
+            if (genericChar != null)
+            {
+                _currentEffectsRef = genericChar.effectsInstances;
+            }
+
+            // var genericEnemy = _parentRef.GetComponent<GenericEnemy>();
+            // if (genericEnemy)
+            // {
+            //     return genericEnemy.startHp;
+            // }
         }
 
         //todo refactor
@@ -70,6 +94,7 @@ namespace UI
 
             if (character != _parentRef)
                 return;
+
             StartCoroutine(showFor2Seconds());
             StartCoroutine(DelayedDamage(currentHp, maxHp));
         }
@@ -123,8 +148,28 @@ namespace UI
         {
             if (_tempShow)
                 return;
-
+            
+            updateCurrentEffectsState();
             healthBar.enabled = !healthBar.enabled;
+        }
+
+        private void updateCurrentEffectsState()
+        {
+            if (_currentEffectsRef == null)
+                return;
+            
+            for (var i = 0; i < 5; i++)
+            {
+                if (i < _currentEffectsRef.Count && _currentEffectsRef[i] != null)
+                {
+                    effectIcons[i].sprite = _currentEffectsRef[i].effectDescription.icon;
+                    effectIcons[i].enabled = true;
+                }
+                else
+                {
+                    effectIcons[i].enabled = false;
+                }
+            }
         }
     }
 }

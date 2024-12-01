@@ -46,8 +46,11 @@ public class InputController : MonoBehaviour
         _actionVisualizers.Add(ActionVisualizerType.Move, moveVisualizer);
         var hitVisualizer = FindFirstObjectByType<HitVisualizer>();
         _actionVisualizers.Add(ActionVisualizerType.MeleeHit, hitVisualizer);
-        var raycastRangeHitVisualizer = FindFirstObjectByType<RaycastTargetVisualizer>();
-        _actionVisualizers.Add(ActionVisualizerType.RaycastTargetHit, raycastRangeHitVisualizer);
+        // var raycastRangeHitVisualizer = FindFirstObjectByType<RaycastTargetVisualizer>();
+        // _actionVisualizers.Add(ActionVisualizerType.RaycastTargetHit, raycastRangeHitVisualizer);
+        var hitScanVisualizer = FindFirstObjectByType<HitScanVisualizer>();
+        _actionVisualizers.Add(ActionVisualizerType.RaycastTargetHit, hitScanVisualizer);
+
         var meleeHitAoeVisualizer = FindFirstObjectByType<AoeMeleeHitVisualizer>();
         _actionVisualizers.Add(ActionVisualizerType.MeleeHitAoe, meleeHitAoeVisualizer);
     }
@@ -199,6 +202,7 @@ public class InputController : MonoBehaviour
 
     public void SelectAction(int actionId)
     {
+        Debug.Log("selected " + actionId);
         if (_selectedActionVisualizer != null)
         {
             _selectedActionVisualizer.DisableVisualizer();

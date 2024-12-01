@@ -9,10 +9,6 @@ namespace Turn
         private LinkedList<GameObject> _roundQueue;
         private List<GameObject> sortedTurnRelatedObjects;
 
-        [SerializeField]
-        private GameObject _selectedCharacter;
-
-
         void Start()
         {
             sortedTurnRelatedObjects = FindAllObjectsOfInterface<TurnRelated>()
