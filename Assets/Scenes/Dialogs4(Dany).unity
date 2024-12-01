@@ -429,10 +429,10 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: With a powerful swing, Hector smashes the idol into pieces.
-            The shards scatter in all directions, and one of them bounces back, striking
-            his leg. Hector mutters a curse under his breath as he grabs at the injury.
-            Later, he pushes the door, which simply opens
+          m_StringArgument: Hector decides not to wait and drinks the strange liquid
+            first. A wave of heat spreads through his body, his muscles feel charged
+            with strength, and his gaze becomes more determined. The others look
+            at him with confusion but notice that Hector seems much more confident.
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &375342468
@@ -1080,7 +1080,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Ignore the statue
+  m_text: Leave the barrel alone
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 39501046fd8f1234cb56f677f6efa1d4, type: 2}
   m_sharedMaterial: {fileID: -3766221642715184230, guid: 39501046fd8f1234cb56f677f6efa1d4, type: 2}
@@ -1197,7 +1197,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: fbd6747861624604b97a24ac93f15a07, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 6d9b87eb38d09d94a8ce139d9a223f9d, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1338,11 +1338,9 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Mage carefully runs the blade across his palm, drops
-            of blood falling onto the idol. The statue's eyes glow briefly before
-            dimming again, with no apparent effect.  After a moment, He winces, noticing
-            that the blood continues to seep from the wound. Later, he pushes the
-            door, which simply opens
+          m_StringArgument: After some consideration, the group decides to take the
+            barrel with them for further study. Hector reluctantly lifts it, grimacing
+            from the weight, which noticeably slows his movements.
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &728128814
@@ -1488,6 +1486,7 @@ GameObject:
   - component: {fileID: 980074590}
   - component: {fileID: 980074589}
   - component: {fileID: 980074588}
+  - component: {fileID: 980074593}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -1518,28 +1517,26 @@ MonoBehaviour:
   - Caesar
   - Caleb
   - Narrator
+  - Draxan
   bg:
-  - {fileID: 21300000, guid: 01631163f43352945899799910599f25, type: 3}
+  - {fileID: 21300000, guid: ac4c81b8e336aac4286b304ede427750, type: 3}
   nowbg: {fileID: 711062929}
   nextbg: {fileID: 1744531610}
   panels:
   - {fileID: 1971133132}
   - {fileID: 435775920}
   audios:
-  - {fileID: 8300000, guid: 16f3dbe0f76adca4d986f5ce595330c0, type: 3}
-  - {fileID: 8300000, guid: 2fb0103c97c8aef4081460fbbf2c110c, type: 3}
-  - {fileID: 8300000, guid: 31ba6bd15ab1c384aacd98c5197f3aa2, type: 3}
-  - {fileID: 8300000, guid: 43c7536a57cf21845bfb4795b1649582, type: 3}
-  - {fileID: 8300000, guid: 2bfae4c3f406a0945aa57e038df47fb7, type: 3}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 8300000, guid: ed417cb693bff0145971e6fb2f33b79c, type: 3}
-  - {fileID: 8300000, guid: c146b2c0efbff6d4ab2e13ed1c665c96, type: 3}
-  - {fileID: 8300000, guid: fab3564d96e794f41894862fb1a506fe, type: 3}
+  - {fileID: 8300000, guid: 98bc8fbf1a4b83e45b33e1421b8f98d9, type: 3}
+  - {fileID: 8300000, guid: b6d77f4fa60e91642975ed7ea6989904, type: 3}
+  - {fileID: 8300000, guid: 47263ed1535006548b274d720b996f9a, type: 3}
+  - {fileID: 8300000, guid: 8cc4f23c956c8a142a0fdaf32fb3150b, type: 3}
+  - {fileID: 8300000, guid: 0997fb10a3d897c488c7f6ae613bb8f9, type: 3}
+  - {fileID: 8300000, guid: 6fb4cb344675d9e47b690a7812ab6f5a, type: 3}
+  - {fileID: 8300000, guid: 1f36eed3c74823440abca9856dc75d47, type: 3}
   audiosByChoose:
-  - {fileID: 8300000, guid: 4eebbbef7a60d15478fd43530468e4e8, type: 3}
-  - {fileID: 8300000, guid: d11f34b65b268e84d8f7af4e6262012a, type: 3}
-  - {fileID: 8300000, guid: 2de9067f578c43f4c995751b0b2369a4, type: 3}
+  - {fileID: 8300000, guid: d2a81572844298747bef3e05232da4f5, type: 3}
+  - {fileID: 8300000, guid: 23b293d2d783c5843bd0986ba7feb4bf, type: 3}
+  - {fileID: 8300000, guid: 3542da060114d06469f0de909de0186b, type: 3}
   source: {fileID: 75322549}
   fadespeed: 1
   bgfadespeed: 1
@@ -1548,41 +1545,31 @@ MonoBehaviour:
   speechTextBoxSample: {fileID: 429833435}
   namesTextBox: {fileID: 395358363}
   nowText:
-  - The heroes enter a dark chamber, illuminated only by the faint light of the torch
-    Caesar is holding. The air is heavy and stale, the walls covered in ancient symbols
-    and cracks. On the opposite side of the room stands a massive stone door etched
-    with mysterious inscriptions.
-  - Beside the door is an ancient idol shaped like a bird with outstretched wings.
-    Its stone eyes seem to follow every movement.
-  - "This idol... I've read about these. They\u2019re said to be connected to the
-    spirits of the tombs. To move forward, a sacrifice is required. It must be anointed
-    with blood."
-  - "Blood? Seriously? That\u2019s just some stupid legend. I say we just smash the
-    thing."
-  - "No blood, no smashing. The idol\u2019s a distraction. I\u2019ll bet gold the
-    door opens without it."
-  - 
-  - 
-  - 'After wandering through the corridors for what felt like ages, the heroes''
-    path ends at a wide archway. Caesar is the first to step into a spacious hall,
-    his eyes widening in awe:'
-  - "shelves lined with ancient books stretch all the way to the ceiling, forming
-    a labyrinth of forgotten knowledge. The air is heavy with the scent of aged paper
-    and decay. But the silence doesn\u2019t last for long."
-  - "From the depths of the library comes a rustling sound, followed by a creak,
-    as if something heavy is being dragged across the floor. The heroes freeze, straining
-    to listen, but it\u2019s too late \u2013 shapes emerge from the shadows..."
+  - The heroes stand among the wreckage, Draxan's body lying on the floor. They look
+    at what remains of the mighty foe, tired but with a sense of victory.
+  - We did it! the book is ours!
+  - ' A thousand years in a tomb, and here we are. In the end, he was just an old
+    skeleton. '
+  - And we went through all this for this? Well, if it's worth even half of what
+    we've been through...
+  - 'Doesn''t matter. The important thing is we won. Now, where''s the exit? '
+  - 'Having survived countless trials, the heroes finally opened the tavern they
+    had dreamed of for so long. It became a home for those who believe in adventure,
+    and a place where every hero can rest after tough battles or embark on new quests. '
+  - 'By the fireplace, travelers gather, sharing their stories and feats, while glasses
+    clink at the tables. An old tome of recipes (well, technically a copy, just in
+    case) obtained from the very heart of the ancient tomb now hangs on the wall,
+    a reminder of what they had to endure. '
   debuffText:
-  - Caleb has gained the "Bleeding" status. This will gradually reduce his health
-    until treated.
-  - "Caesar opened the door. There were no traps or obstacles \u2013 it was just
-    a regular door..."
-  - Hector has suffered a minor injury from a stone shard. His movement speed is
-    now slightly reduced.
+  - Hector gains a "Damage Buff," temporarily increasing his attack power for the
+    next battles.
+  - Hector receives the "Slowed" status in the next battle due to carrying the heavy
+    barrel.
+  - 'The heroes gain no benefit and continue their journey without any consequences. '
   charColor: {r: 0, g: 0, b: 0, a: 0}
   bgColor: {r: 0, g: 0, b: 0, a: 0}
   faderColor: {r: 0, g: 0, b: 0, a: 0}
-  charqueue: 0300000003000000020000000000000001000000030000000300000003000000670000000300000003000000
+  charqueue: 03000000010000000000000002000000000000006700000003000000
 --- !u!114 &980074589
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1672,6 +1659,103 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!82 &980074593
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 980074587}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 065ee807d3dd74b47a9d06df28da5c2c, type: 3}
+  m_Resource: {fileID: 8300000, guid: 065ee807d3dd74b47a9d06df28da5c2c, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 0.114
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &1199143688
 GameObject:
   m_ObjectHideFlags: 0
@@ -1729,7 +1813,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Anoint the statue with blood
+  m_text: Take the barrel with you
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 39501046fd8f1234cb56f677f6efa1d4, type: 2}
   m_sharedMaterial: {fileID: -3766221642715184230, guid: 39501046fd8f1234cb56f677f6efa1d4, type: 2}
@@ -2134,7 +2218,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Smash the statue
+  m_text: Drink from the barrel
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 39501046fd8f1234cb56f677f6efa1d4, type: 2}
   m_sharedMaterial: {fileID: -3766221642715184230, guid: 39501046fd8f1234cb56f677f6efa1d4, type: 2}
@@ -2462,7 +2546,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 01631163f43352945899799910599f25, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ac4c81b8e336aac4286b304ede427750, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2636,7 +2720,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 1090249166, guid: f285727fe05962f4eb7f5c16d0fd07c4, type: 3}
+  m_Sprite: {fileID: -1571395197, guid: e3ce6d5ebb60dd04ebc486b5a4834273, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2758,10 +2842,9 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Focused, Caesar examines the door and presses against
-            its surface. With a loud creak, the door begins to open, requiring nothing
-            in return. Beyond it lies a long, dark corridor. The others look at him
-            in astonishment
+          m_StringArgument: Skeptically eyeing the barrel, the party decides to leave
+            it untouched and move on. The mystery of the ancient drink remains unsolved,
+            but they avoid any potential risks.
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1976927655

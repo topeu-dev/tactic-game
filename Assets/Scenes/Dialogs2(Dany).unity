@@ -429,10 +429,10 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: With a powerful swing, Hector smashes the idol into pieces.
-            The shards scatter in all directions, and one of them bounces back, striking
-            his leg. Hector mutters a curse under his breath as he grabs at the injury.
-            Later, he pushes the door, which simply opens
+          m_StringArgument: Hector decides not to wait and drinks the strange liquid
+            first. A wave of heat spreads through his body, his muscles feel charged
+            with strength, and his gaze becomes more determined. The others look
+            at him with confusion but notice that Hector seems much more confident.
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &375342468
@@ -1080,7 +1080,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Ignore the statue
+  m_text: Leave the barrel alone
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 39501046fd8f1234cb56f677f6efa1d4, type: 2}
   m_sharedMaterial: {fileID: -3766221642715184230, guid: 39501046fd8f1234cb56f677f6efa1d4, type: 2}
@@ -1197,7 +1197,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: fbd6747861624604b97a24ac93f15a07, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 1feeb30f0ae1607489ca2b73083ad257, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1338,11 +1338,9 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Mage carefully runs the blade across his palm, drops
-            of blood falling onto the idol. The statue's eyes glow briefly before
-            dimming again, with no apparent effect.  After a moment, He winces, noticing
-            that the blood continues to seep from the wound. Later, he pushes the
-            door, which simply opens
+          m_StringArgument: After some consideration, the group decides to take the
+            barrel with them for further study. Hector reluctantly lifts it, grimacing
+            from the weight, which noticeably slows his movements.
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &728128814
@@ -1519,27 +1517,30 @@ MonoBehaviour:
   - Caleb
   - Narrator
   bg:
-  - {fileID: 21300000, guid: 01631163f43352945899799910599f25, type: 3}
+  - {fileID: 21300000, guid: e4fa06d568e20684291818e66cee60c3, type: 3}
   nowbg: {fileID: 711062929}
   nextbg: {fileID: 1744531610}
   panels:
   - {fileID: 1971133132}
   - {fileID: 435775920}
   audios:
-  - {fileID: 8300000, guid: 16f3dbe0f76adca4d986f5ce595330c0, type: 3}
-  - {fileID: 8300000, guid: 2fb0103c97c8aef4081460fbbf2c110c, type: 3}
-  - {fileID: 8300000, guid: 31ba6bd15ab1c384aacd98c5197f3aa2, type: 3}
-  - {fileID: 8300000, guid: 43c7536a57cf21845bfb4795b1649582, type: 3}
-  - {fileID: 8300000, guid: 2bfae4c3f406a0945aa57e038df47fb7, type: 3}
+  - {fileID: 8300000, guid: 746ba9b57c6d1084d979c34c2a21f30d, type: 3}
+  - {fileID: 8300000, guid: 71c085c15b747754a94839611e9c4d9b, type: 3}
+  - {fileID: 8300000, guid: cbc9331bdbbc19b4cbdcf8051c64710d, type: 3}
+  - {fileID: 8300000, guid: 14edac6c670691d45a85b261c421d032, type: 3}
+  - {fileID: 8300000, guid: d0fc51ef23e2405478de0d4157309a75, type: 3}
+  - {fileID: 8300000, guid: 79b6d7c588cbd2e42a4a84aa651f048d, type: 3}
+  - {fileID: 8300000, guid: b84e8d36493006640b368817a1fcf8e3, type: 3}
+  - {fileID: 8300000, guid: 7c19c4123ddd8bc43bf6776559bb2982, type: 3}
   - {fileID: 0}
   - {fileID: 0}
-  - {fileID: 8300000, guid: ed417cb693bff0145971e6fb2f33b79c, type: 3}
-  - {fileID: 8300000, guid: c146b2c0efbff6d4ab2e13ed1c665c96, type: 3}
-  - {fileID: 8300000, guid: fab3564d96e794f41894862fb1a506fe, type: 3}
+  - {fileID: 8300000, guid: 7b1e7ff9cba429642a26a78730f6daa7, type: 3}
+  - {fileID: 8300000, guid: c8f9ab3f590bafa44bf864189619629a, type: 3}
+  - {fileID: 8300000, guid: 636d551f081c7c9449b3c561cc7165ee, type: 3}
   audiosByChoose:
-  - {fileID: 8300000, guid: 4eebbbef7a60d15478fd43530468e4e8, type: 3}
-  - {fileID: 8300000, guid: d11f34b65b268e84d8f7af4e6262012a, type: 3}
-  - {fileID: 8300000, guid: 2de9067f578c43f4c995751b0b2369a4, type: 3}
+  - {fileID: 8300000, guid: d2a81572844298747bef3e05232da4f5, type: 3}
+  - {fileID: 8300000, guid: 23b293d2d783c5843bd0986ba7feb4bf, type: 3}
+  - {fileID: 8300000, guid: 3542da060114d06469f0de909de0186b, type: 3}
   source: {fileID: 75322549}
   fadespeed: 1
   bgfadespeed: 1
@@ -1548,41 +1549,50 @@ MonoBehaviour:
   speechTextBoxSample: {fileID: 429833435}
   namesTextBox: {fileID: 395358363}
   nowText:
-  - The heroes enter a dark chamber, illuminated only by the faint light of the torch
-    Caesar is holding. The air is heavy and stale, the walls covered in ancient symbols
-    and cracks. On the opposite side of the room stands a massive stone door etched
-    with mysterious inscriptions.
-  - Beside the door is an ancient idol shaped like a bird with outstretched wings.
-    Its stone eyes seem to follow every movement.
-  - "This idol... I've read about these. They\u2019re said to be connected to the
-    spirits of the tombs. To move forward, a sacrifice is required. It must be anointed
-    with blood."
-  - "Blood? Seriously? That\u2019s just some stupid legend. I say we just smash the
-    thing."
-  - "No blood, no smashing. The idol\u2019s a distraction. I\u2019ll bet gold the
-    door opens without it."
+  - 'The heroes enter a spacious hall that was once a grand dining room. Tall stone
+    arches are cracked and weathered, with long strands of cobwebs hanging from the
+    ceiling. The floor is littered with broken dishes and fragments of furniture. '
+  - In the corner of the room, as if forgotten by time, stands an old wooden barrel,
+    its surface covered in a thick layer of dust and cobwebs. The trio approaches
+    it, and Hector is the first to brush away the webs with his hand.
+  - Caesar leans in, eyeing the barrel with suspicion. Hector slightly lifts the
+    lid, releasing a sharp, strange smell into the air. Inside is a murky liquid
+    that ripples faintly with the movement.
+  - "Perhaps we shouldn\u2019t touch this. We don\u2019t even know what it is...
+    Who knows what could happen?"
+  - "Nonsense! It\u2019s an ancient drink. Who knows, maybe it grants strength or
+    immortality? I say we give it a try."
+  - He reaches for the barrel, but Caleb steps in, raising a hand to stop him.
+  - "I suggest we don\u2019t rush. We could take a sample, or even the whole barrel,
+    and study it later. Who knows what secrets it holds? It might be the key to understanding
+    the culture of the ancients."
+  - Hector and Caesar exchange glances, each clearly dissatisfied with the other's
+    stance. Time seems to stand still as they weigh their next move.
   - 
   - 
-  - 'After wandering through the corridors for what felt like ages, the heroes''
-    path ends at a wide archway. Caesar is the first to step into a spacious hall,
-    his eyes widening in awe:'
-  - "shelves lined with ancient books stretch all the way to the ceiling, forming
-    a labyrinth of forgotten knowledge. The air is heavy with the scent of aged paper
-    and decay. But the silence doesn\u2019t last for long."
-  - "From the depths of the library comes a rustling sound, followed by a creak,
-    as if something heavy is being dragged across the floor. The heroes freeze, straining
-    to listen, but it\u2019s too late \u2013 shapes emerge from the shadows..."
+  - 'The heroes emerge into an overgrown garden, once a picturesque place. Now it
+    is overrun with wild plants and scattered with the remnants of ruined structures.
+    At the center stands a viewing platform, surrounded by crumbled columns and fragments
+    of marble. The trio cautiously surveys the area. '
+  - Following a narrowing path, they arrive at an ancient graveyard. The only sounds
+    are their footsteps and the occasional crackle of dry branches beneath their
+    feet. Suddenly, the moss-covered and cracked gravestones are bathed in an eerie
+    green glow. From each grave, as if on command, candles ignite, their flames trembling
+    in the unnatural stillness.
+  - The darkness deepens, and figures begin to rise from the ground. The skeletons,
+    still coated with clinging dirt, slowly stretch their bony limbs. The stench
+    of decay thickens as the air fills with the creak of old metal and the snap of
+    bones. The undead assemble, encircling the heroes from all sides.
   debuffText:
-  - Caleb has gained the "Bleeding" status. This will gradually reduce his health
-    until treated.
-  - "Caesar opened the door. There were no traps or obstacles \u2013 it was just
-    a regular door..."
-  - Hector has suffered a minor injury from a stone shard. His movement speed is
-    now slightly reduced.
+  - Hector gains a "Damage Buff," temporarily increasing his attack power for the
+    next battles.
+  - Hector receives the "Slowed" status in the next battle due to carrying the heavy
+    barrel.
+  - 'The heroes gain no benefit and continue their journey without any consequences. '
   charColor: {r: 0, g: 0, b: 0, a: 0}
   bgColor: {r: 0, g: 0, b: 0, a: 0}
   faderColor: {r: 0, g: 0, b: 0, a: 0}
-  charqueue: 0300000003000000020000000000000001000000030000000300000003000000670000000300000003000000
+  charqueue: 03000000030000000300000001000000000000000300000002000000030000000300000003000000670000000300000003000000
 --- !u!114 &980074589
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1729,7 +1739,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Anoint the statue with blood
+  m_text: Take the barrel with you
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 39501046fd8f1234cb56f677f6efa1d4, type: 2}
   m_sharedMaterial: {fileID: -3766221642715184230, guid: 39501046fd8f1234cb56f677f6efa1d4, type: 2}
@@ -2134,7 +2144,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Smash the statue
+  m_text: Drink from the barrel
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 39501046fd8f1234cb56f677f6efa1d4, type: 2}
   m_sharedMaterial: {fileID: -3766221642715184230, guid: 39501046fd8f1234cb56f677f6efa1d4, type: 2}
@@ -2462,7 +2472,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 01631163f43352945899799910599f25, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e4fa06d568e20684291818e66cee60c3, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2636,8 +2646,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 1090249166, guid: f285727fe05962f4eb7f5c16d0fd07c4, type: 3}
-  m_Type: 0
+  m_Sprite: {fileID: -113711518, guid: 7fae6c66361661246bc8a4329a7c3b92, type: 3}
+  m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -2758,10 +2768,9 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Focused, Caesar examines the door and presses against
-            its surface. With a loud creak, the door begins to open, requiring nothing
-            in return. Beyond it lies a long, dark corridor. The others look at him
-            in astonishment
+          m_StringArgument: Skeptically eyeing the barrel, the party decides to leave
+            it untouched and move on. The mystery of the ancient drink remains unsolved,
+            but they avoid any potential risks.
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1976927655
