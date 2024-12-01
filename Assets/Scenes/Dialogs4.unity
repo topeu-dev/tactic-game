@@ -1016,12 +1016,12 @@ MonoBehaviour:
   - {fileID: 435775920}
   audios:
   - {fileID: 8300000, guid: 98bc8fbf1a4b83e45b33e1421b8f98d9, type: 3}
-  - {fileID: 8300000, guid: 476058d8e67e76348815052e74f64473, type: 3}
-  - {fileID: 8300000, guid: 5819a4c9da4c1764d8c139bd0f554c1d, type: 3}
-  - {fileID: 8300000, guid: 899b460910f72044d93677cfbe006387, type: 3}
-  - {fileID: 8300000, guid: 0e5f346dc9d396e49bf54062aca9d912, type: 3}
-  - {fileID: 8300000, guid: a8be3328dc57fb6489eaa543ace30333, type: 3}
-  - {fileID: 8300000, guid: b61adc44eac009b4bbe173742b4ed893, type: 3}
+  - {fileID: 8300000, guid: 4bf4d2ef143efc04b8e5089fe2c5e568, type: 3}
+  - {fileID: 8300000, guid: e07f11d97cdd61d4884cb0b5cbebc81e, type: 3}
+  - {fileID: 8300000, guid: 03d13b72c38fb4d4e9dd7990700f3393, type: 3}
+  - {fileID: 8300000, guid: 3075ce21de82eda449c0adceb260c768, type: 3}
+  - {fileID: 8300000, guid: 6fb4cb344675d9e47b690a7812ab6f5a, type: 3}
+  - {fileID: 8300000, guid: 1f36eed3c74823440abca9856dc75d47, type: 3}
   audiosByChoose: []
   source: {fileID: 75322549}
   fadespeed: 1
@@ -1036,7 +1036,7 @@ MonoBehaviour:
   - We did it, the book is ours
   - ' A thousand years in a tomb, and here we are. In the end, he was just an old
     skeleton'
-  - And we went through all this for a book? Well, if it's worth even half of what
+  - And we went through all this for this? Well, if it's worth even half of what
     we've been through...
   - Doesn't matter. The important thing is we won. Now, where's the exit?
   - Having survived countless trials, the heroes finally opened the tavern they had
@@ -1536,7 +1536,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1

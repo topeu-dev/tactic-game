@@ -139,10 +139,10 @@ TextureImporter:
       name: anastasialuky_A_2D_game_character_featuring_a_full_body_skeleto_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 744
-        width: 2272
-        height: 1400
+        x: 949
+        y: 859
+        width: 1323
+        height: 1285
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}

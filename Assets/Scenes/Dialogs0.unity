@@ -994,10 +994,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9c0b1829b26c4842b1449c8679b2608, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxcount: 100
   fader: {fileID: 670718606}
   nextScene: 1
   isChoosing: 0
   speaker: {fileID: 2013773190}
+  debuffTextBox: {fileID: 0}
   buttonStart: {fileID: 1682020461}
   names:
   - Hector
@@ -1014,19 +1016,20 @@ MonoBehaviour:
   - {fileID: 435775920}
   audios:
   - {fileID: 8300000, guid: 7b5ab994130772f429fe32dc5d1d839f, type: 3}
-  - {fileID: 8300000, guid: 476058d8e67e76348815052e74f64473, type: 3}
+  - {fileID: 8300000, guid: 42c975e0513956f4aaa8e424310dcea6, type: 3}
   - {fileID: 8300000, guid: 5819a4c9da4c1764d8c139bd0f554c1d, type: 3}
   - {fileID: 8300000, guid: 899b460910f72044d93677cfbe006387, type: 3}
-  - {fileID: 8300000, guid: 0e5f346dc9d396e49bf54062aca9d912, type: 3}
+  - {fileID: 8300000, guid: 347d41f5ff5ac784685e7a08ec4ffba7, type: 3}
   - {fileID: 8300000, guid: a8be3328dc57fb6489eaa543ace30333, type: 3}
-  - {fileID: 8300000, guid: b61adc44eac009b4bbe173742b4ed893, type: 3}
+  - {fileID: 8300000, guid: 17b403e345081d24b930544aee3c25bd, type: 3}
   - {fileID: 8300000, guid: ab96d71d0e7acbd40a2db6c9e3a30589, type: 3}
   - {fileID: 8300000, guid: deaa1adf2d3b0234a98ec332d70e4037, type: 3}
   - {fileID: 8300000, guid: cce3dcbf4ec38b8499bb1cdaf543fa0a, type: 3}
   - {fileID: 8300000, guid: 061537ffa9c528840bbdee610c4acaac, type: 3}
   - {fileID: 8300000, guid: a68fdde018cf9be40bd5e19f87bc0f6a, type: 3}
-  - {fileID: 8300000, guid: 0eee78de046107b4f980094b729c511e, type: 3}
-  - {fileID: 8300000, guid: 8d1b227d155e894449368f9098edf578, type: 3}
+  - {fileID: 8300000, guid: 6c5ae8b4de302bb44a7dc906de55b411, type: 3}
+  - {fileID: 8300000, guid: 0aec4d0b90d5e7046af5d5ed30acb9dc, type: 3}
+  audiosByChoose: []
   source: {fileID: 75322549}
   fadespeed: 1
   bgfadespeed: 1
@@ -1074,14 +1077,11 @@ MonoBehaviour:
     its empty eye sockets burn with an eerie blue glow. It leans on a curved, rusted
     blade stained with old, dried blood. At that moment, dark clouds gather in the
     sky, shrouding the last rays of sunlight\u2026 "
-  container: {fileID: 429833433}
+  debuffText: []
   charColor: {r: 0, g: 0, b: 0, a: 0}
   bgColor: {r: 0, g: 0, b: 0, a: 0}
   faderColor: {r: 0, g: 0, b: 0, a: 0}
   charqueue: 0300000000000000010000000200000000000000020000006700000001000000000000000200000000000000010000000300000067000000
-  m_Raycaster: {fileID: 980074589}
-  m_EventSystem: {fileID: 1690341373}
-  canvasRect: {fileID: 980074592}
 --- !u!114 &980074589
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1567,7 +1567,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1

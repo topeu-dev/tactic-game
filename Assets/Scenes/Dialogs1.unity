@@ -1551,8 +1551,8 @@ MonoBehaviour:
   - {fileID: 1971133132}
   - {fileID: 435775920}
   audios:
-  - {fileID: 8300000, guid: 16f3dbe0f76adca4d986f5ce595330c0, type: 3}
-  - {fileID: 8300000, guid: 16f3dbe0f76adca4d986f5ce595330c0, type: 3}
+  - {fileID: 8300000, guid: e43b4b9b0c549374dab9ab5bffe39a7c, type: 3}
+  - {fileID: 8300000, guid: 6c76c5bcca22c4f4ca2ba2dcb1654df0, type: 3}
   - {fileID: 8300000, guid: 31ba6bd15ab1c384aacd98c5197f3aa2, type: 3}
   - {fileID: 8300000, guid: 43c7536a57cf21845bfb4795b1649582, type: 3}
   - {fileID: 8300000, guid: 2bfae4c3f406a0945aa57e038df47fb7, type: 3}
@@ -1561,7 +1561,6 @@ MonoBehaviour:
   - {fileID: 8300000, guid: ed417cb693bff0145971e6fb2f33b79c, type: 3}
   - {fileID: 8300000, guid: c146b2c0efbff6d4ab2e13ed1c665c96, type: 3}
   - {fileID: 8300000, guid: fab3564d96e794f41894862fb1a506fe, type: 3}
-  - {fileID: 8300000, guid: cb4cf420c6ad345498e2fb7bd5e1866d, type: 3}
   audiosByChoose:
   - {fileID: 8300000, guid: 4eebbbef7a60d15478fd43530468e4e8, type: 3}
   - {fileID: 8300000, guid: d11f34b65b268e84d8f7af4e6262012a, type: 3}
@@ -1598,10 +1597,6 @@ MonoBehaviour:
   - "From the depths of the library comes a rustling sound, followed by a creak,
     as if something heavy is being dragged across the floor. The heroes freeze, straining
     to listen, but it\u2019s too late \u2013 shapes emerge from the shadows"
-  - 'These are not just warriors of the undead. Before them stand librarians of the
-    past: twisted, desiccated bodies with remnants of clothing and skeletal fingers
-    grasping at the air. As soon as they spot the intruders, they charge forward
-    with hostile intent'
   debuffText:
   - Caleb has gained the "Bleeding" status. This will gradually reduce his health
     until treated
@@ -1612,7 +1607,7 @@ MonoBehaviour:
   charColor: {r: 0, g: 0, b: 0, a: 0}
   bgColor: {r: 0, g: 0, b: 0, a: 0}
   faderColor: {r: 0, g: 0, b: 0, a: 0}
-  charqueue: 0300000003000000020000000000000001000000030000000300000003000000670000000300000003000000
+  charqueue: 03000000030000000200000000000000010000000300000003000000030000006700000003000000
 --- !u!114 &980074589
 MonoBehaviour:
   m_ObjectHideFlags: 0
