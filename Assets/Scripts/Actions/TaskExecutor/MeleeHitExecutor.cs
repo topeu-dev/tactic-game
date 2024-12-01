@@ -36,7 +36,7 @@ namespace Actions.TaskExecutor
             }
 
             activeChar.transform.LookAt(hitTarget.transform);
-            // audioRef.PlayOneShot(actionInstance.actionDescription.audioClip);
+            audioRef.PlayOneShot(actionInstance.actionDescription.audioClip);
             _animatorRef.SetTrigger(AnimTriggers.MeleeHit);
             actionInstance.Used();
 

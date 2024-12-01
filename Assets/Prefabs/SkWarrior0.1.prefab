@@ -5142,11 +5142,11 @@ CapsuleCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.4
+  m_Radius: 0.3
   m_Height: 2.2
   m_Direction: 1
   m_Center: {x: 0, y: 0.98, z: 0}
@@ -5172,12 +5172,12 @@ NavMeshAgent:
   m_GameObject: {fileID: 5059282068358603421}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.35
+  m_Radius: 0.5
   m_Speed: 8
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 360
-  m_StoppingDistance: 0
+  m_StoppingDistance: 1.5
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
@@ -5624,6 +5624,18 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 50
       objectReference: {fileID: 0}
+    - target: {fileID: 167737369494223750, guid: 929dcf9add853394f9793e87f59c4932, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 374436176559223743, guid: 929dcf9add853394f9793e87f59c4932, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1189573136752036749, guid: 929dcf9add853394f9793e87f59c4932, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1741983219221390587, guid: 929dcf9add853394f9793e87f59c4932, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -5716,9 +5728,29 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -1.144
       objectReference: {fileID: 0}
+    - target: {fileID: 3317390746348335477, guid: 929dcf9add853394f9793e87f59c4932, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4220168590718716665, guid: 929dcf9add853394f9793e87f59c4932, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4251842349826545466, guid: 929dcf9add853394f9793e87f59c4932, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4679607799551970797, guid: 929dcf9add853394f9793e87f59c4932, type: 3}
       propertyPath: m_Camera
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5489108856674110297, guid: 929dcf9add853394f9793e87f59c4932, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5761399545631568504, guid: 929dcf9add853394f9793e87f59c4932, type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6221431906906019497, guid: 929dcf9add853394f9793e87f59c4932, type: 3}
       propertyPath: m_AnchorMax.x
@@ -5735,6 +5767,14 @@ PrefabInstance:
     - target: {fileID: 6976433587360444348, guid: 929dcf9add853394f9793e87f59c4932, type: 3}
       propertyPath: m_Name
       value: HpBar
+      objectReference: {fileID: 0}
+    - target: {fileID: 6976433587360444348, guid: 929dcf9add853394f9793e87f59c4932, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7604653920893142106, guid: 929dcf9add853394f9793e87f59c4932, type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

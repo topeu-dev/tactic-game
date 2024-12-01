@@ -19405,6 +19405,18 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 50
       objectReference: {fileID: 0}
+    - target: {fileID: 167737369494223750, guid: 929dcf9add853394f9793e87f59c4932, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 374436176559223743, guid: 929dcf9add853394f9793e87f59c4932, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1189573136752036749, guid: 929dcf9add853394f9793e87f59c4932, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1741983219221390587, guid: 929dcf9add853394f9793e87f59c4932, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -19497,9 +19509,29 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -1.144
       objectReference: {fileID: 0}
+    - target: {fileID: 3317390746348335477, guid: 929dcf9add853394f9793e87f59c4932, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4220168590718716665, guid: 929dcf9add853394f9793e87f59c4932, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4251842349826545466, guid: 929dcf9add853394f9793e87f59c4932, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4679607799551970797, guid: 929dcf9add853394f9793e87f59c4932, type: 3}
       propertyPath: m_Camera
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5489108856674110297, guid: 929dcf9add853394f9793e87f59c4932, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5761399545631568504, guid: 929dcf9add853394f9793e87f59c4932, type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6221431906906019497, guid: 929dcf9add853394f9793e87f59c4932, type: 3}
       propertyPath: m_AnchorMax.x
@@ -19516,6 +19548,14 @@ PrefabInstance:
     - target: {fileID: 6976433587360444348, guid: 929dcf9add853394f9793e87f59c4932, type: 3}
       propertyPath: m_Name
       value: HpBar
+      objectReference: {fileID: 0}
+    - target: {fileID: 6976433587360444348, guid: 929dcf9add853394f9793e87f59c4932, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7604653920893142106, guid: 929dcf9add853394f9793e87f59c4932, type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -20180,6 +20220,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 4957605393579145644, guid: db8ee4fe0d057ed4caf72dad62e70a9b, type: 3}
       insertIndex: -1
       addedObject: {fileID: 546252309731824884}
+    - targetCorrespondingSourceObject: {fileID: 4957605393579145644, guid: db8ee4fe0d057ed4caf72dad62e70a9b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8531390872959939554}
   m_SourcePrefab: {fileID: 100100000, guid: db8ee4fe0d057ed4caf72dad62e70a9b, type: 3}
 --- !u!4 &2644357818851605190 stripped
 Transform:
@@ -20323,7 +20366,7 @@ NavMeshAgent:
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 360
-  m_StoppingDistance: 0
+  m_StoppingDistance: 1.5
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
@@ -20466,6 +20509,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &8531390872959939554
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2644357819290615226}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73e91b1762704d1088076ea675628178, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioRef: {fileID: 0}
 --- !u!4 &2644357819398904889 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4957605394525706287, guid: db8ee4fe0d057ed4caf72dad62e70a9b, type: 3}

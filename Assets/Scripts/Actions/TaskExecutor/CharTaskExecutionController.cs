@@ -22,6 +22,9 @@ public class CharTaskExecutionController : MonoBehaviour, TaskExecutor
             case "Raycast":
                 gameObject.GetComponent<HitScanExecutor>().HitScan(actionInstance, actionContext, callback);
                 break;
+            case "ApplyRage":
+                gameObject.GetComponent<HitScanExecutor>().HitScan(actionInstance, actionContext, callback);
+                break;  
             default:
                 Debug.Log("Error: gameObject: " + gameObject.name + " doesn't know how to execute " +
                           actionInstance.actionDescription.actionName);

@@ -230,6 +230,7 @@ public class InputController : MonoBehaviour
 
     private bool CanApplyActionToClickedObject(GameObject clickedObject)
     {
+        Debug.Log(clickedObject.name +  " " + selectedAction.actionDescription.actionName + " " + selectedAction.actionDescription.possibleObjectsToApply.Contains(clickedObject.tag));
         return selectedAction.actionDescription.possibleObjectsToApply.Contains(clickedObject.tag);
     }
 
