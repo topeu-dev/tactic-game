@@ -20,6 +20,7 @@ namespace Actions
         public string actionName;
         public string description;
         public Sprite icon;
+        public Sprite iconDescription; 
 
         //Tags
         public List<string> possibleObjectsToApply;

@@ -15,6 +15,7 @@ MonoBehaviour:
   actionName: Move
   description: Go to cell
   icon: {fileID: 21300000, guid: 328b1bfa8fbcfe64c996ee588bdb8c5e, type: 3}
+  iconDescription: {fileID: 21300000, guid: e462553cbd521c54a99a178bae877f30, type: 3}
   possibleObjectsToApply:
   - BattleField
   actionVisualizerType: 2

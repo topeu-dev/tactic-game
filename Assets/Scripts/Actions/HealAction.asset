@@ -15,6 +15,7 @@ MonoBehaviour:
   actionName: Heal
   description: Qwerty
   icon: {fileID: 21300000, guid: cba492624c185984795ce38001542b51, type: 3}
+  iconDescription: {fileID: 21300000, guid: ef385575a17d09c43a25451f5bbc33ec, type: 3}
   possibleObjectsToApply:
   - PlayableChar
   actionVisualizerType: 3
