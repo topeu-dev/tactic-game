@@ -221,6 +221,22 @@ public class TypeEffect : MonoBehaviour
   {
     PlayerPrefs.SetInt("barrel", 1);
   }
+  public void SetPlayerPref1()
+  {
+    PlayerPrefs.SetString("Hector", "slow");
+  }
+  public void SetPlayerPref2()
+  {
+    PlayerPrefs.SetString("Caleb", "bleed");
+  }
+  public void SetPlayerPref3()
+  {
+    PlayerPrefs.SetString("Hector", "buff");
+  }
+  public void SetPlayerPref4()
+  {
+    PlayerPrefs.SetString("Boss", "fury");
+  }
   public void NewMaxCount(int i)
   {
     maxcount = i;

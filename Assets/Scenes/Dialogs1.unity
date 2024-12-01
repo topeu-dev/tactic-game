@@ -435,6 +435,18 @@ MonoBehaviour:
             Later, he pushes the door, which simply opens
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 980074588}
+        m_TargetAssemblyTypeName: TypeEffect, Assembly-CSharp
+        m_MethodName: SetPlayerPref1
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &375342468
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1345,6 +1357,18 @@ MonoBehaviour:
             door, which simply opens
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 980074588}
+        m_TargetAssemblyTypeName: TypeEffect, Assembly-CSharp
+        m_MethodName: SetPlayerPref2
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &728128814
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1507,6 +1531,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9c0b1829b26c4842b1449c8679b2608, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxcount: 100
   fader: {fileID: 670718606}
   nextScene: 2
   isChoosing: 1
