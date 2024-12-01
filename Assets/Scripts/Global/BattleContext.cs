@@ -25,16 +25,17 @@ namespace Global
             _charactersInBattle.Remove(arg1);
             if (getOnlyPlayerCharactersInBattle().Count == 0)
             {
-                winPanel.SetActive(true);
-                GetComponent<AudioSource>().clip = win;
+                losePanel.SetActive(true);
+                GetComponent<AudioSource>().clip = lose;
                 GetComponent<AudioSource>().Play();
                 Debug.Log("GAME OVER GGWP");
             }
 
             if (getOnlyEnemiesInBattle().Count == 0)
             {
-                losePanel.SetActive(true);
-                GetComponent<AudioSource>().clip = lose;
+        
+                winPanel.SetActive(true);
+                GetComponent<AudioSource>().clip = win;
                 GetComponent<AudioSource>().Play();
                 Debug.Log("U WON, WELL PLAYED!");
             }
