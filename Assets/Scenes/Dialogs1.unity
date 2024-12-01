@@ -1094,15 +1094,15 @@ MonoBehaviour:
       m_Calls: []
   m_text: Ignore the statue
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 39501046fd8f1234cb56f677f6efa1d4, type: 2}
-  m_sharedMaterial: {fileID: -3766221642715184230, guid: 39501046fd8f1234cb56f677f6efa1d4, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278190080
-  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -1551,8 +1551,8 @@ MonoBehaviour:
   - {fileID: 1971133132}
   - {fileID: 435775920}
   audios:
-  - {fileID: 8300000, guid: 16f3dbe0f76adca4d986f5ce595330c0, type: 3}
-  - {fileID: 8300000, guid: 2fb0103c97c8aef4081460fbbf2c110c, type: 3}
+  - {fileID: 8300000, guid: e43b4b9b0c549374dab9ab5bffe39a7c, type: 3}
+  - {fileID: 8300000, guid: 6c76c5bcca22c4f4ca2ba2dcb1654df0, type: 3}
   - {fileID: 8300000, guid: 31ba6bd15ab1c384aacd98c5197f3aa2, type: 3}
   - {fileID: 8300000, guid: 43c7536a57cf21845bfb4795b1649582, type: 3}
   - {fileID: 8300000, guid: 2bfae4c3f406a0945aa57e038df47fb7, type: 3}
@@ -1576,38 +1576,38 @@ MonoBehaviour:
   - The heroes enter a dark chamber, illuminated only by the faint light of the torch
     Caesar is holding. The air is heavy and stale, the walls covered in ancient symbols
     and cracks. On the opposite side of the room stands a massive stone door etched
-    with mysterious inscriptions.
+    with mysterious inscriptions
   - Beside the door is an ancient idol shaped like a bird with outstretched wings.
-    Its stone eyes seem to follow every movement.
+    Its stone eyes seem to follow every movement
   - "This idol... I've read about these. They\u2019re said to be connected to the
     spirits of the tombs. To move forward, a sacrifice is required. It must be anointed
-    with blood."
+    with blood"
   - "Blood? Seriously? That\u2019s just some stupid legend. I say we just smash the
-    thing."
+    thing"
   - "No blood, no smashing. The idol\u2019s a distraction. I\u2019ll bet gold the
-    door opens without it."
+    door opens without it"
   - 
   - 
-  - 'After wandering through the corridors for what felt like ages, the heroes''
-    path ends at a wide archway. Caesar is the first to step into a spacious hall,
-    his eyes widening in awe:'
+  - After wandering through the corridors for what felt like ages, the heroes' path
+    ends at a wide archway. Caesar is the first to step into a spacious hall, his
+    eyes widening in awe
   - "shelves lined with ancient books stretch all the way to the ceiling, forming
     a labyrinth of forgotten knowledge. The air is heavy with the scent of aged paper
-    and decay. But the silence doesn\u2019t last for long."
+    and decay. But the silence doesn\u2019t last for long"
   - "From the depths of the library comes a rustling sound, followed by a creak,
     as if something heavy is being dragged across the floor. The heroes freeze, straining
-    to listen, but it\u2019s too late \u2013 shapes emerge from the shadows..."
+    to listen, but it\u2019s too late \u2013 shapes emerge from the shadows"
   debuffText:
   - Caleb has gained the "Bleeding" status. This will gradually reduce his health
-    until treated.
+    until treated
   - "Caesar opened the door. There were no traps or obstacles \u2013 it was just
-    a regular door..."
+    a regular door"
   - Hector has suffered a minor injury from a stone shard. His movement speed is
-    now slightly reduced.
+    now slightly reduced
   charColor: {r: 0, g: 0, b: 0, a: 0}
   bgColor: {r: 0, g: 0, b: 0, a: 0}
   faderColor: {r: 0, g: 0, b: 0, a: 0}
-  charqueue: 0300000003000000020000000000000001000000030000000300000003000000670000000300000003000000
+  charqueue: 03000000030000000200000000000000010000000300000003000000030000006700000003000000
 --- !u!114 &980074589
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1756,15 +1756,15 @@ MonoBehaviour:
       m_Calls: []
   m_text: Anoint the statue with blood
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 39501046fd8f1234cb56f677f6efa1d4, type: 2}
-  m_sharedMaterial: {fileID: -3766221642715184230, guid: 39501046fd8f1234cb56f677f6efa1d4, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278190080
-  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -2025,7 +2025,7 @@ MonoBehaviour:
   m_text: Hector has suffered a minor injury from a stone shard. His movement speed
     is now slightly reduced.
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 39501046fd8f1234cb56f677f6efa1d4, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -2033,7 +2033,7 @@ MonoBehaviour:
   m_fontColor32:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -2057,7 +2057,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 2
+  m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -2091,7 +2091,7 @@ MonoBehaviour:
   m_margin: {x: -339.2057, y: 0, z: -398.75952, w: -287.43835}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 1
+  m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &1423868783
@@ -2161,15 +2161,15 @@ MonoBehaviour:
       m_Calls: []
   m_text: Smash the statue
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 39501046fd8f1234cb56f677f6efa1d4, type: 2}
-  m_sharedMaterial: {fileID: -3766221642715184230, guid: 39501046fd8f1234cb56f677f6efa1d4, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278190080
-  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:

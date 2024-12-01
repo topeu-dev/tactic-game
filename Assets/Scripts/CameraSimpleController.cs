@@ -73,7 +73,7 @@ public class CameraSimpleController : MonoBehaviour
     {
         HandleMovementInput();
         MoveCameraToTargetSmooth();
-        HandleScreenEdgeMovement();
+        //HandleScreenEdgeMovement();
         HandleZoom();
     }
     

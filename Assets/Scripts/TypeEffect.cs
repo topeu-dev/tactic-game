@@ -46,7 +46,7 @@ public class TypeEffect : MonoBehaviour
 
     private void Start()
     {
-        if (PlayerPrefs.GetInt("barrel") == 1 || isChoosing)
+        if (PlayerPrefs.GetInt("barrel") == 1)
         {
             maxcount = 100;
             isChoosing = true;
