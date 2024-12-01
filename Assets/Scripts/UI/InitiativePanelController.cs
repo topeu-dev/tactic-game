@@ -5,7 +5,6 @@ using System.Collections.Generic;
 using Turn;
 using UnityEngine;
 using UnityEngine.UI;
-using static UnityEditor.Progress;
 
 namespace UI
 {
