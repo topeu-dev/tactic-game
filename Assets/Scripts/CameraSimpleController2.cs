@@ -71,6 +71,8 @@ public class CameraSimpleController2 : MonoBehaviour
 
     private void OnPlayableCharacterFocusEvent(Component arg0, GameObject arg1)
     {
+        // var adjustTarget = new Vector3(arg1.transform.position.x - 18f, arg1.transform.position.y, arg1.transform.position.z + 14f);
+        // _targetPosition = adjustTarget;
         _targetPosition = arg1.transform.position;
     }
 
