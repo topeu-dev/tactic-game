@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d25881e2a0848059f3c093f6aaf59f4, type: 3}
   m_Name: WarlordAoe
   m_EditorClassIdentifier: 
-  actionName: MeleeAoeHit
+  actionName: WarlordAoe
   description: some
   icon: {fileID: 21300000, guid: 2523a9d639d37e5499c92411208f432c, type: 3}
+  iconDescription: {fileID: 0}
   possibleObjectsToApply:
   - Enemy
   actionVisualizerType: 5

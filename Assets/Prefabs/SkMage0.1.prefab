@@ -5557,6 +5557,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 5605319319537555642, guid: dbef58bc5d3f27c4a9710a553651fed4, type: 3}
       insertIndex: -1
       addedObject: {fileID: 8818780842157421291}
+    - targetCorrespondingSourceObject: {fileID: 5605319319537555642, guid: dbef58bc5d3f27c4a9710a553651fed4, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5820832421464947590}
+    - targetCorrespondingSourceObject: {fileID: 5605319319537555642, guid: dbef58bc5d3f27c4a9710a553651fed4, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 9138017237047843751}
   m_SourcePrefab: {fileID: 100100000, guid: dbef58bc5d3f27c4a9710a553651fed4, type: 3}
 --- !u!1 &3071705924254196510 stripped
 GameObject:
@@ -5799,6 +5805,32 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &5820832421464947590
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3071705924254196510}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99ce8f96d02f4022a2d0fd917e5b57a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  distanceThreshold: 2.5
+--- !u!114 &9138017237047843751
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3071705924254196510}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73e91b1762704d1088076ea675628178, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioRef: {fileID: 0}
 --- !u!4 &3071705924254432942 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5605319319537583370, guid: dbef58bc5d3f27c4a9710a553651fed4, type: 3}

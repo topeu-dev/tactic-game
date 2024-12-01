@@ -20229,7 +20229,7 @@ MonoBehaviour:
     minDmg: 0
     maxDmg: 0
   - actionDescription: {fileID: 11400000, guid: b55f1a2dfe81bcc4ca6d7d9dc3514860, type: 2}
-    cooldown: 0
+    cooldown: 1
     distance: 12
     aoe: 0
     minDmg: 10

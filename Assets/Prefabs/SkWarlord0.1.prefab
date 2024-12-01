@@ -9860,6 +9860,18 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 9095325986078031204, guid: db4c661689009b142aecea90e9593f53, type: 3}
       insertIndex: -1
       addedObject: {fileID: 5401613234281604419}
+    - targetCorrespondingSourceObject: {fileID: 9095325986078031204, guid: db4c661689009b142aecea90e9593f53, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 519703395647573399}
+    - targetCorrespondingSourceObject: {fileID: 9095325986078031204, guid: db4c661689009b142aecea90e9593f53, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3532875556127135712}
+    - targetCorrespondingSourceObject: {fileID: 9095325986078031204, guid: db4c661689009b142aecea90e9593f53, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1965281328266853886}
+    - targetCorrespondingSourceObject: {fileID: 9095325986078031204, guid: db4c661689009b142aecea90e9593f53, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1503487615676973609}
   m_SourcePrefab: {fileID: 100100000, guid: db4c661689009b142aecea90e9593f53, type: 3}
 --- !u!4 &8670163269764450467 stripped
 Transform:
@@ -9983,7 +9995,7 @@ MonoBehaviour:
   - actionDescription: {fileID: 11400000, guid: d7471738070c445428d03798a86dc337, type: 2}
     cooldown: 5
     distance: 0
-    aoe: 45
+    aoe: 150
     minDmg: 7
     maxDmg: 9
   - actionDescription: {fileID: 11400000, guid: 0f68f778ee775b6408d219c798fe1440, type: 2}
@@ -10151,6 +10163,58 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &519703395647573399
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8670163269764552039}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73e91b1762704d1088076ea675628178, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioRef: {fileID: 0}
+--- !u!114 &3532875556127135712
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8670163269764552039}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5b4f181e8bf41bdb4aeeef37893101b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioRef: {fileID: 0}
+--- !u!114 &1965281328266853886
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8670163269764552039}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b093be3d6d144188ba26674aa02d5070, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioRef: {fileID: 0}
+--- !u!114 &1503487615676973609
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8670163269764552039}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99ce8f96d02f4022a2d0fd917e5b57a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  distanceThreshold: 2
 --- !u!1001 &1685352260509736386
 PrefabInstance:
   m_ObjectHideFlags: 0
