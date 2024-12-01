@@ -18,20 +18,20 @@ EditorBuildSettings:
     path: Assets/Scenes/Dialogs1.unity
     guid: ec7558d22e682374984596d354144838
   - enabled: 1
-    path: Assets/Scenes/1Battle 2.unity
-    guid: 281d4eeecd408c14bbdec3e60a80f150
+    path: Assets/Scenes/2Battle_new.unity
+    guid: e7d42fa47c5026b43909ef5106ea1407
   - enabled: 1
     path: Assets/Scenes/Dialogs2.unity
     guid: ae45b7ba3c1120347b6df6cd96b710e5
   - enabled: 1
-    path: Assets/Scenes/1Battle 3.unity
-    guid: 8f5ea7484080320439cdb6c55499d010
+    path: Assets/Scenes/3Battle_new.unity
+    guid: 6bfd6bdb481506246884279ee5dbbc05
   - enabled: 1
     path: Assets/Scenes/Dialogs3.unity
     guid: fee7737a55173a34c912295daa2b40ad
   - enabled: 1
-    path: Assets/Scenes/1Battle 4.unity
-    guid: 7016c8ebdfbb8e14a8c8e020c89a1ff9
+    path: Assets/Scenes/4Battle_new.unity
+    guid: 84f3b73314d367445bf1d9245c8a9429
   - enabled: 1
     path: Assets/Scenes/Dialogs4.unity
     guid: 3b589a26d06af804093d6852d2ec21c3
