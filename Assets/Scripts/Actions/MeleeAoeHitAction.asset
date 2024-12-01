@@ -15,6 +15,7 @@ MonoBehaviour:
   actionName: MeleeAoeHit
   description: some
   icon: {fileID: 21300000, guid: 2523a9d639d37e5499c92411208f432c, type: 3}
+  iconDescription: {fileID: 21300000, guid: 1ef82e8fa4305514e9aedbb6514f3f0a, type: 3}
   possibleObjectsToApply:
   - Enemy
   actionVisualizerType: 5

@@ -14,6 +14,7 @@ public class HUDController : MonoBehaviour
 
     public GameObject actionPanel;
     public List<GameObject> actionPlaceholders = new();
+    public List<GameObject> hintPlaceholders = new();
     public GameObject notificationBar;
     public GameObject endOfTurnButton;
 
@@ -71,6 +72,7 @@ public class HUDController : MonoBehaviour
     {
         actionPanel.SetActive(true);
         var buttons = actionPlaceholders;
+        var hints = hintPlaceholders;
 
         for (var i = 0; i < buttons.Count; i++)
         {
@@ -85,9 +87,11 @@ public class HUDController : MonoBehaviour
             }
 
             var iconPlaceHolder = buttons[i].GetComponent<Image>();
+            var hintPlaceHolder = hints[i].GetComponent<Image>();
 
             if (i < actions.Count && actions[i] != null)
             {
+                hintPlaceHolder.sprite = actions[i].actionDescription.iconDescription;
                 iconPlaceHolder.sprite = actions[i].actionDescription.icon;
                 iconPlaceHolder.enabled = true;
                 var textMeshProUGUI = buttons[i].GetComponentInChildren<TextMeshProUGUI>();
@@ -117,8 +121,16 @@ public class HUDController : MonoBehaviour
         }
     }
 
+  public void EnableHint(int i)
+  {
+    hintPlaceholders[i].gameObject.SetActive(true);
+  }
+  public void DisableHint(int i)
+  {
+    hintPlaceholders[i].gameObject.SetActive(false);
+  }
 
-    private void ShowErrorNotification(Component arg0, string text)
+  private void ShowErrorNotification(Component arg0, string text)
     {
         notificationBar.GetComponent<TextMeshProUGUI>().text = text;
         StartCoroutine(showNotification());

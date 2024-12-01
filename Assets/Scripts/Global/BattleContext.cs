@@ -6,6 +6,8 @@ namespace Global
 {
     public class BattleContext : MonoBehaviour
     {
+        public GameObject winPanel, losePanel;
+        public AudioClip win,lose;
         private readonly Dictionary<GameObject, CharacterInfo> _charactersInBattle = new();
 
         private void OnEnable()
@@ -23,13 +25,17 @@ namespace Global
             _charactersInBattle.Remove(arg1);
             if (getOnlyPlayerCharactersInBattle().Count == 0)
             {
-                // TODO GAME OVER EVENT
+                winPanel.SetActive(true);
+                GetComponent<AudioSource>().clip = win;
+                GetComponent<AudioSource>().Play();
                 Debug.Log("GAME OVER GGWP");
             }
 
             if (getOnlyEnemiesInBattle().Count == 0)
             {
-                // TODO U WON!
+                losePanel.SetActive(true);
+                GetComponent<AudioSource>().clip = lose;
+                GetComponent<AudioSource>().Play();
                 Debug.Log("U WON, WELL PLAYED!");
             }
         }
