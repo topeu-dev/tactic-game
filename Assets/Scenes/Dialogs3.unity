@@ -325,166 +325,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 79992935}
   m_CullTransparentMesh: 1
---- !u!1 &375342465
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 375342466}
-  - component: {fileID: 375342469}
-  - component: {fileID: 375342468}
-  - component: {fileID: 375342467}
-  m_Layer: 5
-  m_Name: Button (2)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &375342466
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 375342465}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1533886057}
-  m_Father: {fileID: 435775923}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.7, y: 0.2}
-  m_AnchorMax: {x: 1, y: 0.8}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &375342467
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 375342465}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Navigation:
-    m_Mode: 3
-    m_WrapAround: 0
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
-  m_Colors:
-    m_NormalColor: {r: 0.381132, g: 0.37322173, b: 0.37322173, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
-    m_ColorMultiplier: 1
-    m_FadeDuration: 0.1
-  m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
-  m_AnimationTriggers:
-    m_NormalTrigger: Normal
-    m_HighlightedTrigger: Highlighted
-    m_PressedTrigger: Pressed
-    m_SelectedTrigger: Selected
-    m_DisabledTrigger: Disabled
-  m_Interactable: 1
-  m_TargetGraphic: {fileID: 375342468}
-  m_OnClick:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 980074588}
-        m_TargetAssemblyTypeName: TypeEffect, Assembly-CSharp
-        m_MethodName: Choose
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 2
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 980074588}
-        m_TargetAssemblyTypeName: TypeEffect, Assembly-CSharp
-        m_MethodName: Choose
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: With a powerful swing, Hector smashes the idol into pieces.
-            The shards scatter in all directions, and one of them bounces back, striking
-            his leg. Hector mutters a curse under his breath as he grabs at the injury.
-            Later, he pushes the door, which simply opens
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 980074588}
-        m_TargetAssemblyTypeName: TypeEffect, Assembly-CSharp
-        m_MethodName: SetPlayerPref1
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
---- !u!114 &375342468
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 375342465}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 6f410509213de3e448f8e60dbf12d40c, type: 3}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
---- !u!222 &375342469
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 375342465}
-  m_CullTransparentMesh: 1
 --- !u!1 &395358362
 GameObject:
   m_ObjectHideFlags: 0
@@ -588,7 +428,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 7.0690613, y: 31.70121, z: 0, w: -33.793762}
+  m_margin: {x: 3.8050537, y: 2.6572866, z: 0, w: 2.3121986}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -616,10 +456,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1971133133}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.14025061, y: 0.67300004}
-  m_AnchorMax: {x: 0.37328416, y: 0.7748924}
-  m_AnchoredPosition: {x: -5, y: 33}
-  m_SizeDelta: {x: 10, y: -4}
+  m_AnchorMin: {x: 0.12900001, y: 0.6705846}
+  m_AnchorMax: {x: 0.365, y: 0.78652316}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &429833432
 GameObject:
@@ -653,7 +493,7 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1971133133}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.1677518, y: 0.22027673}
+  m_AnchorMin: {x: 0.1677518, y: 0.18032297}
   m_AnchorMax: {x: 0.89425063, y: 0.58050805}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
@@ -717,7 +557,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 14.8
+  m_fontSize: 15.75
   m_fontSizeBase: 44
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -755,7 +595,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 4.297844, z: 0, w: 0}
+  m_margin: {x: 0, y: 4.297844, z: 0, w: 1.7713089}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -831,7 +671,6 @@ RectTransform:
   m_Children:
   - {fileID: 728128812}
   - {fileID: 1976927653}
-  - {fileID: 375342466}
   m_Father: {fileID: 980074592}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -1092,17 +931,17 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Ignore the statue
+  m_text: Leave the barrel alone
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 39501046fd8f1234cb56f677f6efa1d4, type: 2}
-  m_sharedMaterial: {fileID: -3766221642715184230, guid: 39501046fd8f1234cb56f677f6efa1d4, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278190080
-  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -1119,10 +958,10 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 52.35
-  m_fontSizeBase: 41
+  m_fontSize: 24
+  m_fontSizeBase: 24
   m_fontWeight: 400
-  m_enableAutoSizing: 1
+  m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
@@ -1157,7 +996,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 92.3764, y: 436.28806, z: 88.869995, w: 126.50098}
+  m_margin: {x: 92.3764, y: 379.25113, z: 88.869995, w: 78.28259}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -1209,7 +1048,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: fbd6747861624604b97a24ac93f15a07, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 6d9b87eb38d09d94a8ce139d9a223f9d, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1280,8 +1119,8 @@ RectTransform:
   - {fileID: 1199143689}
   m_Father: {fileID: 435775923}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.2}
-  m_AnchorMax: {x: 0.3, y: 0.8}
+  m_AnchorMin: {x: 0.132125, y: 0.2}
+  m_AnchorMax: {x: 0.43737507, y: 0.8}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -1343,23 +1182,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 980074588}
         m_TargetAssemblyTypeName: TypeEffect, Assembly-CSharp
-        m_MethodName: Choose
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: Mage carefully runs the blade across his palm, drops
-            of blood falling onto the idol. The statue's eyes glow briefly before
-            dimming again, with no apparent effect.  After a moment, He winces, noticing
-            that the blood continues to seep from the wound. Later, he pushes the
-            door, which simply opens
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 980074588}
-        m_TargetAssemblyTypeName: TypeEffect, Assembly-CSharp
-        m_MethodName: SetPlayerPref2
+        m_MethodName: NameUpdate
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1367,6 +1190,32 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 980074588}
+        m_TargetAssemblyTypeName: TypeEffect, Assembly-CSharp
+        m_MethodName: NewMaxCount
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 11
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 980074588}
+        m_TargetAssemblyTypeName: TypeEffect, Assembly-CSharp
+        m_MethodName: Choose
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: "A thousand years you\u2019ve rotted, and now you think
+            you can threaten us? Well, come on, bones, show me what your legend is
+            worth against my sword!"
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &728128814
@@ -1531,40 +1380,45 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9c0b1829b26c4842b1449c8679b2608, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxcount: 100
+  maxcount: 10
   fader: {fileID: 670718606}
-  nextScene: 2
+  nextScene: 4
   isChoosing: 1
   speaker: {fileID: 2013773190}
   debuffTextBox: {fileID: 1423868782}
-  buttonStart: {fileID: 1944867330}
+  buttonStart: {fileID: 1682020461}
   names:
   - Hector
   - Caesar
   - Caleb
   - Narrator
+  - Boss
   bg:
-  - {fileID: 21300000, guid: 01631163f43352945899799910599f25, type: 3}
+  - {fileID: 21300000, guid: e4fa06d568e20684291818e66cee60c3, type: 3}
+  - {fileID: 21300000, guid: 301f6f604701b0e4fa2391b69650cdf3, type: 3}
   nowbg: {fileID: 711062929}
   nextbg: {fileID: 1744531610}
   panels:
   - {fileID: 1971133132}
   - {fileID: 435775920}
   audios:
-  - {fileID: 8300000, guid: 16f3dbe0f76adca4d986f5ce595330c0, type: 3}
-  - {fileID: 8300000, guid: 2fb0103c97c8aef4081460fbbf2c110c, type: 3}
-  - {fileID: 8300000, guid: 31ba6bd15ab1c384aacd98c5197f3aa2, type: 3}
-  - {fileID: 8300000, guid: 43c7536a57cf21845bfb4795b1649582, type: 3}
-  - {fileID: 8300000, guid: 2bfae4c3f406a0945aa57e038df47fb7, type: 3}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 8300000, guid: ed417cb693bff0145971e6fb2f33b79c, type: 3}
-  - {fileID: 8300000, guid: c146b2c0efbff6d4ab2e13ed1c665c96, type: 3}
-  - {fileID: 8300000, guid: fab3564d96e794f41894862fb1a506fe, type: 3}
+  - {fileID: 8300000, guid: 1f5a7980a32bde349b00b90e4e9dea36, type: 3}
+  - {fileID: 8300000, guid: 93c65f9961fd3524d94ef3e4128366f5, type: 3}
+  - {fileID: 8300000, guid: d69571433ad7fae44ae03ef7e54c63c6, type: 3}
+  - {fileID: 8300000, guid: e314d73d68adf244e8538e01adb9c059, type: 3}
+  - {fileID: 8300000, guid: ecea958c7af87cc4392b9434499fc1f8, type: 3}
+  - {fileID: 8300000, guid: 10a3411dc22a8b6459957b7164aeb6e7, type: 3}
+  - {fileID: 8300000, guid: e4d67696a5d94214f836f932997f89b5, type: 3}
+  - {fileID: 8300000, guid: 19496585319615c43afced64ac5ee931, type: 3}
+  - {fileID: 8300000, guid: 8b1cb698dd48fae43901b3354fd36f13, type: 3}
+  - {fileID: 8300000, guid: 58005e6902e587d42949f75f12e06200, type: 3}
+  - {fileID: 8300000, guid: 58005e6902e587d42949f75f12e06200, type: 3}
+  - {fileID: 8300000, guid: 4f0699f21f612eb48ace98e44a1dec82, type: 3}
+  - {fileID: 8300000, guid: 6b2cfd6f1966f3b43a45fde04762b48e, type: 3}
+  - {fileID: 8300000, guid: 34623550e94d38c40aff357b3aca4c06, type: 3}
   audiosByChoose:
-  - {fileID: 8300000, guid: 4eebbbef7a60d15478fd43530468e4e8, type: 3}
-  - {fileID: 8300000, guid: d11f34b65b268e84d8f7af4e6262012a, type: 3}
-  - {fileID: 8300000, guid: 2de9067f578c43f4c995751b0b2369a4, type: 3}
+  - {fileID: 8300000, guid: 8b1cb698dd48fae43901b3354fd36f13, type: 3}
+  - {fileID: 8300000, guid: 5d57b0f1111b9044fa6354dbf4b02933, type: 3}
   source: {fileID: 75322549}
   fadespeed: 1
   bgfadespeed: 1
@@ -1573,41 +1427,38 @@ MonoBehaviour:
   speechTextBoxSample: {fileID: 429833435}
   namesTextBox: {fileID: 395358363}
   nowText:
-  - The heroes enter a dark chamber, illuminated only by the faint light of the torch
-    Caesar is holding. The air is heavy and stale, the walls covered in ancient symbols
-    and cracks. On the opposite side of the room stands a massive stone door etched
-    with mysterious inscriptions.
-  - Beside the door is an ancient idol shaped like a bird with outstretched wings.
-    Its stone eyes seem to follow every movement.
-  - "This idol... I've read about these. They\u2019re said to be connected to the
-    spirits of the tombs. To move forward, a sacrifice is required. It must be anointed
-    with blood."
-  - "Blood? Seriously? That\u2019s just some stupid legend. I say we just smash the
-    thing."
-  - "No blood, no smashing. The idol\u2019s a distraction. I\u2019ll bet gold the
-    door opens without it."
-  - 
-  - 
-  - 'After wandering through the corridors for what felt like ages, the heroes''
-    path ends at a wide archway. Caesar is the first to step into a spacious hall,
-    his eyes widening in awe:'
-  - "shelves lined with ancient books stretch all the way to the ceiling, forming
-    a labyrinth of forgotten knowledge. The air is heavy with the scent of aged paper
-    and decay. But the silence doesn\u2019t last for long."
-  - "From the depths of the library comes a rustling sound, followed by a creak,
-    as if something heavy is being dragged across the floor. The heroes freeze, straining
-    to listen, but it\u2019s too late \u2013 shapes emerge from the shadows..."
-  debuffText:
-  - Caleb has gained the "Bleeding" status. This will gradually reduce his health
-    until treated.
-  - "Caesar opened the door. There were no traps or obstacles \u2013 it was just
-    a regular door..."
-  - Hector has suffered a minor injury from a stone shard. His movement speed is
-    now slightly reduced.
+  - "The heroes step into the heart of the tomb, their footsteps echoing in the vast
+    chamber. The floor is laid with massive stone slabs, and at the center of the
+    room stand two sarcophagi\u2014monumental, carved from gray stone. One of them
+    glows with an eerie green light, casting flickering shadows across the walls"
+  - The trio approaches cautiously, weapons at the ready. As they draw closer, the
+    glow intensifies, and the lid of the glowing sarcophagus slides open with a deafening
+    rumble. From within rises a figure draped in ancient robes, eyes blazing and
+    wielding a massive sword
+  - This is Draxan the Immortal
+  - Who dares disturb my slumber? For a thousand years, I have rested here, far from
+    the world of the living. And now you awaken me... for what purpose?
+  - "We\u2019ve come for what was buried here with your chef. It\u2019s important
+    to us"
+  - And what is this treasure, so worthy of disturbing the dead?
+  - "It\u2019s... well... a cookbook. We\u2019re looking for it to... um... use it"
+  - "A cookbook? Such a pitiful goal\u2014it\u2019s almost amusing"
+  - "A thousand years you\u2019ve rotted, and now you think you can threaten us?
+    Well, come on, bones, show me what your legend is worth against my sword!"
+  - Draxan raises his sword, a dark aura swirling around him. The light in the chamber
+    dims as the heroes brace for battle
+  - Draxan raises his sword, a dark aura swirling around him. The light in the chamber
+    dims as the heroes brace for battle
+  - "But his decayed body can\u2019t hold the liquid for even a moment. It pours
+    straight through the rotting bones, splashing onto the stone floor below"
+  - A heavy silence fills the room, the sound of the liquid hitting the floor echoing
+    in the stillness
+  - Then, Draxan screams in rage, his eyes burning with fury
+  debuffText: []
   charColor: {r: 0, g: 0, b: 0, a: 0}
   bgColor: {r: 0, g: 0, b: 0, a: 0}
   faderColor: {r: 0, g: 0, b: 0, a: 0}
-  charqueue: 0300000003000000020000000000000001000000030000000300000003000000670000000300000003000000
+  charqueue: 0300000003000000030000000400000001000000040000000200000004000000000000000300000003000000030000000300000003000000
 --- !u!114 &980074589
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1754,17 +1605,17 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Anoint the statue with blood
+  m_text: Take the barrel with you
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 39501046fd8f1234cb56f677f6efa1d4, type: 2}
-  m_sharedMaterial: {fileID: -3766221642715184230, guid: 39501046fd8f1234cb56f677f6efa1d4, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278190080
-  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -1781,10 +1632,10 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 49.95
-  m_fontSizeBase: 41
+  m_fontSize: 24
+  m_fontSizeBase: 24
   m_fontWeight: 400
-  m_enableAutoSizing: 1
+  m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
@@ -1819,7 +1670,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 73.434204, y: 427.02972, z: 84.05017, w: 107.716675}
+  m_margin: {x: 73.434204, y: 363.71478, z: 84.05017, w: 59.257202}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -2025,7 +1876,7 @@ MonoBehaviour:
   m_text: Hector has suffered a minor injury from a stone shard. His movement speed
     is now slightly reduced.
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 39501046fd8f1234cb56f677f6efa1d4, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -2033,7 +1884,7 @@ MonoBehaviour:
   m_fontColor32:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -2057,7 +1908,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 2
+  m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -2091,7 +1942,7 @@ MonoBehaviour:
   m_margin: {x: -339.2057, y: 0, z: -398.75952, w: -287.43835}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 1
+  m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &1423868783
@@ -2101,142 +1952,6 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1423868780}
-  m_CullTransparentMesh: 1
---- !u!1 &1533886056
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1533886057}
-  - component: {fileID: 1533886059}
-  - component: {fileID: 1533886058}
-  m_Layer: 5
-  m_Name: Text (TMP)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1533886057
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1533886056}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 375342466}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1533886058
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1533886056}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_text: Smash the statue
-  m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 39501046fd8f1234cb56f677f6efa1d4, type: 2}
-  m_sharedMaterial: {fileID: -3766221642715184230, guid: 39501046fd8f1234cb56f677f6efa1d4, type: 2}
-  m_fontSharedMaterials: []
-  m_fontMaterial: {fileID: 0}
-  m_fontMaterials: []
-  m_fontColor32:
-    serializedVersion: 2
-    rgba: 4278190080
-  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
-  m_enableVertexGradient: 0
-  m_colorMode: 3
-  m_fontColorGradient:
-    topLeft: {r: 1, g: 1, b: 1, a: 1}
-    topRight: {r: 1, g: 1, b: 1, a: 1}
-    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
-    bottomRight: {r: 1, g: 1, b: 1, a: 1}
-  m_fontColorGradientPreset: {fileID: 0}
-  m_spriteAsset: {fileID: 0}
-  m_tintAllSprites: 0
-  m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: -1183493901
-  m_overrideHtmlColors: 0
-  m_faceColor:
-    serializedVersion: 2
-    rgba: 4294967295
-  m_fontSize: 50.25
-  m_fontSizeBase: 41
-  m_fontWeight: 400
-  m_enableAutoSizing: 1
-  m_fontSizeMin: 18
-  m_fontSizeMax: 72
-  m_fontStyle: 0
-  m_HorizontalAlignment: 2
-  m_VerticalAlignment: 512
-  m_textAlignment: 65535
-  m_characterSpacing: 0
-  m_wordSpacing: 0
-  m_lineSpacing: 0
-  m_lineSpacingMax: 0
-  m_paragraphSpacing: 0
-  m_charWidthMaxAdj: 0
-  m_TextWrappingMode: 1
-  m_wordWrappingRatios: 0.4
-  m_overflowMode: 0
-  m_linkedTextComponent: {fileID: 0}
-  parentLinkedComponent: {fileID: 0}
-  m_enableKerning: 0
-  m_ActiveFontFeatures: 6e72656b
-  m_enableExtraPadding: 0
-  checkPaddingRequired: 0
-  m_isRichText: 1
-  m_EmojiFallbackSupport: 1
-  m_parseCtrlCharacters: 1
-  m_isOrthographic: 1
-  m_isCullingEnabled: 0
-  m_horizontalMapping: 0
-  m_verticalMapping: 0
-  m_uvLineOffset: 0
-  m_geometrySortingOrder: 0
-  m_IsTextObjectScaleStatic: 0
-  m_VertexBufferAutoSizeReduction: 0
-  m_useMaxVisibleDescender: 1
-  m_pageToDisplay: 1
-  m_margin: {x: 88.81006, y: 436.2766, z: 93.74255, w: 100.622314}
-  m_isUsingLegacyAnimationComponent: 0
-  m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
-  m_baseMaterial: {fileID: 0}
-  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
---- !u!222 &1533886059
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1533886056}
   m_CullTransparentMesh: 1
 --- !u!1 &1682020461
 GameObject:
@@ -2487,7 +2202,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 01631163f43352945899799910599f25, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e4fa06d568e20684291818e66cee60c3, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2638,7 +2353,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.155, y: 0.05}
   m_AnchorMax: {x: 0.85, y: 0.44081488}
-  m_AnchoredPosition: {x: -12, y: -20}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1971133134
@@ -2661,7 +2376,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 1090249166, guid: f285727fe05962f4eb7f5c16d0fd07c4, type: 3}
+  m_Sprite: {fileID: 927618413, guid: 80d9007ca429dd548ae9b234d64ae191, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2713,8 +2428,8 @@ RectTransform:
   - {fileID: 688604777}
   m_Father: {fileID: 435775923}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.35, y: 0.2}
-  m_AnchorMax: {x: 0.65, y: 0.8}
+  m_AnchorMin: {x: 0.55643743, y: 0.2}
+  m_AnchorMax: {x: 0.86079174, y: 0.8}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -2764,6 +2479,30 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 980074588}
         m_TargetAssemblyTypeName: TypeEffect, Assembly-CSharp
+        m_MethodName: AddCount
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 980074588}
+        m_TargetAssemblyTypeName: TypeEffect, Assembly-CSharp
+        m_MethodName: NewMaxCount
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 100
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 980074588}
+        m_TargetAssemblyTypeName: TypeEffect, Assembly-CSharp
         m_MethodName: Choose
         m_Mode: 3
         m_Arguments:
@@ -2783,10 +2522,22 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Focused, Caesar examines the door and presses against
-            its surface. With a loud creak, the door begins to open, requiring nothing
-            in return. Beyond it lies a long, dark corridor. The others look at him
-            in astonishment
+          m_StringArgument: After the first encounter, the heroes present Draxan
+            with the barrel of liquid they had taken with them. Draxan greedily grabs
+            the barrel, clutching it with his hands, and tilts it back, gulping down
+            the contents in one swift motion.
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 980074588}
+        m_TargetAssemblyTypeName: TypeEffect, Assembly-CSharp
+        m_MethodName: SetPlayerPref4
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1976927655
@@ -2892,6 +2643,8 @@ MonoBehaviour:
   - {fileID: 1384853027, guid: feda390080d2d124689449168643c868, type: 3}
   - {fileID: -662134064, guid: c1ae147d38480124d8d4c05fa524ac92, type: 3}
   - {fileID: 1457083011, guid: 520236ec64021a24ca991ade642b4ff9, type: 3}
+  - {fileID: 0}
+  - {fileID: 792604694, guid: 237ca7330cd406e469ff07be874b5166, type: 3}
   chooseImage: []
 --- !u!222 &2013773192
 CanvasRenderer:
@@ -2952,7 +2705,7 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1971133133}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.1677518, y: 0.22027673}
+  m_AnchorMin: {x: 0.1677518, y: 0.18032297}
   m_AnchorMax: {x: 0.89425063, y: 0.58050805}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
@@ -3050,7 +2803,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 3.59523, z: 0, w: 0}
+  m_margin: {x: 0, y: 3.59523, z: 0, w: 3.3411105}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
